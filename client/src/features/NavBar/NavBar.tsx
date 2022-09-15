@@ -9,7 +9,7 @@ function NavBar() {
     const navigate = useNavigate()
 
   return (
-    <div className = "top-0 z-10 fixed w-full h-9 bg-gray-900 shadow-sm shadow-gray-900 text-gray-300 flex items-center justify-between px-5">
+    <div className = "top-0 nav fixed">
         <div className='btn flex items-center' onClick = {
             () => {
                 navigate('/')

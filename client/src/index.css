@@ -7,3 +7,11 @@
 .btn {
   @apply hover:scale-105 transition duration-300
 }
+
+.nav {
+  @apply z-10 w-full h-9 bg-gray-900 shadow-sm shadow-gray-900 text-gray-300 flex items-center justify-between px-5
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 9999rem;
+}
