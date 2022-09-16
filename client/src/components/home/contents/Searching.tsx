@@ -2,7 +2,7 @@ import React from 'react'
 
 function Searching() {
   return (
-    <div>searching</div>
+    <div className = 'heading'>Searching</div>
   )
 }
 

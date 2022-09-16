@@ -2,7 +2,7 @@ import React from 'react'
 
 function Documentation() {
   return (
-    <div>documentation</div>
+    <div className = 'heading'>Documentation</div>
   )
 }
 
