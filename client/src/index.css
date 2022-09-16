@@ -16,7 +16,7 @@
   @apply hover:translate-x-3 transition duration-300 ease-out my-1 pl-14 w-48 
 }
 
-a.active {
+nav a.active {
   @apply text-gray-600 
 }
 

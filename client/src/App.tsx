@@ -18,6 +18,7 @@ function App() {
       <Hero />
       <Routes>
         <Route path = '/' element = {<Home />}>
+          <Route index element = {<Intro />} />
           <Route path = '/introduction' element = {<Intro />} />
           <Route path = '/searching' element = {<Searching />} />
           <Route path = '/api' element = {<Api />} />

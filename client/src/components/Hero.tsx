@@ -64,7 +64,7 @@ function Hero() {
                   setBrowseOpen(i => !i) 
                   setPlaceHolderText(ptArray[4])
                 }} 
-                className = {browseSelect === 'Microorganism'? `selectedBrowse pt-1`: `notSelectedBrowse`}>Microorganism</button>
+                className = {browseSelect === 'Microorganisms'? `selectedBrowse pt-1`: `notSelectedBrowse`}>Microorganism</button>
               <button onClick = {() => {
                   setBrowseSelect('Alcohol Percent') 
                   setBrowseOpen(i => !i) 
