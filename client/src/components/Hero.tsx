@@ -1,27 +1,77 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { IoMdArrowDropdown } from 'react-icons/io'
 import { AiOutlineSearch } from 'react-icons/ai'
 
 function Hero() {
 
+  const ptArray = ['Beverage name: eg. Sake',
+    'Beverage starter culture: eg. Marcha',
+    'Beverage ingredients: eg. Barley',
+    'Beverage place: eg. India',
+    'Beverage microorganism: eg. Saccharomyces',
+    'Beverage alcohol content: eg. 40%'
+]
+  const [isBrowseOpen, setBrowseOpen] = useState(false)
+  const [browseSelect, setBrowseSelect] = useState('Name')
+  const [placeholderText, setPlaceHolderText] = useState(ptArray[0])
+
+
   return (
-    <div className = 'text-white z-0 w-full h-2/4 bg-black bg-opacity-70 relative flex-col overflow-hidden rounded-b-3xl shadow-md shadow-gray-500'>
+    <div className = 'text-white z-10 overflow-hidden w-full h-2/4 bg-black bg-opacity-70 relative flex-col rounded-b-3xl shadow-md shadow-gray-500'>
         <div className = { `absolute w-full h-full top-0 left-0 bg-[url('../src/images/hero.jpg')] opacity-90 bg-cover mix-blend-overlay`}></div>
         <div className = { `w-full top-1/4 absolute left-1/4`}>
             <h1 className='text-6xl font-bold'>BeverageDB</h1>
             <p className ='text-sm text-gray-200 mt-3'>An online resource for biological information on beverages</p>
             <div className='flex items-center mt-5'>
-              <button className = 'bg-red-400 py-1 px-3 flex items-center rounded-tl-2xl'>
-                <div className = 'ml-1'>Browse</div>
-                <IoMdArrowDropdown className = 'ml-1 text-xl'/>
+              <button onClick = {() => { setBrowseOpen(i => !i) }} className = 'bg-red-400 py-1 px-3 flex items-center rounded-tl-2xl'>
+                <div className = 'ml-1 pl-2 w-32 transition'>{browseSelect}</div>
+                <IoMdArrowDropdown className = {isBrowseOpen? 'openDropdownIcon': 'closeDropdownIcon'}/>
               </button>
               <form className = 'w-full flex items-center'>
-                <input placeholder='Beverage name: eg. Sake' className = 'font-nunito w-1/4 py-1 focus:outline-none text-gray-600 indent-3' type = 'text' />
-                <button className = ' bg-red-400 py-1 px-4 rounded-r-full flex gap-1 items-center'>
+                <input placeholder={placeholderText} className = 'font-nunito w-2/6 py-1 focus:outline-none text-gray-600 indent-3' type = 'text' />
+                <button className = 'bg-red-400 w-32 py-1 px-4 rounded-r-full flex gap-1 items-center'>
                   <AiOutlineSearch className = 'text-xl' />Search
                 </button>
               </form>
             </div>
+            <ul className = {isBrowseOpen? 'openDropdown': 'closeDropdown'}>
+              <button onClick = {() => {
+                  setBrowseSelect('Name') 
+                  setBrowseOpen(i => !i)
+                  setPlaceHolderText(ptArray[0])
+                }} 
+                className = {browseSelect === 'Name'? `selectedBrowse pt-1`: `notSelectedBrowse pt-1`}>Name</button>
+              <button onClick = {() => {
+                  setBrowseSelect('Starter Culture') 
+                  setBrowseOpen(i => !i);
+                  setPlaceHolderText(ptArray[1]) 
+                }} 
+                className = {browseSelect === 'Starter Culture'? `selectedBrowse pt-1`: `notSelectedBrowse`}>Starter Culture</button>
+              <button onClick = {() => {
+                  setBrowseSelect('Ingredients') 
+                  setBrowseOpen(i => !i)
+                  setPlaceHolderText(ptArray[2])
+                }} 
+                className = {browseSelect === 'Ingredients'? `selectedBrowse pt-1`: `notSelectedBrowse`}>Ingredients</button>
+              <button onClick = {() => {
+                  setBrowseSelect('Place') 
+                  setBrowseOpen(i => !i) 
+                  setPlaceHolderText(ptArray[3])
+                }} 
+                className = {browseSelect === 'Place'? `selectedBrowse pt-1`: `notSelectedBrowse`}>Place</button>
+              <button onClick = {() => {
+                  setBrowseSelect('Microorganisms') 
+                  setBrowseOpen(i => !i) 
+                  setPlaceHolderText(ptArray[4])
+                }} 
+                className = {browseSelect === 'Microorganism'? `selectedBrowse pt-1`: `notSelectedBrowse`}>Microorganism</button>
+              <button onClick = {() => {
+                  setBrowseSelect('Alcohol Percent') 
+                  setBrowseOpen(i => !i) 
+                  setPlaceHolderText(ptArray[5])
+                }} 
+                className = {browseSelect === 'Alcohol Percent'? `selectedBrowse pt-1`: `notSelectedBrowse`}>Alcohol Percent</button>
+            </ul>
         </div>
     </div>
   )

@@ -9,7 +9,7 @@
 }
 
 .nav {
-  @apply z-10 w-full h-9 bg-gray-900 shadow-sm shadow-gray-900 text-gray-300 flex items-center justify-between px-5
+  @apply z-20 w-full h-9 bg-gray-900 shadow-sm shadow-gray-900 text-gray-300 flex items-center justify-between px-5
 }
 
 .navlink {
@@ -22,4 +22,28 @@ a.active {
 
 .heading {
   @apply text-4xl text-gray-500 pt-3 border-b-2
+}
+
+.openDropdown {
+  @apply h-32 py-2 rounded-b-lg text-sm pl-3 relative top-0 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-thumb-rounded-xl overflow-scroll overflow-x-hidden flex w-48 flex-col items-start bg-red-400 scale-y-100 origin-top transition duration-300
+}
+
+.closeDropdown {
+  @apply h-32 py-2 rounded-b-lg text-sm pl-3 relative top-0 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-thumb-rounded-xl overflow-scroll overflow-x-hidden flex w-48 flex-col items-start bg-red-400 scale-y-0 origin-top transition duration-300
+}
+
+.openDropdownIcon {
+  @apply ml-1 text-xl transform duration-300 rotate-0 mr-3
+}
+
+.closeDropdownIcon {
+  @apply ml-1 text-xl transform duration-300 rotate-90 mr-3
+}
+
+.selectedBrowse {
+  @apply text-white hover:translate-x-3 py-1 pl-3 transition duration-300
+}
+
+.notSelectedBrowse {
+  @apply text-gray-300 hover:translate-x-3 py-1 pl-3 transition duration-300
 }

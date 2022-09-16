@@ -13,7 +13,7 @@ import Documentation from './components/home/contents/Documentation'
 
 function App() {
   return (
-    <div className = 'h-screen overflow-y-scroll font-inter'>
+    <div className = 'h-screen overflow-y-scroll font-inter scrollbar-thin scrollbar-thumb-gray-300 scrollbar-thumb-rounded-xl'>
       <NavBar />
       <Hero />
       <Routes>

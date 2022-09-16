@@ -19,5 +19,5 @@ module.exports = {
       }
     },
   },
-  plugins: ['tailwind-scrollbar'],
+  plugins: [require('tailwind-scrollbar')({ nocompatible: true })],
 }
