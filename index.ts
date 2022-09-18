@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import 'dotenv/config'
 import 'express-async-errors'
 import { connectDB } from "./db/connectDB";
+import { dataRouter } from "./routers/dataRouter";
 
 const app = express()
 const port = Number(process.env.PORT) || 5000
@@ -11,6 +12,8 @@ app.use(express.json())
 app.get('/', (req: Request, res: Response) => {
     res.send('hi mom')
 })
+
+app.use('/api/v1/data', dataRouter)
 
 const start = async (uri: string, port: number) => {
     try {

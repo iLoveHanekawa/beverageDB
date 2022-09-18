@@ -1,0 +1,95 @@
+[
+    {
+        "name": "Xaj",
+        "starter": "Xaj-pitha",
+        "ingredients": "Gelatinized rice preferably glutinous varieties",
+        "place": "Assam",
+        "culturalImportance": "Regular use & Martial Ceremonies",
+        "microorganisms": "amylolytic fungal species, viz. Rhizopus delemar, Mucor circinelloides and Aspergillus sp., and saccharifying yeast species such as Meyerozyma guilliermondii, Wickerhamomyces ciferrii, Saccharomyces cerevisiae, etc.LAB with members like Lactobacillus plantarum, Lactobacillus brevis, \nLeuconostoc lactis, etc.",
+        "nutritionalValue": "1.85–2.51% (w\/v) crude protein, 1.163–1.675% (w\/v) soluble protein and minerals- calcium (10.93–34.37  mg\/mL), sodium (1.27–3.49 mg\/mL), potassium (4.76–9.63 mg\/mL), iron (0.296–3.069 mg\/mL) and \nphosphorus (19.123–78.108 mg\/mL)",
+        "alcoholContent": "12-13%",
+        "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+        "name": "Mahua Mand",
+        "starter": "ranu tablets and leaf juice of Buchanania lanzan",
+        "ingredients": "Flower of Madhuca longifolia",
+        "place": "Chhattisgarh",
+        "culturalImportance": "Sacred&Occasionally",
+        "microorganisms": "yeast Saccharomyces cerevisiae",
+        "nutritionalValue": "rich in carbohydrates",
+        "tasteAndOdor": "Juicy",
+        "fermentationTime": "3-5 days",
+        "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+        "name": "Caju Feni",
+        "ingredients": "Cashew",
+        "place": "Goa",
+        "culturalImportance": "romance&ritual ",
+        "microorganisms": "S. cerevisiae, P. galeiformis, P. kudriavzevii, and L. orientalis",
+        "alcoholContent": "45–48.2%",
+        "fermentationTime": "3 days",
+        "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+        "name": "Aark",
+        "starter": "phab",
+        "ingredients": "Barley,Apple,Wild apricot",
+        "place": "Himachal Pradesh",
+        "microorganisms": "S. cerevisiae, amylolytic yeast Endomyces fibuliger",
+        "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+        "name": "Chhang\/Lugri",
+        "starter": "Balma",
+        "ingredients": "Rice\/Barley ",
+        "place": "Himachal Pradesh, Uttrakhand",
+        "culturalImportance": "sprinkled as shagun on guests",
+        "microorganisms": "Lb. plantarum, Lb. casei, Enterococcus faecium, Pediococcus pentosaceus, S. cerevisiae, S. fibuligera, Pichia kudriavzevii, and Candida tropicalis",
+        "nutritionalValue": "rich in vitamins, amino acids, and sugars & protection against cold",
+        "alcoholContent": 0.085,
+        "tasteAndOdor": "Sour&Sweet",
+        "Texture": "Milky white",
+        "fermentationTime": "1 week",
+        "reference": "DOI 10.1007\/s12088-015-0560-6"
+    },
+    {
+        "name": "Sura",
+        "starter": "Dhehli(herbal mix of sattu base) ",
+        "ingredients": "Finger millet",
+        "place": "Himachal Pradesh",
+        "culturalImportance": "Local festivals and shoeri saja",
+        "microorganisms": "S. cerevisiae and Zygosaccharomyces bisporus yeasts",
+        "alcoholContent": 0.15,
+        "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+        "name": "Cashew Apple Wine",
+        "ingredients": "Cashew Apple",
+        "place": "Karnataka",
+        "microorganisms": "S. cerevisiae",
+        "nutritionalValue": "Vitamin C, iron, calcium and phosphorus",
+        "alcoholContent": "6-12%",
+        "Texture": "light yellow",
+        "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+        "name": "Wine",
+        "starter": "Multi starter culture of yeast",
+        "ingredients": "Grapes",
+        "place": "Karnataka, Madhya Pradesh",
+        "microorganisms": "non-Saccharomyces (Torulaspora delbrueckii, Hanseniaspora uvarum and Kluyveromyces thermotolerans) and S. cerevisiae yeast",
+        "nutritionalValue": "A moderate consumption of wine can help in preventing coronary vascular disease (CVD) by increasing the levels of high-density lipoprotein cholesterol (HDL) in plasma, by restoring the endothelial function and by decreasing platelet aggregation, and it also has antioxidative effects",
+        "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+        "name": "Jamun Wine",
+        "ingredients": "Jamun\/Black plum",
+        "place": "Karnataka",
+        "microorganisms": "S. cerevisiae var. bayanus",
+        "nutritionalValue": "Jamun helps curing diabetes",
+        "fermentationTime": "6 days",
+        "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    }
+]

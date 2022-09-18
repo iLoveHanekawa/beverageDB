@@ -12,28 +12,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-require("dotenv/config");
-require("express-async-errors");
-const connectDB_1 = require("./db/connectDB");
-const dataRouter_1 = require("./routers/dataRouter");
-const app = (0, express_1.default)();
-const port = Number(process.env.PORT) || 5000;
-app.use(express_1.default.json());
-app.get('/', (req, res) => {
-    res.send('hi mom');
+exports.getAllData = void 0;
+const dataModel_1 = __importDefault(require("../models/dataModel"));
+const getAllData = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const data = yield dataModel_1.default.find({});
+    res.json({ data });
 });
-app.use('/api/v1/data', dataRouter_1.dataRouter);
-const start = (uri, port) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        yield (0, connectDB_1.connectDB)(uri);
-        console.log('connected to db');
-        app.listen(port, () => {
-            console.log(`server listening to: ${port}`);
-        });
-    }
-    catch (error) {
-        console.log(error);
-    }
-});
-start(process.env.MONGO_URI, port);
+exports.getAllData = getAllData;
