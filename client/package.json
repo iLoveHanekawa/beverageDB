@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.5",
     "autoprefixer": "^10.4.10",
     "axios": "^0.27.2",
     "postcss": "^8.4.16",

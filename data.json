@@ -48,7 +48,7 @@
         "culturalImportance": "sprinkled as shagun on guests",
         "microorganisms": "Lb. plantarum, Lb. casei, Enterococcus faecium, Pediococcus pentosaceus, S. cerevisiae, S. fibuligera, Pichia kudriavzevii, and Candida tropicalis",
         "nutritionalValue": "rich in vitamins, amino acids, and sugars & protection against cold",
-        "alcoholContent": 0.085,
+        "alcoholContent": "0.085%",
         "tasteAndOdor": "Sour&Sweet",
         "Texture": "Milky white",
         "fermentationTime": "1 week",
@@ -61,7 +61,7 @@
         "place": "Himachal Pradesh",
         "culturalImportance": "Local festivals and shoeri saja",
         "microorganisms": "S. cerevisiae and Zygosaccharomyces bisporus yeasts",
-        "alcoholContent": 0.15,
+        "alcoholContent": "0.15%",
         "reference": "doi.org\/10.1007\/978-981-15-1486-9"
     },
     {

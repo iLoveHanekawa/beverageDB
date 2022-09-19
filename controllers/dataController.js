@@ -15,7 +15,42 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAllData = void 0;
 const dataModel_1 = __importDefault(require("../models/dataModel"));
 const getAllData = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const data = yield dataModel_1.default.find({});
-    res.json({ data });
+    const { name, starter, ingredients, place, culturalImportance, microorganisms, nutritionalValue, alcoholContent, tasteAndOdour, texture, reference } = req.query;
+    let queryObj = {};
+    if (name) {
+        queryObj = Object.assign(Object.assign({}, queryObj), { name: name });
+    }
+    if (starter) {
+        queryObj = Object.assign(Object.assign({}, queryObj), { starter: starter });
+    }
+    if (ingredients) {
+        queryObj = Object.assign(Object.assign({}, queryObj), { ingredients: ingredients });
+    }
+    if (place) {
+        queryObj = Object.assign(Object.assign({}, queryObj), { place: place });
+    }
+    if (culturalImportance) {
+        queryObj = Object.assign(Object.assign({}, queryObj), { culturalImportance: culturalImportance });
+    }
+    if (microorganisms) {
+        queryObj = Object.assign(Object.assign({}, queryObj), { microorganisms: microorganisms });
+    }
+    if (nutritionalValue) {
+        queryObj = Object.assign(Object.assign({}, queryObj), { nutritionalValue: nutritionalValue });
+    }
+    if (alcoholContent) {
+        queryObj = Object.assign(Object.assign({}, queryObj), { alcoholContent: alcoholContent });
+    }
+    if (tasteAndOdour) {
+        queryObj = Object.assign(Object.assign({}, queryObj), { tasteAndOdour: tasteAndOdour });
+    }
+    if (texture) {
+        queryObj = Object.assign(Object.assign({}, queryObj), { texture: texture });
+    }
+    if (reference) {
+        queryObj = Object.assign(Object.assign({}, queryObj), { reference: reference });
+    }
+    const data = yield dataModel_1.default.find(queryObj);
+    res.json({ count: data.length, data });
 });
 exports.getAllData = getAllData;

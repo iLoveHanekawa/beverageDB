@@ -15,7 +15,7 @@ function App() {
   return (
     <div className = 'h-screen overflow-y-scroll font-inter scrollbar-thin scrollbar-thumb-gray-300 scrollbar-thumb-rounded-xl'>
       <NavBar />
-      <Hero />
+      {/* <Hero />
       <Routes>
         <Route path = '/' element = {<Home />}>
           <Route index element = {<Intro />} />
@@ -28,7 +28,7 @@ function App() {
         <Route path = '/about' element = {<About />} />
         <Route path = '/contact' element = {<Contact />} /> 
       </Routes>
-      <BottomNavBar />
+      <BottomNavBar /> */}
     </div>
   )
 }
