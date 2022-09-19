@@ -13,12 +13,18 @@ function Search() {
     searchParams.forEach((key, value) => {
         allQueryParams.push([key, value])
     })
+
+    let queryString = '?'
+    allQueryParams.forEach(element => {
+        queryString += `${element[1]}=${element[0]}&`
+    });
+
     const dispatch: AppDispatch = useDispatch()
     const documents = useSelector((state: StateType) => { return state.data.default })
     const loading = useSelector((state: StateType) => (state.data.loading))
     React.useEffect(() => {
         dispatch(fetchData(allQueryParams))
-    }, [])
+    }, [queryString])
 
     console.log(documents)
 

@@ -18,7 +18,7 @@ const getAllData = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     const { name, starter, ingredients, place, culturalImportance, microorganisms, nutritionalValue, alcoholContent, tasteAndOdour, texture, reference } = req.query;
     let queryObj = {};
     if (name) {
-        queryObj = Object.assign(Object.assign({}, queryObj), { name: name });
+        queryObj = Object.assign(Object.assign({}, queryObj), { name: { $regex: name, $options: 'i' } });
     }
     if (starter) {
         queryObj = Object.assign(Object.assign({}, queryObj), { starter: starter });

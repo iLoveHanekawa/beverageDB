@@ -6,7 +6,8 @@ export const getAllData = async (req: Request, res: Response) => {
     let queryObj = {}
 
     if(name) {
-        queryObj = { ...queryObj, name: name }
+        queryObj = { ...queryObj, name: { $regex: name, $options: 'i' } }
+        
     }
     if(starter) {
         queryObj = { ...queryObj, starter: starter }
