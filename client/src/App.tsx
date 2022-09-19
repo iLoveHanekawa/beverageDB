@@ -10,12 +10,13 @@ import Intro from './components/home/contents/Intro'
 import Searching from './components/home/contents/Searching'
 import Api from './components/home/contents/Api'
 import Documentation from './components/home/contents/Documentation'
+import Search from './components/Search'
 
 function App() {
   return (
     <div className = 'h-screen overflow-y-scroll font-inter scrollbar-thin scrollbar-thumb-gray-300 scrollbar-thumb-rounded-xl'>
       <NavBar />
-      {/* <Hero />
+      <Hero />
       <Routes>
         <Route path = '/' element = {<Home />}>
           <Route index element = {<Intro />} />
@@ -25,10 +26,11 @@ function App() {
           <Route path = '/contact' element = {<ContentContact />} />
           <Route path = '/documentation' element = {<Documentation />} />
         </Route>
+        <Route path = '/data/search' element = {<Search />} />
         <Route path = '/about' element = {<About />} />
         <Route path = '/contact' element = {<Contact />} /> 
       </Routes>
-      <BottomNavBar /> */}
+      <BottomNavBar />
     </div>
   )
 }

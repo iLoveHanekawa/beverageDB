@@ -1,20 +1,43 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
+type SchemaType = {
+    name: string | undefined,
+    starter: string | undefined,
+    ingredients: string | undefined,
+    place: string | undefined,
+    culturalImportance: string | undefined,
+    microorganisms: string | undefined,
+    nutritionalValue: string | undefined,
+    alcoholContent: string | undefined,
+    tasteAndOdour: string | undefined,
+    texture: string | undefined,
+    fermentationTime: string | undefined,
+    reference: string | undefined
+}
+
 type DataStateType<T extends {}> = {
     loading: boolean,
-    data: T[],
+    default: { count: number, data: T[]},
     error: string | undefined
 }
 
-const initialState: DataStateType<{}> = {
+const initialState: DataStateType<SchemaType> = {
     loading: false,
-    data: [],
+    default: {count: 0, data: []},
     error: ''
 }
 
-const fetchData = createAsyncThunk('data/fetch', async () => {
-    const response = await axios.get('/api/v1/data')
+export const fetchData = createAsyncThunk<unknown, [key: string, value: string][]>('data/fetch', async (allQueryParams: [key: string, value: string][]) => {
+
+    let queryString = '?'
+    allQueryParams.forEach(element => {
+        queryString += `${element[1]}=${element[0]}&`
+    });
+
+    console.log(queryString)
+
+    const response = await axios.get(`/api/v1/data${queryString}`)
     const data = response.data
     return data
 })
@@ -29,12 +52,11 @@ const dataSlice = createSlice({
         })
         builder.addCase(fetchData.fulfilled, (state, action) => {
             state.loading = false,
-            state.data = action.payload
+            state.default = action.payload as { count: number, data: SchemaType[]}
             state.error = ''
         })
         builder.addCase(fetchData.rejected, (state, action) => {
             state.loading = false,
-            state.data = [],
             state.error = action.error.message
         })
     }

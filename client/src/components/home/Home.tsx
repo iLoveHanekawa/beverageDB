@@ -3,8 +3,6 @@ import { NavLink, Outlet } from 'react-router-dom'
 
 function Home() {
 
-
-
   return (
     <div className='overflow-hidden justify-between flex h-1/2 my-4 mx-4'>
       <div className = 'rounded-l-2xl flex flex-col items-center h-full w-1/6 relative text-gray-400 bg-gray-200'>
