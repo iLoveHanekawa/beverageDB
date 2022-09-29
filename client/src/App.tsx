@@ -12,6 +12,7 @@ import Api from './components/home/contents/Api'
 import Documentation from './components/home/contents/Documentation'
 import Search from './components/Search'
 import Item from './components/Item'
+import Loading from './components/Loading'
 
 function App() {
   return (

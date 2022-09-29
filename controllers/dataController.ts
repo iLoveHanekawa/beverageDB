@@ -39,7 +39,7 @@ export const getAllData = async (req: Request, res: Response) => {
         queryObj = { ...queryObj, reference: reference }
     }
 
-    const data: {}[] = await dataModel.find(queryObj)
+    const data: {}[] = await dataModel.find(queryObj).sort('name')
     res.json({ count: data.length, data })
 }
 

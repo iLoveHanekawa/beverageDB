@@ -53,7 +53,7 @@ nav a.active {
 }
 
 .fieldStyle {
-  @apply text-white bg-gray-800 border-b border-gray-700 py-5 px-5 col-span-1
+  @apply text-gray-200 bg-gray-800 border-b border-gray-700 py-5 px-5 col-span-1
 }
 
 .itemStyle {

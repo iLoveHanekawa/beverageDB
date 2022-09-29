@@ -50,7 +50,7 @@ const getAllData = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     if (reference) {
         queryObj = Object.assign(Object.assign({}, queryObj), { reference: reference });
     }
-    const data = yield dataModel_1.default.find(queryObj);
+    const data = yield dataModel_1.default.find(queryObj).sort('name');
     res.json({ count: data.length, data });
 });
 exports.getAllData = getAllData;

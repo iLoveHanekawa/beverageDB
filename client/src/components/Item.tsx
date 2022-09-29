@@ -2,6 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { SchemaType } from '../features/data'
 import axios from 'axios'
+import Loading from './Loading'
 
 function Item() {
 
@@ -72,7 +73,7 @@ function Item() {
                     </div>}
 
                 </div>
-            </div>: <div>Loading</div>}
+            </div>: <Loading />}
         </div>
     )
 }
