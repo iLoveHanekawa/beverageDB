@@ -1,8 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
-type SchemaType = {
+export type SchemaType = {
     name: string | undefined,
+    _id: number | undefined,
     starter: string | undefined,
     ingredients: string | undefined,
     place: string | undefined,

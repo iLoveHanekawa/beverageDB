@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import { IoMdArrowDropdown } from 'react-icons/io'
 import { AiOutlineSearch } from 'react-icons/ai'
+import { useSelector, useDispatch } from 'react-redux'
+import { StateType, AppDispatch } from './../app/store'
 import { useNavigate, createSearchParams } from 'react-router-dom'
+import { textActions } from '../features/searchText'
 
 function Hero() {
 
@@ -13,9 +16,10 @@ function Hero() {
     'Beverage alcohol content: eg. 40%'
   ]
   
-  const urlParamKeys = ['name', 'starterCulture', 'ingredients', 'place', 'microorganim', 'alcoholPercent']
+  const urlParamKeys = ['name', 'starter', 'ingredients', 'place', 'microorganim', 'alcoholPercent']
 
-  const [searchText, setSearchText] = React.useState('')
+  const searchText = useSelector((state: StateType) => state.text.default)
+  const dispatch: AppDispatch = useDispatch()
   const [param, setParam] = React.useState(urlParamKeys[0])
   const [isBrowseOpen, setBrowseOpen] = useState(false)
   const [browseSelect, setBrowseSelect] = useState('Name')
@@ -23,10 +27,10 @@ function Hero() {
   const navigate = useNavigate()
 
   return (
-    <div className = 'text-white z-10 w-full h-2/4 bg-black bg-opacity-70 relative flex-col rounded-b-3xl shadow-md shadow-gray-500'>
-        <div className = { `absolute w-full h-full top-0 left-0 bg-[url('../src/images/hero.jpg')] rounded-b-3xl opacity-90 bg-cover mix-blend-overlay`}></div>
+    <div className = 'text-white z-10 w-full h-2/6 bg-black bg-opacity-70 text-sm relative flex-col rounded-b-2xl shadow-md shadow-gray-500'>
+        <div className = { `absolute w-full h-full top-0 left-0 bg-[url('../src/images/hero.jpg')] rounded-b-2xl opacity-90 bg-cover mix-blend-overlay`}></div>
         <div className = { `w-full top-1/4 absolute pl-80`}>
-            <h1 className='text-6xl font-bold'>BeverageDB</h1>
+            <h1 className='text-4xl font-bold'>BeverageDB</h1>
             <p className ='text-sm text-gray-200 mt-3'>An online resource for biological information on beverages</p>
             <div className='flex items-center mt-5'>
               <button onClick = {() => { setBrowseOpen(i => !i) }} className = 'bg-red-400 py-1 px-3 flex items-center rounded-tl-2xl'>
@@ -35,8 +39,8 @@ function Hero() {
               </button>
               <form className = 'w-full flex items-center'>
                 <input onChange = {(event) => { 
-                  setSearchText(event.target.value) 
-                  }} value = {searchText} placeholder={placeholderText} className = 'font-nunito w-3/6 py-1 focus:outline-none text-gray-600 indent-3' type = 'text' />
+                  dispatch(textActions.setSearchText(event.target.value))
+                  }} value = {searchText} placeholder={placeholderText} className = 'font-nunito w-2/6 py-1 focus:outline-none text-gray-600 indent-3' type = 'text' />
                 <button onClick = {(event) => { 
                   event.preventDefault()
                   navigate({ pathname: '/data/search', search: `?${createSearchParams({ [param]: searchText })}`}) }

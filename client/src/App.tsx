@@ -11,6 +11,7 @@ import Searching from './components/home/contents/Searching'
 import Api from './components/home/contents/Api'
 import Documentation from './components/home/contents/Documentation'
 import Search from './components/Search'
+import Item from './components/Item'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path = '/data/search' element = {<Search />} />
         <Route path = '/about' element = {<About />} />
         <Route path = '/contact' element = {<Contact />} /> 
+        <Route path = '/data/:userId' element = {<Item />} />
       </Routes>
       <BottomNavBar />
     </div>

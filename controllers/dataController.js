@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getAllData = void 0;
+exports.getData = exports.getAllData = void 0;
 const dataModel_1 = __importDefault(require("../models/dataModel"));
 const getAllData = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { name, starter, ingredients, place, culturalImportance, microorganisms, nutritionalValue, alcoholContent, tasteAndOdour, texture, reference } = req.query;
@@ -21,7 +21,7 @@ const getAllData = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         queryObj = Object.assign(Object.assign({}, queryObj), { name: { $regex: name, $options: 'i' } });
     }
     if (starter) {
-        queryObj = Object.assign(Object.assign({}, queryObj), { starter: starter });
+        queryObj = Object.assign(Object.assign({}, queryObj), { starter: { $regex: starter, $options: 'i' } });
     }
     if (ingredients) {
         queryObj = Object.assign(Object.assign({}, queryObj), { ingredients: ingredients });
@@ -54,3 +54,8 @@ const getAllData = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     res.json({ count: data.length, data });
 });
 exports.getAllData = getAllData;
+const getData = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const data = yield dataModel_1.default.findById(req.params.userId);
+    res.json({ data });
+});
+exports.getData = getData;

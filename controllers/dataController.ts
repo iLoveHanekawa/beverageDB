@@ -7,10 +7,9 @@ export const getAllData = async (req: Request, res: Response) => {
 
     if(name) {
         queryObj = { ...queryObj, name: { $regex: name, $options: 'i' } }
-        
     }
     if(starter) {
-        queryObj = { ...queryObj, starter: starter }
+        queryObj = { ...queryObj, starter: { $regex: starter, $options: 'i'} }
     }
     if(ingredients) {
         queryObj = { ...queryObj, ingredients: ingredients }
@@ -42,4 +41,9 @@ export const getAllData = async (req: Request, res: Response) => {
 
     const data: {}[] = await dataModel.find(queryObj)
     res.json({ count: data.length, data })
+}
+
+export const getData = async (req: Request, res: Response) => {
+    const data = await dataModel.findById(req.params.userId)
+    res.json({ data })
 }

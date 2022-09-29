@@ -9,7 +9,7 @@
 }
 
 .nav {
-  @apply z-20 w-full h-9 bg-gray-900 shadow-sm shadow-gray-900 text-gray-300 flex items-center justify-between px-5
+  @apply z-20 w-full h-7 bg-gray-900 shadow-sm shadow-gray-900 text-gray-300 flex items-center justify-between px-5
 }
 
 .navlink {
@@ -46,4 +46,16 @@ nav a.active {
 
 .notSelectedBrowse {
   @apply text-gray-300 hover:translate-x-3 py-1 pl-3 transition duration-300
+}
+
+.itemField {
+  @apply row-span-1 col-span-3 grid grid-cols-3
+}
+
+.fieldStyle {
+  @apply text-white bg-gray-800 border-b border-gray-700 py-5 px-5 col-span-1
+}
+
+.itemStyle {
+  @apply text-gray-600 col-span-2 self-center py-5 px-6 border border-gray-100
 }

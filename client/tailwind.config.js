@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      width: {
+        nvw: "97vw"
+      },
       colors: {
         purple: {
           wisteria: '#875F9A',

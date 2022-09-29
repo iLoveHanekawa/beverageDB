@@ -7,4 +7,4 @@ exports.dataRouter = void 0;
 const express_1 = __importDefault(require("express"));
 const dataController_1 = require("../controllers/dataController");
 exports.dataRouter = express_1.default.Router();
-exports.dataRouter.get('/', dataController_1.getAllData);
+exports.dataRouter.get('/', dataController_1.getAllData).get('/:userId', dataController_1.getData);
