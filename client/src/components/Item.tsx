@@ -19,12 +19,12 @@ function Item() {
     }, []) 
     
     return (
-        <div>
+        <div className = 'overflow-x-hidden'>
             {item? <div className = 'flex-col flex items-center'>
                 <div className = 'text-gray-600 self-start text-4xl mt-4 ml-8 border-b py-2 w-full'>{item.name}</div>
                 <div className = {`grid grid-rows-${Object.keys(item).length} grid-cols-3 w-full pb-14 px-5 pt-10`}>
                     {item._id && <div className = 'itemField'>
-                        <div className = 'fieldStyle'>Id</div>
+                        <div className = 'fieldStyle'>ID</div>
                         <div className = 'itemStyle'>{item._id}</div>
                     </div>}
                     {item.alcoholContent && <div className = 'itemField'>
