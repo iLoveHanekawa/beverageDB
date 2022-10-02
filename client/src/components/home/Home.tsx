@@ -1,13 +1,25 @@
+import axios from 'axios'
 import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 
 function Home() {
 
+  const [news, setNews] = React.useState([])
+
+  React.useEffect(() => {
+    const fetchNews = async () => {
+      const response = await axios.get('https://api.nytimes.com/svc/search/v2/articlesearch.json?q=beverage&api-key=tMKcGGwFaGflWD3HaTyJwMOgVWOxfpD6')
+      const data = response.data
+      setNews(data.response.docs)
+    }
+    fetchNews()
+  }, [])
+
   return (
-    <div className='overflow-hidden justify-between flex h-1/2 my-4 mx-4'>
+    <div className='overflow-x-hidden justify-between flex h-1/2 my-4 mx-4'>
       
       <div className = 'rounded-l-2xl flex flex-col items-center h-full w-1/6 relative text-gray-400 bg-gray-200'>
-        <nav className = 'w-full mt-7 text-md flex flex-col items-center overflow-hidden pr-7'>
+        <nav className = 'w-full mt-7 text-md flex flex-col items-center overflow-x-hidden pr-7'>
           <div className='text-xl black text-gray-600 border-gray-300 border-b-2 mb-6 pr-8'>Contents</div>
           <NavLink className = 'navlink' to = '/introduction'>Introduction</NavLink>
           <NavLink className = 'navlink' to = '/searching'>Searching</NavLink>
@@ -16,13 +28,14 @@ function Home() {
           <NavLink className = 'navlink' to = '/contact'>Contact</NavLink>
         </nav>
       </div>
-      <div className='w-2/4 overflow-hidden'>
+      <div className='w-3/4 mx-1 overflow-x-hidden scrollbar-thin scrollbar-thumb-gray-200 px-16 scrollbar-thumb-rounded-md'>
         {/* <p className = 'text-gray-400 mt-6'>Some introduction text</p> */}
         <Outlet />
       </div>
-      <div className = 'rounded-r-2xl h-full w-1/6 relative text-gray-400 bg-gray-200'>
-        <ul className = 'mt-7 text-md flex flex-col items-center'>
-          <li className = 'text-xl black text-gray-600 border-gray-300 border-b-2'>Suggested Articles</li>
+      <div className = 'rounded-r-2xl h-full w-3/12 relative text-gray-400 overflow-scroll overflow-x-hidden scrollbar-thin scrollbar-thumb-gray-300 bg-gray-200'>
+        <ul className = 'mt-7 text-md flex flex-col items-start'>
+          <li className = 'text-xl black text-gray-600 self-center border-gray-300 border-b-2 mb-7'>Suggested Articles</li>
+          {news.length === 0? <p className = 'self-center'>Loading...</p>:news.map((i: { headline: { main: string }, web_url: string }, index) => <a key = {index} href = {i.web_url} target = '__blank' className = 'news'>{i.headline.main}</a>)}
         </ul>
       </div>
     </div>

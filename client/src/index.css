@@ -59,3 +59,7 @@ nav a.active {
 .itemStyle {
   @apply text-gray-600 col-span-2 self-center py-5 px-6 border border-gray-100
 }
+
+.news {
+  @apply hover:underline hover:scale-105 hover:text-gray-700 transition duration-300 text-sm px-8 pb-7
+}
