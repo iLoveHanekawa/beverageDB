@@ -3,6 +3,8 @@ import { BiDrink } from 'react-icons/bi'
 import { AiOutlineHome, AiOutlineInfoCircle, AiOutlineContacts } from 'react-icons/ai'
 import { useNavigate } from 'react-router-dom'
 import { RiContactsLine } from 'react-icons/ri'
+import { ImStatsBars } from 'react-icons/im'
+
 
 function NavBar() {
 
@@ -43,7 +45,16 @@ function NavBar() {
                 <RiContactsLine className = 'text-md' />
                 <button className = 'text-sm'>Contact Us</button>
             </div>
+            <div className = 'btn flex items-center gap-1' onClick = {
+            () => {
+                navigate('/stats', { replace: true })
+            }
+        }>
+                <ImStatsBars className='text-md'/>
+                <button className = 'text-sm'>Statistics</button>
+            </div>  
         </div>
+        
     </div>
   )
 }

@@ -32,7 +32,6 @@ function Search() {
         dispatch(fetchData(allQueryParams))
     }, [queryString])
 
-    console.log(documents)
 
   return (
     <div className = 'w-full flex flex-col border-gray-300 h-fit items-center mt-1 overflow-x-hidden'>

@@ -1,95 +1,971 @@
 [
     {
-        "name": "Xaj",
-        "starter": "Xaj-pitha",
-        "ingredients": "Gelatinized rice preferably glutinous varieties",
-        "place": "Assam",
-        "culturalImportance": "Regular use & Martial Ceremonies",
-        "microorganisms": "amylolytic fungal species, viz. Rhizopus delemar, Mucor circinelloides and Aspergillus sp., and saccharifying yeast species such as Meyerozyma guilliermondii, Wickerhamomyces ciferrii, Saccharomyces cerevisiae, etc.LAB with members like Lactobacillus plantarum, Lactobacillus brevis, \nLeuconostoc lactis, etc.",
-        "nutritionalValue": "1.85–2.51% (w\/v) crude protein, 1.163–1.675% (w\/v) soluble protein and minerals- calcium (10.93–34.37  mg\/mL), sodium (1.27–3.49 mg\/mL), potassium (4.76–9.63 mg\/mL), iron (0.296–3.069 mg\/mL) and \nphosphorus (19.123–78.108 mg\/mL)",
-        "alcoholContent": "12-13%",
-        "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+     "name": "Apong",
+     "starter": "Khamtip, Ipoh",
+     "ingredients": "Rice",
+     "place": "Arunachal Pradesh",
+     "culturalImportance": "Regular use",
+     "tasteAndOdour": "Pleasant",
+     "texture": "Clean and milky liquor",
+     "fermentationTime": "8-9 hrs",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
     },
     {
-        "name": "Mahua Mand",
-        "starter": "ranu tablets and leaf juice of Buchanania lanzan",
-        "ingredients": "Flower of Madhuca longifolia",
-        "place": "Chhattisgarh",
-        "culturalImportance": "Sacred&Occasionally",
-        "microorganisms": "yeast Saccharomyces cerevisiae",
-        "nutritionalValue": "rich in carbohydrates",
-        "tasteAndOdor": "Juicy",
-        "fermentationTime": "3-5 days",
-        "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+     "name": "Opo\/Kala Apong",
+     "starter": "amylolytic starter",
+     "ingredients": "Rice ",
+     "place": "Arunachal Pradesh",
+     "culturalImportance": "Regular use",
+     "texture": "Clean blackish coloured",
+     "fermentationTime": "4-7 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
     },
     {
-        "name": "Caju Feni",
-        "ingredients": "Cashew",
-        "place": "Goa",
-        "culturalImportance": "romance&ritual ",
-        "microorganisms": "S. cerevisiae, P. galeiformis, P. kudriavzevii, and L. orientalis",
-        "alcoholContent": "45–48.2%",
-        "fermentationTime": "3 days",
-        "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+     "name": "Ennog",
+     "starter": "Ipoh",
+     "ingredients": "Rice,Paddy husk",
+     "place": "Arunachal Pradesh",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
     },
     {
-        "name": "Aark",
-        "starter": "phab",
-        "ingredients": "Barley,Apple,Wild apricot",
-        "place": "Himachal Pradesh",
-        "microorganisms": "S. cerevisiae, amylolytic yeast Endomyces fibuliger",
-        "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+     "name": "Madua Apong",
+     "ingredients": "Millet,Ektam leaves",
+     "place": "Arunachal Pradesh",
+     "culturalImportance": "Regular use",
+     "tasteAndOdour": "Sweet &amp; aromatic",
+     "texture": "Golden yellow coloured",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
     },
     {
-        "name": "Chhang\/Lugri",
-        "starter": "Balma",
-        "ingredients": "Rice\/Barley ",
-        "place": "Himachal Pradesh, Uttrakhand",
-        "culturalImportance": "sprinkled as shagun on guests",
-        "microorganisms": "Lb. plantarum, Lb. casei, Enterococcus faecium, Pediococcus pentosaceus, S. cerevisiae, S. fibuligera, Pichia kudriavzevii, and Candida tropicalis",
-        "nutritionalValue": "rich in vitamins, amino acids, and sugars & protection against cold",
-        "alcoholContent": "0.085%",
-        "tasteAndOdor": "Sour&Sweet",
-        "Texture": "Milky white",
-        "fermentationTime": "1 week",
-        "reference": "DOI 10.1007\/s12088-015-0560-6"
+     "name": "Bhang-chyang",
+     "ingredients": "Maize rice\/barley and pham",
+     "place": "Arunachal Pradesh, Tibetian",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
     },
     {
-        "name": "Sura",
-        "starter": "Dhehli(herbal mix of sattu base) ",
-        "ingredients": "Finger millet",
-        "place": "Himachal Pradesh",
-        "culturalImportance": "Local festivals and shoeri saja",
-        "microorganisms": "S. cerevisiae and Zygosaccharomyces bisporus yeasts",
-        "alcoholContent": "0.15%",
-        "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+     "name": "Aara",
+     "starter": "Phab",
+     "ingredients": "Cereals",
+     "place": "Arunachal Pradesh, Tibetian",
+     "tasteAndOdour": "strong ethanolic ",
+     "fermentationTime": "1-2 weeks",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
     },
     {
-        "name": "Cashew Apple Wine",
-        "ingredients": "Cashew Apple",
-        "place": "Karnataka",
-        "microorganisms": "S. cerevisiae",
-        "nutritionalValue": "Vitamin C, iron, calcium and phosphorus",
-        "alcoholContent": "6-12%",
-        "Texture": "light yellow",
-        "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+     "name": "Themsing",
+     "starter": "Ipoh\/Siye",
+     "ingredients": "Millet\/Barley",
+     "place": "Arunachal Pradesh",
+     "culturalImportance": "Regular use",
+     "tasteAndOdour": "Good aroma",
+     "texture": "Golden coloured",
+     "fermentationTime": "7-10 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
     },
     {
-        "name": "Wine",
-        "starter": "Multi starter culture of yeast",
-        "ingredients": "Grapes",
-        "place": "Karnataka, Madhya Pradesh",
-        "microorganisms": "non-Saccharomyces (Torulaspora delbrueckii, Hanseniaspora uvarum and Kluyveromyces thermotolerans) and S. cerevisiae yeast",
-        "nutritionalValue": "A moderate consumption of wine can help in preventing coronary vascular disease (CVD) by increasing the levels of high-density lipoprotein cholesterol (HDL) in plasma, by restoring the endothelial function and by decreasing platelet aggregation, and it also has antioxidative effects",
-        "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+     "name": "Rakshi",
+     "starter": "Charcoal\/ash",
+     "ingredients": "Millet\/Barley\/Rice",
+     "place": "Arunachal Pradesh",
+     "culturalImportance": "Regular use",
+     "tasteAndOdour": "strong ethanolic ",
+     "fermentationTime": "1-2 weeks",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
     },
     {
-        "name": "Jamun Wine",
-        "ingredients": "Jamun\/Black plum",
-        "place": "Karnataka",
-        "microorganisms": "S. cerevisiae var. bayanus",
-        "nutritionalValue": "Jamun helps curing diabetes",
-        "fermentationTime": "6 days",
-        "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+     "name": "Mingri, Lohpani and Bhangchang\/Phaak",
+     "starter": "Phab",
+     "ingredients": "Finger millet\/ barley\/rice\/ maize",
+     "place": "Arunachal Pradesh",
+     "culturalImportance": "Regular use",
+     "tasteAndOdour": "Strong aroma, less aroma, very weak aroma resp.",
+     "texture": "Mingri-light yellow, Lohpani-Dark yellowish, Bhangchang - whitish ",
+     "fermentationTime": "4-5 days - Mingri, Furthur 2-3 days - Lohpani, Furthur 4-5 days - Bhangchang",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Yu",
+     "starter": "Hamai",
+     "ingredients": "Rice",
+     "place": "Arunachal Pradesh",
+     "culturalImportance": "Regular use",
+     "tasteAndOdour": "Fruity smell",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Poling",
+     "starter": "Yeast",
+     "ingredients": "Marua",
+     "place": "Arunachal Pradesh",
+     "culturalImportance": "Regular use",
+     "tasteAndOdour": "Fruity smell",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Pona",
+     "starter": "Ioph",
+     "ingredients": "Dry boiled rice",
+     "place": "Arunachal Pradesh",
+     "culturalImportance": "Regular use",
+     "fermentationTime": "1 week",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Nyongin",
+     "starter": "opop",
+     "ingredients": "Rice",
+     "place": "Arunachal Pradesh",
+     "culturalImportance": "Mainly during Mopin, the main traditional festival of Galo",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Pone",
+     "starter": "opop",
+     "ingredients": "Rice husk,rice,opop",
+     "place": "Arunachal Pradesh",
+     "culturalImportance": "Mainly during Mopin, the main traditional festival of Galo",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "O\/oh",
+     "starter": "Ipoh",
+     "ingredients": "Rice mixed thoroughly with millet",
+     "place": "Arunachal Pradesh",
+     "culturalImportance": "Regular use",
+     "texture": "Pona filtered with water",
+     "fermentationTime": "4-5 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Sira-o",
+     "starter": "amylolytic starter",
+     "ingredients": "Rice mixed thoroughly with millet",
+     "place": "Arunachal Pradesh",
+     "culturalImportance": "Regular use",
+     "texture": "Pona distilled",
+     "fermentationTime": "4-5 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Kiad-lieh",
+     "starter": "Thiat",
+     "ingredients": "Rice",
+     "place": "North East India",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Xaj",
+     "starter": "Xaj-pitha",
+     "ingredients": "Gelatinized rice preferably glutinous varieties",
+     "place": "Assam",
+     "culturalImportance": "Regular use &amp; Martial Ceremonies",
+     "microorganisms": "amylolytic fungal species, viz. Rhizopus delemar, Mucor circinelloides and Aspergillus sp., and saccharifying yeast species such as Meyerozyma guilliermondii, Wickerhamomyces ciferrii, Saccharomyces cerevisiae, etc.LAB with members like Lactobacillus plantarum, Lactobacillus brevis, \nLeuconostoc lactis, etc.",
+     "nutritionalValue": "1.85–2.51% (w\/v) crude protein, 1.163–1.675% (w\/v) soluble protein and minerals- calcium (10.93–34.37&nbsp; mg\/mL), sodium (1.27–3.49 mg\/mL), potassium (4.76–9.63 mg\/mL), iron (0.296–3.069 mg\/mL) and \nphosphorus (19.123–78.108 mg\/mL)",
+     "alcoholContent": "12-13%",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Zu\/Judima",
+     "starter": "Umhu\/Humao",
+     "ingredients": "Gelatinized rice preferably glutinous varieties",
+     "place": "Assam",
+     "culturalImportance": "Regular use",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Juhning",
+     "starter": "Chol",
+     "ingredients": "Rice",
+     "place": "Assam",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Juharo",
+     "starter": "Humao",
+     "ingredients": "Rice",
+     "place": "Assam",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Jou Bishi",
+     "starter": "Angkur",
+     "ingredients": "Gelatinized rice preferably glutinous varieties",
+     "place": "Assam",
+     "culturalImportance": "Regular use",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Sujen",
+     "starter": "Perok kushi",
+     "ingredients": "Gelatinized rice preferably glutinous varieties",
+     "place": "Assam",
+     "culturalImportance": "Regular use",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Apong",
+     "starter": "apop pitha",
+     "ingredients": "Gelatinized rice preferably glutinous varieties",
+     "place": "Assam",
+     "culturalImportance": "Regular use",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Sai-mod",
+     "starter": "Apong kusure",
+     "place": "Assam",
+     "fermentationTime": "2 weeks",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Ahom",
+     "starter": "Vekur pitha",
+     "ingredients": "Rice",
+     "place": "Assam",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Zu",
+     "starter": "Humao",
+     "ingredients": "Rice",
+     "place": "Assam",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Haria",
+     "starter": "Mod pitha",
+     "ingredients": "Gelatinized rice preferably glutinous varieties",
+     "place": "Assam",
+     "culturalImportance": "Regular use",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Arak\/Hor-Alank",
+     "starter": "Phab ",
+     "ingredients": "Gelatinized rice preferably glutinous varieties",
+     "place": "Assam",
+     "culturalImportance": "Regular use",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Laopani",
+     "starter": "Bhekur pitha",
+     "ingredients": "Gelatinized rice preferably glutinous varieties",
+     "place": "Assam",
+     "culturalImportance": "Regular use",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Hadia\/Handia",
+     "starter": "Ranu tablets\/Bakhar",
+     "ingredients": "Rice\/Mahua",
+     "place": "Chhatisgarh\/Jharkhand",
+     "culturalImportance": "consumption and business",
+     "nutritionalValue": "rich in carbohydrates, controls the thermal regulation of body and makes the body cool",
+     "tasteAndOdour": "Sour",
+     "fermentationTime": "2-3 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Toddy\/Tadi",
+     "starter": "Natural",
+     "ingredients": "Neera(from palmyra tree)",
+     "place": "Bihar",
+     "culturalImportance": "Regular use",
+     "nutritionalValue": "rich in carbohydrates, mostly sucrose, and has a nearly neutral pH",
+     "alcoholContent": 0.04,
+     "fermentationTime": "Few hours",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Chhind ",
+     "starter": "Yeast",
+     "ingredients": "Extracted sap of chhind (Phoenix sylvestris) tree",
+     "place": "Chhattisgarh",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Salfi",
+     "starter": "Natural",
+     "ingredients": "Trunk sap of salfi tree (Caryota urens)",
+     "place": "Chhattisgarh",
+     "culturalImportance": "Regular&amp;ocassional",
+     "nutritionalValue": "Carbohydrates, Vitamins, Proteins",
+     "fermentationTime": "overnight",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Mahua Mand",
+     "starter": "ranu tablets and leaf juice of Buchanania lanzan",
+     "ingredients": "Flower of Madhuca longifolia",
+     "place": "Chhattisgarh",
+     "culturalImportance": "Sacred&amp;Occasionally",
+     "microorganisms": "yeast Saccharomyces cerevisiae",
+     "nutritionalValue": "rich in carbohydrates",
+     "tasteAndOdour": "Juicy",
+     "fermentationTime": "3-5 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Sur\/Toddy",
+     "starter": "pao, sannas",
+     "ingredients": "Coconut palm sap(sur)",
+     "place": "Goa",
+     "nutritionalValue": "total reducing sugars, proteins, and vitamin C of 22.25&nbsp;μg\/mL, 0.33&nbsp;μg\/mL, 0.25&nbsp;μg\/mL, and 0.312&nbsp;μg\/mL",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Madda Feni",
+     "starter": "Sur ",
+     "ingredients": "Coconut palm sap(sur)",
+     "place": "Goa",
+     "alcoholContent": "42-45%",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Vinagre",
+     "ingredients": "Coconut palm sap(sur)",
+     "place": "Goa",
+     "fermentationTime": "22 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Caju Feni",
+     "ingredients": "Cashew",
+     "place": "Goa",
+     "culturalImportance": "romance&amp;ritual ",
+     "microorganisms": "S. cerevisiae, P. galeiformis, P. kudriavzevii, and L. orientalis",
+     "alcoholContent": "45–48.2%",
+     "fermentationTime": "3 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Angoori\/kinnauri",
+     "starter": "phab",
+     "ingredients": "Grapes",
+     "place": "Himachal Pradesh",
+     "culturalImportance": "Locally",
+     "alcoholContent": "Red Grapes - 5%, Green Grapes - 3.5%",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Aark",
+     "starter": "phab",
+     "ingredients": "Barley,Apple,Wild apricot",
+     "place": "Himachal Pradesh",
+     "microorganisms": "S. cerevisiae, amylolytic yeast Endomyces fibuliger",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Bhemi",
+     "ingredients": "Apple, apricot",
+     "place": "Himachal Pradesh",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Chhang\/Lugri",
+     "starter": "Balma",
+     "ingredients": "Rice\/Barley ",
+     "place": "Himachal Pradesh, Uttrakhand",
+     "culturalImportance": "sprinkled as shagun on guests",
+     "microorganisms": "Lb. plantarum, Lb. casei, Enterococcus faecium, Pediococcus pentosaceus, S. cerevisiae, S. fibuligera, Pichia kudriavzevii, and Candida tropicalis",
+     "nutritionalValue": "rich in vitamins, amino acids, and sugars &amp; protection against cold",
+     "alcoholContent": 0.085,
+     "tasteAndOdour": "Sour&amp;Sweet",
+     "texture": "Milky white",
+     "fermentationTime": "1 week",
+     "reference": "DOI 10.1007\/s12088-015-0560-6"
+    },
+    {
+     "name": "Chulli",
+     "starter": "phab",
+     "ingredients": "Apricot",
+     "place": "Himachal Pradesh",
+     "culturalImportance": "Locally",
+     "microorganisms": "S. cerevisiae",
+     "alcoholContent": 0.03,
+     "fermentationTime": "2-3 days, 10-15 days(distilled)",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Daru\/Chakti",
+     "ingredients": "Jaggery",
+     "place": "Himachal Pradesh, Uttrakhand",
+     "culturalImportance": "Locally",
+     "microorganisms": "S. cerevisiae, Candida famata, C. valida, and Kluveromyces thermotolerance",
+     "alcoholContent": 0.05,
+     "tasteAndOdour": "kikar added for taste&amp;aroma",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Ghanti",
+     "ingredients": "Apple, apricot",
+     "place": "Himachal Pradesh",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Rak ",
+     "starter": "Phab",
+     "ingredients": "Apple, wild almond, apricot, and jaggery",
+     "place": "Himachal Pradesh",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Soor",
+     "ingredients": "Fruits,keem",
+     "place": "Himachal Pradesh",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Sura",
+     "starter": "Dhehli(herbal mix of sattu base) ",
+     "ingredients": "Finger millet",
+     "place": "Himachal Pradesh",
+     "culturalImportance": "Local festivals and shoeri saja",
+     "microorganisms": "S. cerevisiae and Zygosaccharomyces bisporus yeasts",
+     "alcoholContent": 0.15,
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Phab",
+     "starter": "chhang,arak,kinnauri",
+     "ingredients": "Rice and leaves of Solanum khasianum",
+     "place": "Himachal Pradesh",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Keem",
+     "starter": "soor",
+     "ingredients": "Wheat,plants",
+     "place": "Himachal Pradesh",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Dhehli",
+     "starter": "Sura",
+     "ingredients": "Mixture of 36 herbs and roasted barley flour",
+     "place": "Himachal Pradesh",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Cashew Apple Wine",
+     "ingredients": "Cashew Apple",
+     "place": "Karnataka",
+     "microorganisms": "S. cerevisiae",
+     "nutritionalValue": "Vitamin C, iron, calcium and phosphorus",
+     "alcoholContent": "6-12%",
+     "texture": "light yellow",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Wine",
+     "starter": "Multi starter culture of yeast",
+     "ingredients": "Grapes",
+     "place": "Karnataka, Madhya Pradesh",
+     "microorganisms": "non-Saccharomyces (Torulaspora delbrueckii, Hanseniaspora uvarum and Kluyveromyces thermotolerans) and S. cerevisiae yeast",
+     "nutritionalValue": "A moderate consumption of wine can help in preventing coronary vascular disease (CVD) by increasing the levels of high-density lipoprotein cholesterol (HDL) in plasma, by restoring the endothelial function and by decreasing platelet aggregation, and it also has antioxidative effects",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Jamun Wine",
+     "ingredients": "Jamun\/Black plum",
+     "place": "Karnataka",
+     "microorganisms": "S. cerevisiae var. bayanus",
+     "nutritionalValue": "Jamun helps curing diabetes",
+     "fermentationTime": "6 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Garcinia Wine ",
+     "ingredients": "Garcinia fruit",
+     "place": "Karnataka",
+     "microorganisms": "S.cerevisiae",
+     "nutritionalValue": "therapeutic properties because of secondary metabolites such as xanthones, flavonoids, benzophenones, lactones, phenolic compounds and organic acids",
+     "fermentationTime": "21 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Toddy\/Coconut vinegar",
+     "starter": "Sugar,Yeast",
+     "ingredients": "coconut water",
+     "place": "Kerala, Karnataka ",
+     "alcoholContent": 0.081,
+     "tasteAndOdour": "mellow flavour",
+     "texture": "dark yellow to golden brown",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Palm vinegar",
+     "ingredients": "Palm sap",
+     "place": "Kerala",
+     "alcoholContent": "Acetic Acid- 4%(v\/v)",
+     "tasteAndOdour": "sour ",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Mahua",
+     "starter": "Ranu tablets",
+     "ingredients": "Dried corollas of Madhuca longifolia",
+     "place": "Madhya Pradesh, Odisha, West Bengal",
+     "culturalImportance": "religious, regular",
+     "nutritionalValue": "curing jaundice, light tranquillizer, 5-10% daily requirements of nutrients, curing cholera",
+     "fermentationTime": "4-6 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Handia",
+     "starter": "Ranu tablets\/Bakhar",
+     "ingredients": "Rice",
+     "place": "Madhya Pradesh",
+     "culturalImportance": "Source of livelihood",
+     "nutritionalValue": "keeps the stomach cool, and it protects from extreme heat and is also intoxicating, curing jaundice, colic disorders, and dysentery",
+     "texture": "dense&amp;mushy, cream white colour",
+     "fermentationTime": "2-3 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Pendum",
+     "starter": "Gurji (Setaria italican)",
+     "ingredients": "Rice starch",
+     "place": "Madhya Pradesh",
+     "nutritionalValue": "protiens, to get rid of anxiety&amp;drowsiness",
+     "fermentationTime": "7-10 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Basi",
+     "starter": "Natural",
+     "ingredients": "Rice(pej&amp;mand)",
+     "place": "Madhya Pradesh",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Haria",
+     "starter": "Bakhar",
+     "ingredients": "Rice",
+     "place": "Madhya Pradesh, Odisha, West Bengal",
+     "culturalImportance": "Traditional",
+     "microorganisms": "LAB and Bifidobacteria, Saccharomyces cerevisiae, Saccharomyces boulardii, \nSaccharomycopsis sp., Zygosaccharomyces cidri, Pichia, Candida tropicalis, \nCandida musa, Candida nitratophila, and Issatchenkia",
+     "nutritionalValue": "curing gastrointestinal disorders, including amoebic dysentery, appendicitis, amoebiasis, enteritis, and acid reflux,  skin, eye, hair, and heart defensive agent.",
+     "alcoholContent": "2-3%",
+     "texture": "Creamy liquid",
+     "fermentationTime": "3-4 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Yu angouba",
+     "ingredients": "Rice\/germinated paddy",
+     "place": "Manipur",
+     "nutritionalValue": "for fair complexion, After distillation a liquid Machin is formed that has soothing effect when massaged on the lower surface of the feet, relieves pain during \narthritis and muscle soreness, enhances quick healing of wound stiches",
+     "fermentationTime": "2-4 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Khor\/Zoungao",
+     "ingredients": "Germinated paddy",
+     "place": "Manipur",
+     "nutritionalValue": "for fair complexion",
+     "fermentationTime": "2-4 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Atingba",
+     "starter": "hamei",
+     "ingredients": "Rice(glutinous variety)",
+     "place": "Manipur",
+     "microorganisms": "P. anomala and P. pentosaceus",
+     "nutritionalValue": "good source of polyphenols, soluble sugars, terpenoids, flavonoids, and anthraquinone, has antioxidant and antimicrobial activities, and inhibits lipid peroxidation, enhance \nthe removal of kidney stone during urination",
+     "alcoholContent": "5.71-7.75%",
+     "fermentationTime": "3-4 days in summer\/6-8 days in winter &amp; then 2-3 days submerged fermentation",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Patso",
+     "starter": "chamri",
+     "ingredients": "Rice ",
+     "place": "Manipur",
+     "alcoholContent": "Mild",
+     "texture": "Distilled",
+     "fermentationTime": "3-4 days in summer\/6-8 days in winter &amp; then 2-3 days submerged fermentation",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Timpui",
+     "starter": "khai",
+     "ingredients": "Rice ",
+     "place": "Manipur",
+     "alcoholContent": "Mild",
+     "texture": "Distilled",
+     "fermentationTime": "3-4 days in summer\/6-8 days in winter &amp; then 2-3 days submerged fermentation",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Waiyu",
+     "starter": "hamei",
+     "ingredients": "Rice,husk",
+     "place": "Manipur",
+     "alcoholContent": "Mild",
+     "texture": "Yellowish",
+     "fermentationTime": "1 week",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Pheijou",
+     "starter": "khai",
+     "ingredients": "Rice,husk",
+     "place": "Manipur",
+     "alcoholContent": "Mild",
+     "texture": "Yellowish",
+     "fermentationTime": "3-4 days summer, 3-6 days winter",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Acham",
+     "starter": "chamri",
+     "ingredients": "Rice ",
+     "place": "Manipur",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Zouju\/Zouzu",
+     "starter": "khai",
+     "ingredients": "Rice ",
+     "place": "Manipur",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Banana Wine",
+     "starter": "hamei",
+     "place": "North East India",
+     "fermentationTime": "3-4 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Zupui",
+     "starter": "Dawidim",
+     "ingredients": "Rice",
+     "place": "Mizoram",
+     "culturalImportance": "Chapchar Kut",
+     "tasteAndOdour": "Sweet ",
+     "fermentationTime": "till it becomes sweet",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Zufang",
+     "starter": "Dawidim",
+     "ingredients": "StickyRice",
+     "place": "Mizoram",
+     "alcoholContent": 0.063,
+     "tasteAndOdour": "Sweet ",
+     "fermentationTime": "3 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Tin-zu\/Faisa-zu",
+     "starter": "Dawidim",
+     "ingredients": "Rice",
+     "place": "Mizoram",
+     "culturalImportance": "Regular",
+     "alcoholContent": "Strong",
+     "tasteAndOdour": "Clear",
+     "fermentationTime": "3 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Ziang- dui",
+     "ingredients": "Brassica leaves",
+     "place": "Mizoram",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Rakzu",
+     "starter": "Dawidim",
+     "ingredients": "Rice",
+     "place": "Mizoram",
+     "alcoholContent": 0.206,
+     "fermentationTime": "Stean distillatioon using three-tiered distillation unit of tin-zu",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Bell dzu\/dzii",
+     "ingredients": "Passion fruit",
+     "place": "Nagaland",
+     "fermentationTime": "10-12 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Kothal Dzu",
+     "ingredients": "Jackfruit",
+     "place": "Nagaland",
+     "fermentationTime": "7-9 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Khulushi dzii",
+     "ingredients": "Gooseberry",
+     "place": "Nagaland",
+     "nutritionalValue": "helps in indigestion",
+     "fermentationTime": "10-15 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Dekuijao",
+     "starter": "Nduhi",
+     "ingredients": "Rice",
+     "place": "Nagaland",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Nchiangne",
+     "starter": "Kekhrii",
+     "ingredients": "Red rice",
+     "place": "Nagaland",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Duizou",
+     "starter": "Kekhrii",
+     "ingredients": "Red rice",
+     "place": "Nagaland",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Madhu",
+     "starter": "Yeast,Moulds",
+     "ingredients": "Rice",
+     "place": "Nagaland",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Ruhi",
+     "starter": "Kekhrii",
+     "ingredients": "Rice",
+     "place": "Nagaland",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Zutho",
+     "starter": "Kekhrii",
+     "ingredients": "Rice",
+     "place": "Nagaland",
+     "culturalImportance": "during Sekrenyi",
+     "microorganisms": "Zutho: Saccharomyces cerevisiae, Khrei: Wickerhamomyces anomalus, Saccharomycopsis fibuligera, Pichia anomala, P. terricola, P. kudriavzevii, and Candida glabrat",
+     "nutritionalValue": "pH&nbsp;3.6, acidity 5.1%",
+     "alcoholContent": 0.05,
+     "tasteAndOdour": "Sweet",
+     "texture": "Whitisih",
+     "fermentationTime": "3-4 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Jou  ",
+     "ingredients": "Rice",
+     "place": "Nagaland",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Cutocie",
+     "ingredients": "Cucumber &amp; its leaves",
+     "place": "Nagaland",
+     "fermentationTime": "2-3 months",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Kodo ko jaanr\/Chyang",
+     "starter": "marcha",
+     "ingredients": "Finger millet",
+     "place": "Sikkim",
+     "microorganisms": "fungi Mucor circinelloides and Rhizopus chinensis; amylolytic and alcohol-producing yeasts Saccharomycopsis fibuligera, Pichia anomala, S. cerevisiae and Candida glabrata; and few species of bacteria Pediococcus pentosaceus and Lb. bifermentans",
+     "nutritionalValue": "good tonic for ailing persons and post-natal women, protein, 9.3% DM; fat, \n2.0% DM; crude fibre, 4.7% DM; carbohydrate, 83.7% DM; calorie value, \n389.6 kcal\/100 g; calcium, 281.0 mg\/100 g; potassium, 398.0 mg\/100 g; phosphorous, 326.0 mg\/100 g; iron, 24.0 mg\/100 g; magnesium, 118.0 mg\/100 g; manganese, 9.0 mg\/100 g; and zinc, 1.2 mg\/100 g, pH, 4.1, Vitamin cyanocobalamin, amino acids like valine, threonine, leucine and isoleucine ",
+     "alcoholContent": 0.048,
+     "tasteAndOdour": "Sweet aroma",
+     "fermentationTime": "saccharification- 3 days, alcoholic fermentation- 3-7 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Bhaati jaanr",
+     "starter": "marcha",
+     "ingredients": "Rice",
+     "place": "Sikkim",
+     "microorganisms": "Rhizopus chinensis; yeasts Saccharomycopsis fibuligera, Pichia anomala, Saccharomyces cerevisiae and Candida glabrata; and few lactic acid bacteria Pediococcus pentosaceus and Lb. bifermentans",
+     "nutritionalValue": "1.7% DM; protein, 9.5% DM; fat, 2.0% DM; crude fibre, 1.5% DM; carbohydrate, 86.9% DM; calorie value, 404.1&nbsp; kcal\/100&nbsp; g; calcium, 12.8&nbsp;mg\/100&nbsp;g; potassium, 146.0&nbsp;mg\/100&nbsp;g; phosphorous, 595.0&nbsp;mg\/100&nbsp;g; iron, 7.7&nbsp; mg\/100&nbsp; g; magnesium, 50.0&nbsp; mg\/100&nbsp; g; manganese, 1.4&nbsp; mg\/100&nbsp; g; and zinc, 2.7&nbsp;mg\/100&nbsp;g",
+     "alcoholContent": 0.059,
+     "tasteAndOdour": "Sweet aroma",
+     "texture": "Juicy soft",
+     "fermentationTime": "saccharification- 2 days, alcoholic fermentation- 3-7 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Raksi",
+     "starter": "marcha",
+     "ingredients": "Cereal beverages",
+     "place": "Sikkim",
+     "alcoholContent": "22.9-27%",
+     "fermentationTime": "Distillation for 2-3 hours continuously",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Makai ko jaanr",
+     "starter": "marcha",
+     "ingredients": "Maize",
+     "place": "Sikkim",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Gahoon ko jaanr",
+     "starter": "marcha",
+     "ingredients": "Wheat ",
+     "place": "Sikkim",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Simal tarul ko jaanr",
+     "starter": "marcha",
+     "ingredients": "cassava tuber",
+     "place": "Sikkim",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Jao ko jaanr",
+     "starter": "marcha",
+     "ingredients": "Barley",
+     "place": "Sikkim",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Faapar ko jaanr",
+     "starter": "marcha",
+     "ingredients": "Buck Wheat",
+     "place": "Sikkim",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Poko",
+     "starter": "manapu",
+     "ingredients": "Rice",
+     "place": "Sikkim",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Chee",
+     "starter": "Buth",
+     "ingredients": "Finger millet\/Barley",
+     "place": "Sikkim, Nepal, Bhutan",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Kallu\/Toddy",
+     "starter": "Natural yeast",
+     "ingredients": "Sap of coconut or palm\/ Neera",
+     "place": "Tamil Nadu, Telangana, Andra Pradesh",
+     "culturalImportance": "Economic",
+     "microorganisms": "Saccharomyces cerevisiae, Schizosaccharomyces pombe, Acetobacter aceti, Acetobacter rancens, \nAcetobacter suboxydans, Leuconostoc dextranicum, Micrococcus sp., Pediococcus\nsp., Bacillus sp. and Sarcina sp.",
+     "nutritionalValue": "Vitamin B, ascorbic acid, thiamine, riboflavin, and pyridoxine",
+     "alcoholContent": "4-9%",
+     "tasteAndOdour": "Slightly Bitter",
+     "texture": "Cloudy",
+     "fermentationTime": "overnight",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Langi\/rice beer",
+     "starter": "Chuwan",
+     "ingredients": "Unboiled rice(Mami Rice)",
+     "place": "Tripura",
+     "culturalImportance": "economically, culturally and spiritually",
+     "nutritionalValue": "Carbohydrates, proteins",
+     "alcoholContent": "6-10%",
+     "fermentationTime": "3-6 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Chuwarak",
+     "starter": "Jaggery",
+     "ingredients": "Langi+Water ",
+     "place": "Tripura",
+     "texture": "Milky white",
+     "fermentationTime": "2-3 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Soor",
+     "starter": "Keem",
+     "ingredients": "Cereals,fruits",
+     "place": "Uttrakhand",
+     "microorganisms": "C. famata, K. marxianus, S. cere visiae, C. valida, and Sm. Fibuligera, C. glabrata, C. tropicalis, and Wickerhamomyces sp., Enterococcus casseliflavus, Weissella paramesenteroides, and Enterococcus durans",
+     "nutritionalValue": "Medicinal purpose",
+     "alcoholContent": "35-40%",
+     "fermentationTime": "12-13 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Kanji",
+     "starter": "Salt and mustard seeds",
+     "ingredients": "Beetroot,carrot",
+     "place": "Punjab,Haryana",
+     "microorganisms": "H. anomala, Geo. candidum, and C. tropicalis",
+     "tasteAndOdour": "Strong",
+     "texture": "Red colour",
+     "fermentationTime": "4-7 days",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Buza",
+     "ingredients": "Barley",
+     "place": "Ladakh",
+     "texture": "Thick liquor",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Kiad",
+     "starter": "thiat",
+     "ingredients": "Rice",
+     "place": "Meghalaya",
+     "reference": "doi.org\/10.1080\/21553769.2016.1249032"
+    },
+    {
+     "name": "Jann",
+     "starter": "Balam ",
+     "ingredients": "Fruits ",
+     "place": "Uttrakhand, Nepal, Tibet",
+     "reference": "doi.org\/10.20546\/ijcmas.2018.704.214"
+    },
+    {
+     "name": "Mead",
+     "starter": "Fruit juice, N&amp;P sources",
+     "ingredients": "Honey",
+     "place": "South Asia",
+     "microorganisms": "Maury and Vierke yeasts, 3%–5% active yeast culture of Saccharomyces cerevisiae",
+     "nutritionalValue": "Digestion &amp; Metabolism",
+     "alcoholContent": "7-22%",
+     "tasteAndOdour": "Strong, Sweet",
+     "fermentationTime": "1-2 weeks",
+     "reference": "doi.org\/10.1016\/B978-0-12-815271-3.00001-4"
+    },
+    {
+     "name": "Rguntshang",
+     "starter": "Phab",
+     "ingredients": "Grapes",
+     "place": "Ladhak",
+     "alcoholContent": "Mild",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Apricot Wine",
+     "ingredients": "Wild Apriots(chulli)",
+     "place": "hilly temperate countries like India",
+     "nutritionalValue": "higher titratable acidity, K, Na, and Fe",
+     "reference": "doi.org\/10.1007\/978-981-15-1486-9"
+    },
+    {
+     "name": "Indian Jakfruit Wine",
+     "starter": "Fermented wine inoculum",
+     "ingredients": "Jackfruit pulp",
+     "place": "India, Burma, China, Sri Lanka",
+     "microorganisms": "Endomycopsis",
+     "alcoholContent": "7-8% (v\/v)",
+     "tasteAndOdour": "Pungent aroma &amp; smell",
+     "fermentationTime": "1 week",
+     "reference": "doi.org\/10.20546\/ijcmas.2018.704.214"
     }
-]
+   ]

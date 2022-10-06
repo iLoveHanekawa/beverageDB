@@ -1,22 +1,29 @@
 import axios from 'axios'
 import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
+import { NewsType } from '../../App'
 
-function Home() {
 
-  const [news, setNews] = React.useState([])
+type HomeProps = {
+  setRenderHero: React.Dispatch<React.SetStateAction<boolean>>
+  news: NewsType[]
+  setNews: React.Dispatch<React.SetStateAction<NewsType[]>>
+}
+
+function Home(props: HomeProps) {
 
   React.useEffect(() => {
     const fetchNews = async () => {
       const response = await axios.get('https://api.nytimes.com/svc/search/v2/articlesearch.json?q=beverage&api-key=tMKcGGwFaGflWD3HaTyJwMOgVWOxfpD6')
       const data = response.data
-      setNews(data.response.docs)
+      props.setNews(data.response.docs)
     }
-    fetchNews()
+    if(props.news.length === 0) fetchNews()
+    props.setRenderHero(true)
   }, [])
 
   return (
-    <div className='overflow-x-hidden justify-between flex h-1/2 my-4 mx-4'>
+    <div className='overflow-x-hidden justify-between flex h-3/5 my-3 mx-4'>
       
       <div className = 'rounded-l-2xl flex flex-col items-center h-full w-1/6 relative text-gray-400 bg-gray-200'>
         <nav className = 'w-full mt-7 text-md flex flex-col items-center overflow-x-hidden pr-7'>
@@ -32,10 +39,10 @@ function Home() {
         {/* <p className = 'text-gray-400 mt-6'>Some introduction text</p> */}
         <Outlet />
       </div>
-      <div className = 'rounded-r-2xl h-full w-3/12 relative text-gray-400 overflow-scroll overflow-x-hidden scrollbar-thin scrollbar-thumb-gray-300 bg-gray-200'>
+      <div className = 'rounded-r-2xl h-full w-3/12 relative text-gray-400 overflow-scroll overflow-x-hidden scrollbar-thin scrollbar-thumb-gray-300 scrollbar-thumb-rounded-xl bg-gray-200'>
         <ul className = 'mt-7 text-md flex flex-col items-start'>
           <li className = 'text-xl black text-gray-600 self-center border-gray-300 border-b-2 mb-7'>Suggested Articles</li>
-          {news.length === 0? <p className = 'self-center'>Loading...</p>:news.map((i: { headline: { main: string }, web_url: string }, index) => <a key = {index} href = {i.web_url} target = '__blank' className = 'news'>{i.headline.main}</a>)}
+          {props.news.length === 0? <p className = 'self-center'>Loading...</p>:props.news.map((i: { headline: { main: string }, web_url: string }, index) => <a key = {index} href = {i.web_url} target = '__blank' className = 'news'>{i.headline.main}</a>)}
         </ul>
       </div>
     </div>
