@@ -1,5 +1,5 @@
 import React from 'react'
-import {Chart as ChartJS, defaults, PointElement, Legend, Tooltip, LineElement, ArcElement, CategoryScale, LinearScale, BarElement, ScriptableChartContext} from 'chart.js'
+import {Chart as ChartJS, defaults, PointElement, Legend, Tooltip, LineElement, ArcElement, CategoryScale, LinearScale, BarElement} from 'chart.js'
 import { Chart } from 'react-chartjs-2'
 
 type StatsPropsType = {
@@ -22,7 +22,7 @@ function Stats(props: StatsPropsType) {
   const chartRef = React.useRef()
 
   const [data, setData] = React.useState({
-    labels: ['Jun', 'Jul', 'Aug', 'Sept'],
+    labels: ['Jun', 'Jul', 'Aug'],
     datasets: [
       {
         id: 0,
@@ -40,8 +40,7 @@ function Stats(props: StatsPropsType) {
   })
 
   return (
-    <div className = 'w-full h-full justify-center flex flex-col items-center'>
-      
+    <div className = 'w-full h-full justify-center flex flex-col items-center'> 
       <div className='w-96'>
         <Chart type = 'doughnut' ref = {chartRef} datasetIdKey='id' data={data} />
       </div>

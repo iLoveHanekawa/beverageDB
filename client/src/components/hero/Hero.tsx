@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import { IoMdArrowDropdown } from 'react-icons/io'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { useSelector, useDispatch } from 'react-redux'
-import { StateType, AppDispatch } from './../app/store'
+import { StateType, AppDispatch } from '../../app/store'
 import { useNavigate, createSearchParams } from 'react-router-dom'
-import { textActions } from '../features/searchText'
+import { textActions } from '../../features/searchText'
+import HeroButton from './HeroButton'
 
 function Hero() {
 
@@ -50,51 +51,66 @@ function Hero() {
               </form>
             </div>
             <ul className = {isBrowseOpen? 'openDropdown': 'closeDropdown'}>
-              <button onClick = {() => {
-                  setBrowseSelect('Name') 
-                  setBrowseOpen(i => !i)
-                  setPlaceHolderText(ptArray[0])
-                  setParam(urlParamKeys[0])
-
-                }} 
-                className = {browseSelect === 'Name'? `selectedBrowse pt-1`: `notSelectedBrowse pt-1`}>Name</button>
-              <button onClick = {() => {
-                  setBrowseSelect('Starter Culture') 
-                  setBrowseOpen(i => !i);
-                  setPlaceHolderText(ptArray[1]) 
-                  setParam(urlParamKeys[1])
-                }} 
-                className = {browseSelect === 'Starter Culture'? `selectedBrowse pt-1`: `notSelectedBrowse`}>Starter Culture</button>
-              <button onClick = {() => {
-                  setBrowseSelect('Ingredients') 
-                  setBrowseOpen(i => !i)
-                  setPlaceHolderText(ptArray[2])
-                  setParam(urlParamKeys[2])
-
-                }} 
-                className = {browseSelect === 'Ingredients'? `selectedBrowse pt-1`: `notSelectedBrowse`}>Ingredients</button>
-              <button onClick = {() => {
-                  setBrowseSelect('Place') 
-                  setBrowseOpen(i => !i) 
-                  setPlaceHolderText(ptArray[3])
-                  setParam(urlParamKeys[3])
-
-                }} 
-                className = {browseSelect === 'Place'? `selectedBrowse pt-1`: `notSelectedBrowse`}>Place</button>
-              <button onClick = {() => {
-                  setBrowseSelect('Microorganisms') 
-                  setBrowseOpen(i => !i) 
-                  setPlaceHolderText(ptArray[4])
-                  setParam(urlParamKeys[4])
-                }} 
-                className = {browseSelect === 'Microorganisms'? `selectedBrowse pt-1`: `notSelectedBrowse`}>Microorganism</button>
-              <button onClick = {() => {
-                  setBrowseSelect('Alcohol Percent') 
-                  setBrowseOpen(i => !i) 
-                  setPlaceHolderText(ptArray[5])
-                  setParam(urlParamKeys[5])
-                }} 
-                className = {browseSelect === 'Alcohol Percent'? `selectedBrowse pt-1`: `notSelectedBrowse`}>Alcohol Percent</button>
+              <HeroButton 
+                  setBrowseSelect = { setBrowseSelect }
+                  setBrowseOpen = { setBrowseOpen }
+                  setPlaceHolderText = {setPlaceHolderText}
+                  setParam = {setParam}
+                  browseSelect = { browseSelect }
+                  placeHolderValue = { ptArray[0] }
+                  paramValue = { urlParamKeys[0] }
+                  browseValue = {'Name'}
+              />
+              <HeroButton 
+                  setBrowseSelect = { setBrowseSelect }
+                  setBrowseOpen = { setBrowseOpen }
+                  setPlaceHolderText = {setPlaceHolderText}
+                  setParam = {setParam}
+                  browseSelect = { browseSelect }
+                  placeHolderValue = { ptArray[1] }
+                  paramValue = { urlParamKeys[1] }
+                  browseValue = {'Starter Culture'}
+              />
+              <HeroButton 
+                  setBrowseSelect = { setBrowseSelect }
+                  setBrowseOpen = { setBrowseOpen }
+                  setPlaceHolderText = {setPlaceHolderText}
+                  setParam = {setParam}
+                  browseSelect = { browseSelect }
+                  placeHolderValue = { ptArray[2] }
+                  paramValue = { urlParamKeys[2] }
+                  browseValue = {'Ingredients'}
+              />
+              <HeroButton 
+                  setBrowseSelect = { setBrowseSelect }
+                  setBrowseOpen = { setBrowseOpen }
+                  setPlaceHolderText = {setPlaceHolderText}
+                  setParam = {setParam}
+                  browseSelect = { browseSelect }
+                  placeHolderValue = { ptArray[3] }
+                  paramValue = { urlParamKeys[3] }
+                  browseValue = {'Place'}
+              />
+              <HeroButton 
+                  setBrowseSelect = { setBrowseSelect }
+                  setBrowseOpen = { setBrowseOpen }
+                  setPlaceHolderText = {setPlaceHolderText}
+                  setParam = {setParam}
+                  browseSelect = { browseSelect }
+                  placeHolderValue = { ptArray[4] }
+                  paramValue = { urlParamKeys[4] }
+                  browseValue = {'Microorganism'}
+              />     
+              <HeroButton 
+                  setBrowseSelect = { setBrowseSelect }
+                  setBrowseOpen = { setBrowseOpen }
+                  setPlaceHolderText = {setPlaceHolderText}
+                  setParam = {setParam}
+                  browseSelect = { browseSelect }
+                  placeHolderValue = { ptArray[5] }
+                  paramValue = { urlParamKeys[5] }
+                  browseValue = {'Alcohol Percent'}
+              />     
             </ul>
         </div>
     </div>
