@@ -8,6 +8,9 @@ module.exports = {
       width: {
         nvw: "97vw"
       },
+      height: {
+        nvh: "95vh"
+      },
       colors: {
         purple: {
           wisteria: '#875F9A',

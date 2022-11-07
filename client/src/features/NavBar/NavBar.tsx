@@ -4,6 +4,7 @@ import { AiOutlineHome, AiOutlineInfoCircle, AiOutlineContacts } from 'react-ico
 import { useNavigate } from 'react-router-dom'
 import { RiContactsLine } from 'react-icons/ri'
 import { ImStatsBars } from 'react-icons/im'
+import { BiMap } from 'react-icons/bi'
 
 
 function NavBar() {
@@ -22,39 +23,41 @@ function NavBar() {
         </div>
         <div className = 'flex gap-6 items-center'>
             <div className = 'btn flex items-center gap-1' onClick = {
-            () => {
-                navigate('/')
-            }
-        }>
+                () => {
+                    navigate('/')
+            }}>
                 <AiOutlineHome className='text-md'/>
                 <button className = 'text-sm'>Home</button>
             </div>
             <div className='btn flex items-center gap-1' onClick = {
-            () => {
-                navigate('/about')
-            }
-        }>
+                () => {
+                    navigate('/about')
+            }}>
                 <AiOutlineInfoCircle className = 'text-md' />
                 <button className = 'text-sm'>About</button>
             </div>
             <div className='btn flex items-center gap-2' onClick = {
-            () => {
-                navigate('/contact')
-            }
-        }>
+                () => {
+                    navigate('/contact')
+            }}>
                 <RiContactsLine className = 'text-md' />
                 <button className = 'text-sm'>Contact Us</button>
             </div>
             <div className = 'btn flex items-center gap-1' onClick = {
-            () => {
-                navigate('/stats', { replace: true })
-            }
-        }>
+                () => {
+                    navigate('/stats', { replace: true })
+            }}>
                 <ImStatsBars className='text-md'/>
                 <button className = 'text-sm'>Statistics</button>
-            </div>  
-        </div>
-        
+            </div>
+            <div className = 'btn flex items-center gap-1' onClick = {
+                () => {
+                    navigate('/maps', { replace: true })
+            }}>
+                <BiMap className='text-md'/>
+                <button className = 'text-sm'>Maps</button>
+            </div>
+        </div>    
     </div>
   )
 }

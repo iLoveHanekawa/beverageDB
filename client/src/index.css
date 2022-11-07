@@ -63,3 +63,7 @@ nav a.active {
 .news {
   @apply hover:underline hover:scale-105 hover:text-gray-700 transition duration-300 text-sm px-8 pb-7
 }
+
+.leaflet-container {
+  @apply h-nvh absolute top-6 z-0 w-screen left-0
+}

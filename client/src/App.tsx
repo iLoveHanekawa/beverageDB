@@ -15,6 +15,7 @@ import Search from './components/Search'
 import Item from './components/Item'
 import Loading from './components/Loading'
 import Stats from './components/Stats'
+import Maps from './components/Maps'
 
 export type NewsType = { headline: { main: string }, web_url: string }
 
@@ -37,6 +38,7 @@ function App() {
           <Route path = '/contact' element = {<ContentContact />} />
           <Route path = '/documentation' element = {<Documentation />} />
         </Route>
+        <Route path = '/maps' element = {<Maps setRenderHero={setRenderHero} />} />
         <Route path = '/stats' element = {<Stats setRenderHero={setRenderHero} />} />
         <Route path = '/data/search' element = {<Search />} />
         <Route path = '/about' element = {<About />} />

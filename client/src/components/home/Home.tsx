@@ -3,7 +3,6 @@ import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import { NewsType } from '../../App'
 
-
 type HomeProps = {
   setRenderHero: React.Dispatch<React.SetStateAction<boolean>>
   news: NewsType[]
@@ -13,10 +12,11 @@ type HomeProps = {
 function Home(props: HomeProps) {
 
   React.useEffect(() => {
-    const fetchNews = async () => {
-      const response = await axios.get('https://api.nytimes.com/svc/search/v2/articlesearch.json?q=beverage&api-key=tMKcGGwFaGflWD3HaTyJwMOgVWOxfpD6')
-      const data = response.data
-      props.setNews(data.response.docs)
+      console.log()
+      const fetchNews = async () => {
+        const response = await axios.get(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=beverage&api-key=${import.meta.env.VITE_NYT_KEY}`)
+        const data = response.data
+        props.setNews(data.response.docs)
     }
     if(props.news.length === 0) fetchNews()
     props.setRenderHero(true)
@@ -24,7 +24,6 @@ function Home(props: HomeProps) {
 
   return (
     <div className='overflow-x-hidden justify-between flex h-3/5 my-3 mx-4'>
-      
       <div className = 'rounded-l-2xl flex flex-col items-center h-full w-1/6 relative text-gray-400 bg-gray-200'>
         <nav className = 'w-full mt-7 text-md flex flex-col items-center overflow-x-hidden pr-7'>
           <div className='text-xl black text-gray-600 border-gray-300 border-b-2 mb-6 pr-8'>Contents</div>

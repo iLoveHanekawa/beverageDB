@@ -42,7 +42,7 @@ function Stats(props: StatsPropsType) {
   return (
     <div className = 'w-full h-full justify-center flex flex-col items-center'> 
       <div className='w-96'>
-        <Chart type = 'doughnut' ref = {chartRef} datasetIdKey='id' data={data} />
+        <Chart type = 'bar' ref = {chartRef} datasetIdKey='id' data={data} />
       </div>
     </div>
   )
