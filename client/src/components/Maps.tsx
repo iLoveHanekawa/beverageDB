@@ -16,7 +16,8 @@ var colorArray = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6',
 		  '#E666B3', '#33991A', '#CC9999', '#B3B31A', '#00E680', 
 		  '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933',
 		  '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3', 
-		  '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
+		  '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'
+];
 //thank you https://gist.github.com/mucar
 
 function Maps(props: MapsProps) {
@@ -30,13 +31,14 @@ function Maps(props: MapsProps) {
     let x = -1;
 
     return (  
-        <MapContainer center={[22.5937, 78.9629]} zoom={5} scrollWheelZoom={true}>
+        <MapContainer style = {{
+            
+        }} center={[22.5937, 78.9629]} zoom={5} scrollWheelZoom={true}>
             <GeoJSON onEachFeature={(state, layer) => {
                 layer.bindPopup(state.properties.NAME_1)
                 layer.on({
                     click: (event) => {
                         setSelected(event.target.feature.properties.NAME_1)
-                        // layer.openPopup()
                     },
                 })
             }} data = {data} style = {(feature) => {
@@ -44,14 +46,15 @@ function Maps(props: MapsProps) {
                 
                 return {
                     fillColor: colorArray[colorArray.length - 1 - x],
-                    fillOpacity: selected === feature?.properties.NAME_1? 0.9: 0.3,
+                    fillOpacity: selected === feature?.properties.NAME_1? 0.8: 0.3,
                     color: "gray",
-                    weight: 0.8
+                    weight: selected === feature?.properties.NAME_1? 2: 0.3
                 }
             }}/>
             <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                attribution='&copy; <a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+                url="https://api.maptiler.com/maps/openstreetmap/256/{z}/{x}/{y}.jpg?key=XQefLgXL3iSvq1jAzYKJ"
+                noWrap = {true}
             />
         </MapContainer>
     )
