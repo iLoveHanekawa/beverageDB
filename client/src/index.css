@@ -65,5 +65,5 @@ nav a.active {
 }
 
 .leaflet-container {
-  @apply h-nvh absolute top-6 z-0 w-screen left-0
+  @apply h-nvh absolute top-2.5 z-0 w-screen left-0
 }

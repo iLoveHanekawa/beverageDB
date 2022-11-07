@@ -15,7 +15,7 @@ import Search from './components/Search'
 import Item from './components/Item'
 import Loading from './components/Loading'
 import Stats from './components/Stats'
-import Maps from './components/Maps'
+import Maps from './components/maps/Maps'
 
 export type NewsType = { headline: { main: string }, web_url: string }
 
