@@ -1,10 +1,10 @@
 import React from 'react'
 import { MapContainer, TileLayer, GeoJSON, ZoomControl} from 'react-leaflet'
-import {GeoJsonObject} from 'geojson'
+import { Layer } from 'leaflet'
+import {GeoJsonObject, Feature, Geometry} from 'geojson'
 import * as mapData from '../../../mapData.json'
-import { FaLocationArrow } from 'react-icons/fa'
-import { AiOutlineSearch } from 'react-icons/ai'
 import MapsNav from './MapsNav'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 
 type MapsProps = {
     setRenderHero: React.Dispatch<React.SetStateAction<boolean>>
@@ -25,39 +25,52 @@ var colorArray = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6',
 
 function Maps(props: MapsProps) {
 
+    const [searchParams, setSearchParams] = useSearchParams()
     const [datalist, setDatalist] = React.useState<string[]>([])
-    
+    const navigate = useNavigate()
     const [selected, setSelected] = React.useState<string>()
+
     React.useEffect(() => {
         props.setRenderHero(false)
         setSelected("Click on a state")
     }, [])
 
-    const [data, setData] = React.useState(mapData as GeoJsonObject)
+    let queryString = '?'
+    searchParams.forEach((key, value) => {
+        queryString += `${value}=${key}&`
+    })
+
     let x = -1;
+    
+    const onEachState = (state: Feature<Geometry, any>, layer: Layer) => {
+        // layer.bindPopup(state.properties.NAME_1)
+        layer.on({
+            click: (event) => {
+                setSelected(event.target.feature.properties.NAME_1)
+                navigate(`/maps/?place=${event.target.feature.properties.NAME_1}`)
+            },
+        })
+    }
+
+    const stateStyle = (feature: Feature<Geometry, any> | undefined) => {
+        x++;
+        if(!datalist.includes(feature?.properties.NAME_1)) datalist.push(feature?.properties.NAME_1)
+        return {
+            fillColor: colorArray[colorArray.length - 1 - x],
+            fillOpacity: selected === feature?.properties.NAME_1? 0.8: 0.3,
+            color: "gray",
+            weight: selected === feature?.properties.NAME_1? 2: 0.3
+        }
+    }
+
+    const [data, setData] = React.useState(mapData as GeoJsonObject)
 
     return (  
         <div className='w-nvw h-screen overflow-hidden'>
-            <MapsNav setSelected={setSelected} datalist={datalist} selected = {selected as string} />
+            <MapsNav setSelected={setSelected} datalist={datalist} searchParams = {searchParams} selected = {selected as string} />
             <MapContainer zoomControl = {false} style = {{
             }} center={[22.5937, 98.9629]} zoom={5} scrollWheelZoom={true}>
-                <GeoJSON onEachFeature={(state, layer) => {
-                    // layer.bindPopup(state.properties.NAME_1)
-                    layer.on({
-                        click: (event) => {
-                            setSelected(event.target.feature.properties.NAME_1)
-                        },
-                    })
-                }} data = {data} style = {(feature) => {
-                    x++;
-                    if(!datalist.includes(feature?.properties.NAME_1)) datalist.push(feature?.properties.NAME_1)
-                    return {
-                        fillColor: colorArray[colorArray.length - 1 - x],
-                        fillOpacity: selected === feature?.properties.NAME_1? 0.8: 0.3,
-                        color: "gray",
-                        weight: selected === feature?.properties.NAME_1? 2: 0.3
-                    }
-                }}/>
+                <GeoJSON onEachFeature={onEachState} data = {data} style = {stateStyle}/>
                 <TileLayer
                     attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
                     url={`https://api.maptiler.com/maps/openstreetmap/256/{z}/{x}/{y}.jpg?key=${import.meta.env.VITE_MAPTILER_KEY}`}

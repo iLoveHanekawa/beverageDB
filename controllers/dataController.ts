@@ -10,12 +10,12 @@ export const getAllData = async (req: Request, res: Response) => {
     }
     if(starter) {
         queryObj = { ...queryObj, starter: { $regex: starter, $options: 'i'} }
-    }
+    } 
     if(ingredients) {
         queryObj = { ...queryObj, ingredients: ingredients }
     }
     if(place) {
-        queryObj = { ...queryObj, place: place }
+        queryObj = { ...queryObj, place: { $regex: place, $options: 'i' } }
     }
     if(culturalImportance) {
         queryObj = { ...queryObj, culturalImportance: culturalImportance }

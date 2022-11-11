@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "dev": "concurrently \"tsc.cmd -w\" \"npm start\" \"cd client && npm run dev\""
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   "homepage": "https://github.com/iLoveHanekawa/beverageDB#readme",
   "devDependencies": {
     "@types/express": "^4.17.13",
+    "concurrently": "^7.5.0",
     "nodemon": "^2.0.19"
   },
   "dependencies": {

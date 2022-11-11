@@ -27,7 +27,7 @@ const getAllData = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         queryObj = Object.assign(Object.assign({}, queryObj), { ingredients: ingredients });
     }
     if (place) {
-        queryObj = Object.assign(Object.assign({}, queryObj), { place: place });
+        queryObj = Object.assign(Object.assign({}, queryObj), { place: { $regex: place, $options: 'i' } });
     }
     if (culturalImportance) {
         queryObj = Object.assign(Object.assign({}, queryObj), { culturalImportance: culturalImportance });

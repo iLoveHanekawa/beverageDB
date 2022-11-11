@@ -34,7 +34,7 @@ function Search() {
 
 
   return (
-    <div className = 'w-full flex flex-col border-gray-300 h-fit items-center mt-1 overflow-x-hidden'>
+    <div className = 'w-full flex flex-col border-gray-300 h-fit items-center overflow-x-hidden'>
         <div className = 'self-start text-4xl text-gray-400 ml-8 mt-4'>{`Search results(${count})`}</div>
         <div className = 'self-start text-md text-gray-400 ml-10 mt-2 border-b tracking-wider border-gray-200 w-full'>{`For: ${searchText}`}</div>
         {loading? <Loading />: 

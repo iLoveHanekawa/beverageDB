@@ -19,7 +19,7 @@ function Item() {
     }, []) 
     
     return (
-        <div className = 'overflow-x-hidden'>
+        <div className = 'overflow-x-hidden mt-6'>
             {item? <div className = 'flex-col flex items-center'>
                 <div className = 'text-gray-600 self-start text-4xl mt-4 ml-8 border-b py-2 w-full'>{item.name}</div>
                 <div className = {`grid grid-rows-${Object.keys(item).length} grid-cols-3 w-full pb-14 px-5 pt-10`}>
