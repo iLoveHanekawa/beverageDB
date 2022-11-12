@@ -31,13 +31,17 @@ function MapsNav(props: MapsNavProps) {
     const loading = useSelector((state: StateType) => (state.data.loading))
     
     React.useEffect(() => {
-        if(queryString != '') dispatch(fetchData(allQueryParams))
-    }, [queryString])
+        if(props.datalist.includes(props.searchParams.get('place') as string)) dispatch(fetchData(allQueryParams))
+        props.setSelected(() => {
+            let state = props.searchParams.get('place') as string
+            if(props.datalist.includes(state)) return state
+            else return defaultText
+        })
+    }, [props.selected])
 
     const data = useSelector((state: StateType) => state.data.default)
     const [inputText, setInputText] = React.useState('')
     const defaultText = "Enter a valid state"
-    console.log(data)
 
     const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
@@ -74,8 +78,8 @@ function MapsNav(props: MapsNavProps) {
                 <div className = 'text-sm ml-4 text-gray-400'>in {props.selected === "Click on a state"? `"Please choose a state first"`: props.selected}</div>
             </div>
         </div>
-        {loading? <Loading />: <div className = 'overflow-x-hidden scrollbar-thin scrollbar-thumb-gray-300 scrollbar-thumb-rounded-md overflow-scroll mt-2 ml-3'>
-            {data.data.map((item, i) => <li className = 'list-none border-b-2 text-gray-500' key = {i}>
+        {loading? <Loading />: <div className = 'overflow-x-hidden scrollbar-thin scrollbar-thumb-gray-300 scrollbar-thumb-rounded-md overflow-scroll mt-1 ml-5'>
+            {data.data.map((item, i) => <li className = 'list-none border-b-2 mt-2 border-gray-100 text-gray-400' key = {i}>
             <div className = 'hover:underline cursor-pointer text-md pb-1 flex gap-2 justify-start items-center' onClick = {() => {
                 navigate(`/data/${item._id}`)
             }}><HiOutlineDocument className = 'text-md' />{`${item.name}`}</div>
