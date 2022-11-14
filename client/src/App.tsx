@@ -16,6 +16,10 @@ import Item from './components/Item'
 import Loading from './components/Loading'
 import Stats from './components/Stats'
 import Maps from './components/maps/Maps'
+import Starter from './components/Starter'
+import StarterItem from './components/StarterItem'
+import img from './images/449153.jpg'
+import Splash from './components/splash/Splash'
 
 export type NewsType = { headline: { main: string }, web_url: string }
 
@@ -27,8 +31,9 @@ function App() {
 
   return (
     <div className = 'h-screen overflow-y-scroll font-inter scrollbar-thin scrollbar-thumb-gray-300 scrollbar-thumb-rounded-xl'>
-      <NavBar />
-      {renderHero? <Hero />: <div></div>}
+      {/* <NavBar /> */}
+      {/* {renderHero? <Hero />: <div></div>} */}
+      <Splash />
       <Routes>
         <Route path = '/' element = {<Home setRenderHero={setRenderHero} news = {news} setNews = {setNews} />}>
           <Route index element = {<Intro />} />
@@ -44,8 +49,10 @@ function App() {
         <Route path = '/about' element = {<About />} />
         <Route path = '/contact' element = {<Contact />} /> 
         <Route path = '/data/:userId' element = {<Item />} />
+        <Route path = '/starter' element = {<Starter setRenderHero = {setRenderHero} />} />
+        <Route path = '/starter/:starterId' element = {<StarterItem setRenderHero = {setRenderHero} />} />
       </Routes>
-      <BottomNavBar />
+      {/* <BottomNavBar /> */}
     </div>
   )
 }

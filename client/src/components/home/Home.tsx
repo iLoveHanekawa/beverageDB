@@ -17,6 +17,7 @@ function Home(props: HomeProps) {
         const response = await axios.get(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=beverage&api-key=${import.meta.env.VITE_NYT_KEY}`)
         const data = response.data
         props.setNews(data.response.docs)
+        console.log(data.response.docs)
     }
     if(props.news.length === 0) fetchNews()
     props.setRenderHero(true)
