@@ -21,7 +21,11 @@ import StarterItem from './components/StarterItem'
 import img from './images/449153.jpg'
 import Splash from './components/splash/Splash'
 
-export type NewsType = { headline: { main: string }, web_url: string }
+export type NewsType = { 
+  headline: { 
+    main: string 
+  }, web_url: string 
+}
 
 
 function App() {

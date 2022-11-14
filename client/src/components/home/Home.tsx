@@ -16,6 +16,7 @@ function Home(props: HomeProps) {
       const fetchNews = async () => {
         const response = await axios.get(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=beverage&api-key=${import.meta.env.VITE_NYT_KEY}`)
         const data = response.data
+        console.log(data)
         props.setNews(data.response.docs)
         console.log(data.response.docs)
     }
