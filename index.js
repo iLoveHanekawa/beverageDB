@@ -17,6 +17,7 @@ require("dotenv/config");
 require("express-async-errors");
 const connectDB_1 = require("./db/connectDB");
 const dataRouter_1 = require("./routers/dataRouter");
+const starterRouter_1 = require("./routers/starterRouter");
 const app = (0, express_1.default)();
 const port = Number(process.env.PORT) || 5000;
 app.use(express_1.default.json());
@@ -24,6 +25,7 @@ app.get('/', (req, res) => {
     res.send('hi mom');
 });
 app.use('/api/v1/data', dataRouter_1.dataRouter);
+app.use('/api/v1/starter', starterRouter_1.starterRouter);
 const start = (uri, port) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         yield (0, connectDB_1.connectDB)(uri);

@@ -16,7 +16,7 @@ import SearchList from './SearchList'
     const [isBrowseOpen, setBrowseOpen] = useState(false)
     const [browseSelect, setBrowseSelect] = useState('Name')
     const navigate = useNavigate()
-  return (
+    return (
     <div className='text-white grid grid-cols-2 grid-rows-2 items-center'>
         <div className = 'row-span-2 col-span-1 flex-col'>
             <button onClick = {() => { setBrowseOpen(i => !i) }} className = 'py-1 w-full px-3 flex flex-col  items-center'>

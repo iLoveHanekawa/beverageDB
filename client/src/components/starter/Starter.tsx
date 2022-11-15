@@ -1,21 +1,30 @@
 import React from 'react'
 import SplashNav from '../splash/SplashNav'
-import * as starters from '../starter/starters.json'
+import StarterListItem from './StarterListItem'
+import {AppDispatch, StateType} from '../../app/store'
+import { useSelector, useDispatch } from 'react-redux'
+import { fetchData } from '../../features/Starter/starter'
 
-type StarterProps = {
-    setRenderHero: React.Dispatch<React.SetStateAction<boolean>>
-}
+function Starter() {
 
-function Starter(props: StarterProps) {
-
+    const dispatch: AppDispatch = useDispatch()
+    const starterArray = useSelector((state: StateType) => state.starter.default)
+    console.log(starterArray)
     React.useEffect(() => {
-        props.setRenderHero(false)
+        dispatch(fetchData('/api/v1/starter')) 
     }, [])
 
     return (
-    <div className = 'relative bg-black text-white w-screen h-screen'>
+    <div className = 'relative bg-black text-white w-screen h-screen overflow-x-hidden'>
         <SplashNav />
-        <div className = ''></div>
+        <p className='text-white text-4xl absolute font-bold top-10 ml-10 my-10 border-b-2 pb-2 border-gray-800 w-full'>Starters</p>
+        <ul className = 'grid grid-cols-6 absolute top-40 h-3/4 px-9 gap-3 w-full grid-rows-2'>
+            {starterArray.map((starter, i) => {
+                return <li className = 'h-full' key = {i}>
+                    <StarterListItem color = {starter.color} name = {starter.name} description = {starter.description} />
+                </li>
+            })}
+        </ul>
     </div>
     )
 }

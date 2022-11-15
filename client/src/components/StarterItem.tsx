@@ -5,11 +5,7 @@ type StarterItemProps = {
 }
 
 function StarterItem(props: StarterItemProps) {
-
-    React.useEffect(() => {
-        props.setRenderHero(false)
-    }, [])
-
+    
     return (
     <div>StarterItem</div>
     )

@@ -5,8 +5,8 @@ import Search from './search/Search'
 
 function SplashNav() {
   return (
-    <div className = 'w-screen absolute top-3 left-5 flex justify-between items-start pr-10'>
-          <div className = 'flex items-center gap-2'>
+    <div className = 'w-screen absolute top-3 z-10 flex justify-between items-start pr-5'>
+          <div className = 'flex pl-5 items-center gap-2'>
               <BiDrink className = 'text-white text-xl'/>
               <div className = 'text-white text-xl'>BeverageDB</div>
           </div>
