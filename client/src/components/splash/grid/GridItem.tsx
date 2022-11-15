@@ -1,19 +1,24 @@
 import React from 'react'
 import { IconType } from 'react-icons'
+import { useNavigate } from 'react-router-dom'
 
 type GridItemProps = {
     color: string
     Icon: IconType
     IconArt: IconType
     itemTitle: string
+    route: string
 }
 
 function GridItem(props: GridItemProps) {
 
+    const navigate = useNavigate()
     const [isHovering, setIsHovering] = React.useState(false)
 
   return (
-    <div className = 'row-span-1 col-span-1 shadow-inner'>
+    <div onClick = {() => {
+        navigate(props.route)
+    }} className = 'row-span-1 col-span-1 shadow-inner'>
         <div className = 'grid grid-rows-5 grid-cols-1 h-full'>
             <div className = 'text-gray-300 row-span-1 text-sm'>Some information about this section. More information about this section. Even more information about this section.</div>
             <div className = {`${props.color} transform relative hover:scale-105 duration-300 row-span-4 rounded-lg`}>

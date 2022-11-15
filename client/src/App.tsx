@@ -16,7 +16,7 @@ import Item from './components/Item'
 import Loading from './components/Loading'
 import Stats from './components/Stats'
 import Maps from './components/maps/Maps'
-import Starter from './components/Starter'
+import Starter from './components/starter/Starter'
 import StarterItem from './components/StarterItem'
 import img from './images/449153.jpg'
 import Splash from './components/splash/Splash'
@@ -37,24 +37,23 @@ function App() {
     <div className = 'h-screen overflow-y-scroll font-inter scrollbar-thin scrollbar-thumb-gray-300 scrollbar-thumb-rounded-xl'>
       {/* <NavBar /> */}
       {/* {renderHero? <Hero />: <div></div>} */}
-      <Splash />
       <Routes>
-        <Route path = '/' element = {<Home setRenderHero={setRenderHero} news = {news} setNews = {setNews} />}>
-          <Route index element = {<Intro />} />
+        {/* <Route path = '/' element = {<Home setRenderHero={setRenderHero} news = {news} setNews = {setNews} />}> */}
+        <Route path = '/' element = {<Splash/>} />
+          {/* <Route index element = {<Intro />} />
           <Route path = '/introduction' element = {<Intro />} />
           <Route path = '/searching' element = {<Searching />} />
           <Route path = '/api' element = {<Api />} />
           <Route path = '/contact' element = {<ContentContact />} />
-          <Route path = '/documentation' element = {<Documentation />} />
-        </Route>
+          <Route path = '/documentation' element = {<Documentation />} /> */}
         <Route path = '/maps' element = {<Maps setRenderHero={setRenderHero} />} />
         <Route path = '/stats' element = {<Stats setRenderHero={setRenderHero} />} />
         <Route path = '/data/search' element = {<Search />} />
         <Route path = '/about' element = {<About />} />
         <Route path = '/contact' element = {<Contact />} /> 
         <Route path = '/data/:userId' element = {<Item />} />
-        <Route path = '/starter' element = {<Starter setRenderHero = {setRenderHero} />} />
-        <Route path = '/starter/:starterId' element = {<StarterItem setRenderHero = {setRenderHero} />} />
+        <Route path = '/starters' element = {<Starter setRenderHero = {setRenderHero} />} />
+        <Route path = '/starters/:starterId' element = {<StarterItem setRenderHero = {setRenderHero} />} />
       </Routes>
       {/* <BottomNavBar /> */}
     </div>
