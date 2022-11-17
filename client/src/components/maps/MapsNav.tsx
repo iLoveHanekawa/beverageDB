@@ -50,7 +50,7 @@ function MapsNav(props: MapsNavProps) {
     }
 
   return (
-    <div className = 'flex flex-col absolute right-0 top-5 shadow-md shadow-gray-400 overflow-hidden bg-white w-96 h-nvh z-10'>
+    <div className = 'flex flex-col absolute right-0 top-0 shadow-md shadow-gray-400 overflow-hidden bg-white w-96 h-nvh z-10'>
         <div className = 'h-2/6 w-full bg-gray-800 '>
             <form onSubmit={ submitForm } className='rounded-full h-8 bg-white left-10 top-12 absolute'>
                 <input list = 'states' value = {inputText} onChange = {(event) => {
@@ -81,7 +81,7 @@ function MapsNav(props: MapsNavProps) {
         {loading? <Loading />: <div className = 'overflow-x-hidden scrollbar-thin scrollbar-thumb-gray-300 scrollbar-thumb-rounded-md overflow-scroll mt-1 ml-5'>
             {data.data.map((item, i) => <li className = 'list-none border-b-2 mt-2 border-gray-100 text-gray-400' key = {i}>
             <div className = 'hover:underline cursor-pointer text-md pb-1 flex gap-2 justify-start items-center' onClick = {() => {
-                navigate(`/data/${item._id}`)
+                navigate(`/beverage/${item._id}`)
             }}><HiOutlineDocument className = 'text-md' />{`${item.name}`}</div>
                 </li>)}
         </div>}

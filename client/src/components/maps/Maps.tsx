@@ -6,10 +6,6 @@ import * as mapData from '../../../mapData.json'
 import MapsNav from './MapsNav'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 
-type MapsProps = {
-    setRenderHero: React.Dispatch<React.SetStateAction<boolean>>
-}
-
 var colorArray = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
 		  '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
 		  '#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A', 
@@ -23,7 +19,7 @@ var colorArray = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6',
 ];
 //thank you https://gist.github.com/mucar
 
-function Maps(props: MapsProps) {
+function Maps() {
 
     const [searchParams, setSearchParams] = useSearchParams()
     const [datalist, setDatalist] = React.useState<string[]>([])
@@ -31,7 +27,6 @@ function Maps(props: MapsProps) {
     const [selected, setSelected] = React.useState<string>()
 
     React.useEffect(() => {
-        props.setRenderHero(false)
         setSelected("Click on a state")
     }, [])
 
@@ -66,7 +61,7 @@ function Maps(props: MapsProps) {
     const [data, setData] = React.useState(mapData as GeoJsonObject)
 
     return (  
-        <div className='w-nvw h-screen overflow-hidden'>
+        <div className='w-screen h-screen overflow-hidden'>
             <MapsNav setSelected={setSelected} datalist={datalist} searchParams = {searchParams} selected = {selected as string} />
             <MapContainer zoomControl = {false} style = {{
             }} center={[22.5937, 98.9629]} zoom={5} scrollWheelZoom={true}>

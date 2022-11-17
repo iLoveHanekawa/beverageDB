@@ -9,7 +9,6 @@ function Starter() {
 
     const dispatch: AppDispatch = useDispatch()
     const starterArray = useSelector((state: StateType) => state.starter.default)
-    console.log(starterArray)
     React.useEffect(() => {
         dispatch(fetchData('/api/v1/starter')) 
     }, [])
@@ -20,9 +19,8 @@ function Starter() {
         <p className='text-white text-4xl absolute font-bold top-10 ml-10 my-10 border-b-2 pb-2 border-gray-800 w-full'>Starters</p>
         <ul className = 'grid grid-cols-6 absolute top-40 h-3/4 px-9 gap-3 w-full grid-rows-2'>
             {starterArray.map((starter, i) => {
-                console.log(starter)
                 return <li className = 'h-full' key = {i}>
-                    <StarterListItem index = {i} name = {starter.name} description = {starter.description} />
+                    <StarterListItem _id = {starter._id} index = {i} name = {starter.name} description = {starter.description} />
                 </li>
             })}
         </ul>

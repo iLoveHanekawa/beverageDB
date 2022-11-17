@@ -42,7 +42,7 @@ function Search() {
             <div className = 'border-t border-l border-r mt-8 w-nvw border-gray-300 shadow-gray-300 shadow-md bg-gray-200 rounded-md px-4 mb-10'>
                 <div>{documents.data.map((i, index) => 
                     <li className = 'border-b-2 cursor-pointer border-gray-100 list-none text-gray-500 py-4 ml-3' onClick = {() => {
-                        navigate(`/data/${i._id}`)
+                        navigate(`/beverage/${i._id}`)
                     }} key = {index}>
                         <div className = 'hover:underline text-md pb-1 flex gap-5 justify-start items-center'><HiOutlineDocument className = 'text-md' />{`${i.name}`}</div>
                         <div className = 'cursor-default ml-3 text-sm text-gray-400'>{`ID: ${i._id}`}</div>

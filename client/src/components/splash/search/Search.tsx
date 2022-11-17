@@ -33,7 +33,7 @@ import SearchList from './SearchList'
                 }} value = {searchText} className = 'font-nunito py-1 focus:outline-none rounded-md text-gray-600 indent-3' type = 'text' />
             <button onClick = {(event) => { 
                 event.preventDefault()
-                navigate({ pathname: '/data/search', search: `?${createSearchParams({ [param]: searchText })}`}) }
+                navigate({ pathname: '/beverages/search', search: `?${createSearchParams({ [param]: searchText })}`}) }
             } className = 'py-1 px-4 rounded-r-full flex gap-1 items-center'>
                 <AiOutlineSearch className = 'text-2xl rounded-tl-xl' />
             </button>

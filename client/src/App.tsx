@@ -46,14 +46,14 @@ function App() {
           <Route path = '/api' element = {<Api />} />
           <Route path = '/contact' element = {<ContentContact />} />
           <Route path = '/documentation' element = {<Documentation />} /> */}
-        <Route path = '/maps' element = {<Maps setRenderHero={setRenderHero} />} />
+        <Route path = '/maps' element = {<Maps />} />
         <Route path = '/stats' element = {<Stats setRenderHero={setRenderHero} />} />
-        <Route path = '/data/search' element = {<Search />} />
+        <Route path = '/beverages/search' element = {<Search />} />
         <Route path = '/about' element = {<About />} />
         <Route path = '/contact' element = {<Contact />} /> 
-        <Route path = '/data/:userId' element = {<Item />} />
-        <Route path = '/starters' element = {<Starter setRenderHero = {setRenderHero} />} />
-        <Route path = '/starters/:starterId' element = {<StarterItem setRenderHero = {setRenderHero} />} />
+        <Route path = '/beverage/:userId' element = {<Item />} />
+        <Route path = '/starters' element = {<Starter />} />
+        <Route path = '/starter/:starterId' element = {<StarterItem />} />
       </Routes>
       {/* <BottomNavBar /> */}
     </div>

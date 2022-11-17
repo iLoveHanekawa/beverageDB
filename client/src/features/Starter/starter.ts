@@ -7,14 +7,14 @@ type StarterDataType = {
     default: {
         name: string
         description: string
-        color: string
+        _id: number
     }[]
 }
 
 export const fetchData = createAsyncThunk('fetch', async (url: string) => {
     const response = await axios.get(url)
     const data = await response.data
-    return data.data
+    return data.starters
 })
 
 const initialState: StarterDataType = { 

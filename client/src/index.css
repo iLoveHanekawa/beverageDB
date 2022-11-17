@@ -45,7 +45,7 @@ nav a.active {
 }
 
 .notSelectedBrowse {
-  @apply text-gray-400 hover:text-white py-1 pl-3 transition duration-300
+  @apply text-gray-200 hover:text-white py-1 pl-3 transition duration-300
 }
 
 .itemField {
@@ -65,5 +65,5 @@ nav a.active {
 }
 
 .leaflet-container {
-  @apply h-nvh absolute top-2.5 z-0 w-screen left-0
+  @apply h-screen absolute top-0 z-0 w-screen left-0
 }

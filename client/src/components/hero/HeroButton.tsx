@@ -16,7 +16,7 @@ function HeroButton(props: HeroButtonProps) {
         props.setBrowseOpen(i => !i);
         props.setParam(props.paramValue)
       }} 
-      className = {props.browseSelect === props.browseValue? `selectedBrowse pt-1`: `notSelectedBrowse`}>{props.browseValue}</button>
+      className = { props.browseSelect === props.browseValue? `selectedBrowse pt-1`: `notSelectedBrowse` }>{ props.browseValue }</button>
   )
 }
 
