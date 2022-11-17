@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const starterSchema = new mongoose_1.default.Schema({
     name: String,
-    color: String,
     description: String
 });
 exports.default = mongoose_1.default.model('starter', starterSchema);
