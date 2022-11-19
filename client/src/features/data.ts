@@ -19,28 +19,22 @@ export type SchemaType = {
 
 type DataStateType<T extends {}> = {
     loading: boolean,
-    default: { total: number, count: number, data: T[]},
+    default: { total: number, count: number, data: T[], qString: string},
     error: string | undefined
 }
 
 const initialState: DataStateType<SchemaType> = {
     loading: false,
-    default: { total: 0, count: 0, data: []},
+    default: { total: 0, count: 0, data: [], qString: ''},
     error: ''
 }
 
-export const fetchData = createAsyncThunk<unknown, [key: string, value: string][]>('data/fetch', async (allQueryParams: [key: string, value: string][]) => {
-
-    let queryString = '?'
-    allQueryParams.forEach(element => {
-        queryString += `${element[1]}=${element[0]}&`
-    });
-
+export const fetchData = createAsyncThunk<unknown, string>('data/fetch', async (queryString: string) => {
     console.log(queryString)
 
     const response = await axios.get(`/api/v1/data${queryString}`)
     const data = response.data
-    return data
+    return {...data, qString: queryString}
 })
 
 const dataSlice = createSlice({
@@ -53,7 +47,7 @@ const dataSlice = createSlice({
         })
         builder.addCase(fetchData.fulfilled, (state, action) => {
             state.loading = false,
-            state.default = action.payload as { total: number, count: number, data: SchemaType[]}
+            state.default = action.payload as { total: number, count: number, data: SchemaType[], qString: string}
             state.error = ''
         })
         builder.addCase(fetchData.rejected, (state, action) => {

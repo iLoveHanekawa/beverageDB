@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getData = exports.getAllData = void 0;
 const dataModel_1 = __importDefault(require("../models/dataModel"));
 const getAllData = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { name, starter, ingredients, place, culturalImportance, microorganisms, nutritionalValue, alcoholContent, tasteAndOdour, texture, reference, page = 1 } = req.query;
+    const { name, starter, ingredients, place, culturalImportance, microorganisms, nutritionalValue, alcoholContent, tasteAndOdour, texture, reference, limit, page = 1 } = req.query;
     let queryObj = {};
     if (name) {
         queryObj = Object.assign(Object.assign({}, queryObj), { name: { $regex: name, $options: 'i' } });
@@ -50,11 +50,11 @@ const getAllData = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     if (reference) {
         queryObj = Object.assign(Object.assign({}, queryObj), { reference: reference });
     }
-    const limit = 10;
-    const skip = limit * (Number(page) - 1);
+    const lim = Number(limit) || 10;
+    const skip = lim * (Number(page) - 1);
     let data = yield dataModel_1.default.find(queryObj).sort('name');
     let result = { total: data.length };
-    data = yield dataModel_1.default.find(queryObj).sort('name').skip(skip).limit(limit);
+    data = yield dataModel_1.default.find(queryObj).sort('name').skip(skip).limit(lim);
     res.json(Object.assign(Object.assign({}, result), { count: data.length, data }));
 });
 exports.getAllData = getAllData;

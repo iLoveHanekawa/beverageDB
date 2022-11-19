@@ -10,14 +10,12 @@ import SplashNav from './splash/SplashNav'
 type AllQueryParamsType = [key: string, value: string][]
 
 function OldSearch() {
-    const [page, setPage] = React.useState(1)
     const [searchParams, setSearchParams] = useSearchParams()
-    const searchText = useSelector((state: StateType) => state.text.default)
+    const [searchText, setSearchText] = React.useState('')
     const allQueryParams: AllQueryParamsType = []
     searchParams.forEach((key, value) => {
         allQueryParams.push([key, value])
     })
-
     const navigate = useNavigate()
 
     let queryString = '?'
@@ -30,9 +28,8 @@ function OldSearch() {
     const count = useSelector((state: StateType) => { return state.data.default.count})
     const loading = useSelector((state: StateType) => (state.data.loading))
     React.useEffect(() => {
-        dispatch(fetchData(allQueryParams))
+        dispatch(fetchData(queryString))
     }, [queryString])
-
 
   return (
     <div className = 'w-full text-white flex flex-col border-gray-300 h-fit items-center overflow-hidden'>
@@ -47,11 +44,11 @@ function OldSearch() {
                         navigate(`/beverage/${i._id}`)
                     }} key = {index}>
                         <div className = 'hover:underline text-md pb-1 flex gap-5 justify-start items-center'><HiOutlineDocument className = 'text-md' />{`${i.name}`}</div>
-                        <div className = 'cursor-default ml-3 text-sm '>{`ID: ${i._id}`}</div>
+                        <div className = 'cursor-default ml-3 text-sm'>{`ID: ${i._id}`}</div>
                     </li>)}
                 </div>
             </div>:
-            <div className='self-start ml-10 mt-2 pb-2  text-lg'>{`Sorry no results found for "${searchText}"`}</div>
+            <div className='self-start ml-10 mt-2 pb-2 text-lg'>{`Sorry no results found for "${searchText}"`}</div>
         }
     </div>
   )

@@ -1,7 +1,7 @@
 import React from 'react'
 import SplashNav from '../splash/SplashNav'
-import { StateType, AppDispatch } from '../../app/store'
-import { useSelector, useDispatch } from 'react-redux'
+import { AppDispatch } from '../../app/store'
+import { useDispatch } from 'react-redux'
 import { useSearchParams, useNavigate, createSearchParams } from 'react-router-dom'
 import { fetchData } from '../../features/data'
 import SearchItem from './SearchItem'
@@ -17,7 +17,7 @@ function Search() {
         microorganisms: '',
         alcoholPercent: '',
     })
-    const [page, setPage] = React.useState('1')
+    const page = '1'
     const [searchParams, setSearchParams] = useSearchParams()
     const allQueryParams: AllQueryParamsType = []
     searchParams.forEach((key, value) => {
