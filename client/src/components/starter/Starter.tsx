@@ -16,7 +16,7 @@ function Starter() {
     return (
     <div className = 'relative bg-black text-white w-screen h-screen overflow-x-hidden'>
         <SplashNav />
-        <p className='text-white text-4xl absolute font-bold top-10 ml-10 my-10 border-b-2 pb-2 border-gray-800 w-full'>Starters</p>
+        <p className='text-white text-4xl absolute font-bold top-10 ml-10 my-10 border-b-2 pb-2 border-gray-800 w-full tracking-wide'>Starters</p>
         <ul className = 'grid grid-cols-6 absolute top-40 h-3/4 px-9 gap-3 w-full grid-rows-2'>
             {starterArray.map((starter, i) => {
                 return <li className = 'h-full' key = {i}>

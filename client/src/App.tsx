@@ -11,7 +11,7 @@ import Intro from './components/home/contents/Intro'
 import Searching from './components/home/contents/Searching'
 import Api from './components/home/contents/Api'
 import Documentation from './components/home/contents/Documentation'
-import Search from './components/Search'
+import SearchResults from './components/SearchResults'
 import Item from './components/Item'
 import Loading from './components/Loading'
 import Stats from './components/Stats'
@@ -20,6 +20,7 @@ import Starter from './components/starter/Starter'
 import StarterItem from './components/StarterItem'
 import img from './images/449153.jpg'
 import Splash from './components/splash/Splash'
+import Search from './components/search/Search'
 
 export type NewsType = { 
   headline: { 
@@ -34,7 +35,7 @@ function App() {
   const [news, setNews] = React.useState<NewsType[]>([])
 
   return (
-    <div className = 'h-screen overflow-y-scroll font-inter scrollbar-thin scrollbar-thumb-gray-300 scrollbar-thumb-rounded-xl'>
+    <div className = 'h-screen overflow-y-scroll font-nunito scrollbar-thin bg-black scrollbar-thumb-gray-300 scrollbar-thumb-rounded-xl'>
       {/* <NavBar /> */}
       {/* {renderHero? <Hero />: <div></div>} */}
       <Routes>
@@ -48,7 +49,8 @@ function App() {
           <Route path = '/documentation' element = {<Documentation />} /> */}
         <Route path = '/maps' element = {<Maps />} />
         <Route path = '/stats' element = {<Stats setRenderHero={setRenderHero} />} />
-        <Route path = '/beverages/search' element = {<Search />} />
+        <Route path = '/search' element = {<Search />} />
+        <Route path = '/beverages/search' element = {<SearchResults />} />
         <Route path = '/about' element = {<About />} />
         <Route path = '/contact' element = {<Contact />} /> 
         <Route path = '/beverage/:userId' element = {<Item />} />

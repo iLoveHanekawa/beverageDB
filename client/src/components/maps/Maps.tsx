@@ -42,7 +42,7 @@ function Maps() {
         layer.on({
             click: (event) => {
                 setSelected(event.target.feature.properties.NAME_1)
-                navigate(`/maps/?place=${event.target.feature.properties.NAME_1}`)
+                navigate(`/maps/?place=${event.target.feature.properties.NAME_1}`, { replace: true })
             },
         })
     }

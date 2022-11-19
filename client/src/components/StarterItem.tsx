@@ -33,7 +33,7 @@ function StarterItem() {
         </div>:<div className='flex flex-col justify-start items-start z-10 ml-10 absolute top-1/4'>
             <div className = 'flex items-center gap-5 justify-start'>
                 <button className='hover:scale-125 transition duration-300' onClick = {() => {
-                        navigate('/starters')
+                        navigate('/starters', { replace: true })
                     }}>
                     <MdOutlineArrowBackIosNew className = 'text-4xl ' />
                 </button>

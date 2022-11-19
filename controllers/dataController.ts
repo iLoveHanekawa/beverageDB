@@ -2,7 +2,7 @@ import { Request, Response, text } from 'express'
 import dataModel from '../models/dataModel'
 
 export const getAllData = async (req: Request, res: Response) => {
-    const { name, starter, ingredients, place, culturalImportance, microorganisms, nutritionalValue, alcoholContent, tasteAndOdour, texture, reference } = req.query
+    const { name, starter, ingredients, place, culturalImportance, microorganisms, nutritionalValue, alcoholContent, tasteAndOdour, texture, reference, page = 1 } = req.query
     let queryObj = {}
 
     if(name) {
@@ -12,7 +12,7 @@ export const getAllData = async (req: Request, res: Response) => {
         queryObj = { ...queryObj, starter: { $regex: starter, $options: 'i'} }
     } 
     if(ingredients) {
-        queryObj = { ...queryObj, ingredients: ingredients }
+        queryObj = { ...queryObj, ingredients: { $regex: ingredients, $options: 'i'} }
     }
     if(place) {
         queryObj = { ...queryObj, place: { $regex: place, $options: 'i' } }
@@ -39,8 +39,13 @@ export const getAllData = async (req: Request, res: Response) => {
         queryObj = { ...queryObj, reference: reference }
     }
 
-    const data: {}[] = await dataModel.find(queryObj).sort('name')
-    res.json({ count: data.length, data })
+    const limit = 10
+    const skip = limit * (Number(page )- 1) 
+
+    let data: {}[] = await dataModel.find(queryObj).sort('name')
+    let result = { total: data.length }
+    data = await dataModel.find(queryObj).sort('name').skip(skip).limit(limit)
+    res.json({ ...result, count: data.length, data })
 }
 
 export const getData = async (req: Request, res: Response) => {

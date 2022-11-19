@@ -28,11 +28,11 @@ function GridItem(props: GridItemProps) {
                     setIsHovering(false)
                 }} className = ' grid grid-rows-5 grid-cols-1 justify-center text-white pt-8 gap-4'>
                     <div className = {`${isHovering? 'opacity-100 scale-100': 'opacity-0 scale-90'} transform duration-300 pl-8 pt-5 flex items-center gap-3 row-span-1`}>
-                        <props.Icon className = 'text-5xl' />
+                        
                         <div className = 'font-bold text-3xl'>{props.itemTitle}</div>
                     </div>
                     <div className = 'absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2'>
-                        <props.IconArt className={`transform duration-300 text-white ${isHovering? 'text-9xl opacity-40': 'text-8xl'} ${props.itemTitle === 'Starters'? ``: `-rotate-45`}`} />
+                        <props.IconArt className={`transform duration-300 text-white ${isHovering? 'text-8xl opacity-40': 'text-7xl'} ${(props.itemTitle === 'Starters' || props.itemTitle === 'Search')? ``: `-rotate-45`}`} />
                     </div>
                 </div>
             </div>

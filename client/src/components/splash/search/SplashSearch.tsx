@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { StateType, AppDispatch } from '../../../app/store'
 import { useNavigate, createSearchParams } from 'react-router-dom'
 import { textActions } from '../../../features/searchText'
-import SearchList from './SearchList'
+import SearchList from './SplashSearchList'
   
   const urlParamKeys = ['name', 'starter', 'ingredients', 'place', 'microorganim', 'alcoholPercent']
 
@@ -33,7 +33,7 @@ import SearchList from './SearchList'
                 }} value = {searchText} className = 'font-nunito py-1 focus:outline-none rounded-md text-gray-600 indent-3' type = 'text' />
             <button onClick = {(event) => { 
                 event.preventDefault()
-                navigate({ pathname: '/beverages/search', search: `?${createSearchParams({ [param]: searchText })}`}) }
+                navigate({ pathname: '/beverages/search', search: `?${createSearchParams({ [param]: searchText, page: '1' })}`}) }
             } className = 'py-1 px-4 rounded-r-full flex gap-1 items-center'>
                 <AiOutlineSearch className = 'text-2xl rounded-tl-xl' />
             </button>

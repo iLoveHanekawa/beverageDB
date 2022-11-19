@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getData = exports.getAllData = void 0;
 const dataModel_1 = __importDefault(require("../models/dataModel"));
 const getAllData = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { name, starter, ingredients, place, culturalImportance, microorganisms, nutritionalValue, alcoholContent, tasteAndOdour, texture, reference } = req.query;
+    const { name, starter, ingredients, place, culturalImportance, microorganisms, nutritionalValue, alcoholContent, tasteAndOdour, texture, reference, page = 1 } = req.query;
     let queryObj = {};
     if (name) {
         queryObj = Object.assign(Object.assign({}, queryObj), { name: { $regex: name, $options: 'i' } });
@@ -24,7 +24,7 @@ const getAllData = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         queryObj = Object.assign(Object.assign({}, queryObj), { starter: { $regex: starter, $options: 'i' } });
     }
     if (ingredients) {
-        queryObj = Object.assign(Object.assign({}, queryObj), { ingredients: ingredients });
+        queryObj = Object.assign(Object.assign({}, queryObj), { ingredients: { $regex: ingredients, $options: 'i' } });
     }
     if (place) {
         queryObj = Object.assign(Object.assign({}, queryObj), { place: { $regex: place, $options: 'i' } });
@@ -50,8 +50,12 @@ const getAllData = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     if (reference) {
         queryObj = Object.assign(Object.assign({}, queryObj), { reference: reference });
     }
-    const data = yield dataModel_1.default.find(queryObj).sort('name');
-    res.json({ count: data.length, data });
+    const limit = 10;
+    const skip = limit * (Number(page) - 1);
+    let data = yield dataModel_1.default.find(queryObj).sort('name');
+    let result = { total: data.length };
+    data = yield dataModel_1.default.find(queryObj).sort('name').skip(skip).limit(limit);
+    res.json(Object.assign(Object.assign({}, result), { count: data.length, data }));
 });
 exports.getAllData = getAllData;
 const getData = (req, res) => __awaiter(void 0, void 0, void 0, function* () {

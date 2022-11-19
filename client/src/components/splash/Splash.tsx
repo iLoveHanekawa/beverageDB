@@ -2,7 +2,7 @@ import React from 'react'
 import { BiDrink } from 'react-icons/bi'
 import { AiFillGithub } from 'react-icons/ai'
 import Grid from './grid/Grid'
-import Search from './search/Search'
+import Search from './search/SplashSearch'
 import SplashNav from './SplashNav'
 
 function Splash() {

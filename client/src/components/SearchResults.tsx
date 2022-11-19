@@ -5,11 +5,12 @@ import { useSearchParams, useNavigate } from 'react-router-dom'
 import { fetchData } from '../features/data'
 import { HiOutlineDocument} from 'react-icons/hi'
 import Loading from './Loading'
+import SplashNav from './splash/SplashNav'
 
 type AllQueryParamsType = [key: string, value: string][]
 
 function Search() {
-
+    const [page, setPage] = React.useState(1)
     const [searchParams, setSearchParams] = useSearchParams()
     const searchText = useSelector((state: StateType) => state.text.default)
     const allQueryParams: AllQueryParamsType = []
@@ -34,22 +35,23 @@ function Search() {
 
 
   return (
-    <div className = 'w-full flex flex-col border-gray-300 h-fit items-center overflow-x-hidden'>
-        <div className = 'self-start text-4xl text-gray-400 ml-8 mt-4'>{`Search results(${count})`}</div>
-        <div className = 'self-start text-md text-gray-400 ml-10 mt-2 border-b tracking-wider border-gray-200 w-full'>{`For: ${searchText}`}</div>
+    <div className = 'w-full text-white flex flex-col border-gray-300 h-fit items-center overflow-hidden'>
+        <SplashNav />
+        <div className = 'absolute top-10  left-0 self-start text-4xl  ml-8 mt-4'>{`Search results(${count})`}</div>
+        <div className = 'self-start text-md  tracking-wider absolute top-20 left-10 border-gray-200 w-full'>{`For: ${searchText}`}</div>
         {loading? <Loading />: 
             count > 0? 
-            <div className = 'border-t border-l border-r mt-8 w-nvw border-gray-300 shadow-gray-300 shadow-md bg-gray-200 rounded-md px-4 mb-10'>
+            <div className = 'absolute top-32 border-t border-l border-r mt-8 w-nvw border-gray-300 shadow-gray-300 shadow-md rounded-md px-4 mb-10'>
                 <div>{documents.data.map((i, index) => 
-                    <li className = 'border-b-2 cursor-pointer border-gray-100 list-none text-gray-500 py-4 ml-3' onClick = {() => {
+                    <li className = 'border-b-2 cursor-pointer border-gray-100 list-none  py-4 ml-3' onClick = {() => {
                         navigate(`/beverage/${i._id}`)
                     }} key = {index}>
                         <div className = 'hover:underline text-md pb-1 flex gap-5 justify-start items-center'><HiOutlineDocument className = 'text-md' />{`${i.name}`}</div>
-                        <div className = 'cursor-default ml-3 text-sm text-gray-400'>{`ID: ${i._id}`}</div>
+                        <div className = 'cursor-default ml-3 text-sm '>{`ID: ${i._id}`}</div>
                     </li>)}
                 </div>
             </div>:
-            <div className='self-start ml-10 mt-2 pb-2 text-gray-400 text-lg'>{`Sorry no results found for "${searchText}"`}</div>
+            <div className='self-start ml-10 mt-2 pb-2  text-lg'>{`Sorry no results found for "${searchText}"`}</div>
         }
     </div>
   )

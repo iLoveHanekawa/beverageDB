@@ -19,13 +19,13 @@ export type SchemaType = {
 
 type DataStateType<T extends {}> = {
     loading: boolean,
-    default: { count: number, data: T[]},
+    default: { total: number, count: number, data: T[]},
     error: string | undefined
 }
 
 const initialState: DataStateType<SchemaType> = {
     loading: false,
-    default: {count: 0, data: []},
+    default: { total: 0, count: 0, data: []},
     error: ''
 }
 
@@ -53,7 +53,7 @@ const dataSlice = createSlice({
         })
         builder.addCase(fetchData.fulfilled, (state, action) => {
             state.loading = false,
-            state.default = action.payload as { count: number, data: SchemaType[]}
+            state.default = action.payload as { total: number, count: number, data: SchemaType[]}
             state.error = ''
         })
         builder.addCase(fetchData.rejected, (state, action) => {
