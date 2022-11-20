@@ -8,11 +8,12 @@ import { useNavigate, useSearchParams } from 'react-router-dom'
 import { fetchData } from '../../features/data'
 import { HiOutlineDocument} from 'react-icons/hi'
 import Loading from '../Loading'
+import { LocationType } from '../maps/Maps'
 
 type MapsNavProps = {
     selected: string
     searchParams: URLSearchParams
-    datalist: string[]
+    datalist: LocationType
     setSelected: React.Dispatch<React.SetStateAction<string | undefined>>
 }
 
@@ -28,13 +29,14 @@ function MapsNav(props: MapsNavProps) {
     const loading = useSelector((state: StateType) => (state.data.loading))
     
     React.useEffect(() => {
-        if(props.datalist.includes(props.searchParams.get('place') as string)) dispatch(fetchData(queryString))
+        if(props.datalist.states.includes(props.searchParams.get('place') as string) ||
+        props.datalist.countries.includes(props.searchParams.get('place') as string)) dispatch(fetchData(queryString))
         props.setSelected(() => {
-            let state = props.searchParams.get('place') as string
-            if(props.datalist.includes(state)) return state
+            let location = props.searchParams.get('place') as string
+            if(props.datalist.countries.includes(location) || props.datalist.states.includes(location)) return location
             else return defaultText
         })
-    }, [queryString])
+    }, [props.selected])
 
     const data = useSelector((state: StateType) => state.data.default)
     const [inputText, setInputText] = React.useState('')
@@ -42,7 +44,7 @@ function MapsNav(props: MapsNavProps) {
 
     const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        props.setSelected(props.datalist.includes(inputText)? inputText: defaultText)
+        props.setSelected(props.datalist.states.includes(inputText) || props.datalist.countries.includes(inputText)? inputText: defaultText)
         if(inputText != defaultText) navigate(`/maps?place=${inputText}`)
     }
 
@@ -57,7 +59,7 @@ function MapsNav(props: MapsNavProps) {
                     <AiOutlineSearch className = 'hover:bg-gray-800 hover:text-white transition duration-300 absolute top-0 left-0 h-8 bg-white rounded-full p-1 text-gray-800 text-3xl '/>
                 </button>
                 <datalist id = 'states'>
-                    {props.datalist.map((state, index) => <option value = {state} key = {index} />)}
+                    {props.datalist.countries.map((state, index) => <option value = {state} key = {index} />)}
                 </datalist>
             </form>
             <div className = 'w-max flex mt-28 items-center justify-between ml-12 text-white'>
