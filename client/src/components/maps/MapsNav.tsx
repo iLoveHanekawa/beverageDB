@@ -1,13 +1,15 @@
 import React from 'react'
-import { AiOutlineSearch } from 'react-icons/ai'
-import { MdLocalBar } from 'react-icons/md'
+import { AiOutlineSearch, AiFillGithub } from 'react-icons/ai'
+import { MdLocalBar, MdNavigateBefore } from 'react-icons/md'
 import { TiLocationArrowOutline } from 'react-icons/ti'
 import { useSelector, useDispatch } from 'react-redux'
 import { StateType, AppDispatch } from '../../app/store'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { fetchData } from '../../features/data'
 import { HiOutlineDocument} from 'react-icons/hi'
+import { GiWineGlass } from 'react-icons/gi'
 import Loading from '../Loading'
+import {BiNavigation} from 'react-icons/bi'
 import { LocationType } from '../maps/Maps'
 
 type MapsNavProps = {
@@ -40,7 +42,7 @@ function MapsNav(props: MapsNavProps) {
 
     const data = useSelector((state: StateType) => state.data.default)
     const [inputText, setInputText] = React.useState('')
-    const defaultText = "Enter a valid state"
+    const defaultText = "Enter valid location"
 
     const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
@@ -49,43 +51,59 @@ function MapsNav(props: MapsNavProps) {
     }
 
   return (
-    <div className = 'flex flex-col absolute right-0 top-0 shadow-md shadow-gray-400 overflow-hidden bg-white w-96 h-nvh z-10'>
-        <div className = 'h-2/6 w-full bg-gray-800 '>
-            <form onSubmit={ submitForm } className='rounded-full h-8 bg-white left-10 top-12 absolute'>
-                <input list = 'states' value = {inputText} onChange = {(event) => {
-                    setInputText(event.target.value)
-                }} type = 'text' placeholder='State name; eg: Uttar Pradesh' className = {`rounded-full text-sm italic h-8 absolute top-0 left-0 focus:outline-none transition duration-300 origin-left indent-9 w-64`} />
-                <button>    
-                    <AiOutlineSearch className = 'hover:bg-gray-800 hover:text-white transition duration-300 absolute top-0 left-0 h-8 bg-white rounded-full p-1 text-gray-800 text-3xl '/>
-                </button>
-                <datalist id = 'states'>
-                    {props.datalist.countries.map((state, index) => <option value = {state} key = {index} />)}
-                </datalist>
-            </form>
-            <div className = 'w-max flex mt-28 items-center justify-between ml-12 text-white'>
-                <TiLocationArrowOutline className = 'text-5xl' />
-                <div className = 'flex flex-col ml-4 items-start'>
-                    <div className = 'text-2xl'>{props.selected}</div>
-                    <div className = 'ml-3 text-sm text-gray-500'>India</div>
+    <div className='flex flex-col absolute right-0 top-0 shadow-md text-white shadow-gray-400 overflow-hidden bg-black w-96 h-nvh z-10'>
+        <div className = 'pl-2 text-lg flex justify-between items-center pt-1'>
+            <div onClick = {() => { navigate('/') }} className = 'flex items-center cursor-pointer'>
+                <GiWineGlass />
+                <div className = 'ml-1'>BeverageDB</div>
+            </div>
+            <a href='https://github.com/iLoveHanekawa/beverageDB' className = 'h-max' target = '__blank'>
+                <AiFillGithub className = 'text-white text-2xl mr-1' />
+            </a>
+        </div>
+        <div className = 'pb-2 mt-4 border-b-2 border-gray-800 flex items-center text-3xl'>
+            <MdNavigateBefore onClick = {() => {
+                navigate('/')
+            }} className = 'hover:scale-125 transition duration-300 text-5xl cursor-pointer' />
+            <div className = 'flex flex-col justify-center'>
+                <div className = 'font-bold'>Maps</div>
+                <div className = 'text-gray-300 text-sm'>{props.selected === 'Enter valid location'? `Selected location: None`:`Selected location: ${props.selected}` }</div>
+            </div>
+        </div>
+        <form onSubmit={ submitForm } className='mt-5 pb-4 pl-3 border-b-2 border-gray-800 flex items-center'>
+            <BiNavigation className = 'mr-4 tracking-wide text-2xl' />
+            <input list = 'states' value = {inputText} onChange = {(event) => {
+                setInputText(event.target.value)
+            }} type = 'text' className = {`focus:outline-none h-7 text-sm w-3/5 indent-1 rounded-md text-gray-800`} />
+            <button>    
+                <AiOutlineSearch className = 'text-2xl ml-2 hover:scale-125 transition duration-300'/>
+            </button>
+            <datalist id = 'states'>
+                {props.datalist.countries.map((country, index) => <option value = {country} key = {index} />)}
+                {props.datalist.states.map((state, index) => <option value = {state} key = {index} />)}
+            </datalist>
+        </form>
+        {
+            props.selected !== 'Enter valid location'? <div>   
+                <div className = 'flex flex-col text-lg ml-4 mt-3 border-b-2 border-gray-800 justify-center'>
+                    <div className = 'tracking-wide text-2xl'>{`Beverages`}</div>
+                    <div className = 'ml-3 text-sm text-gray-300'>{`Search results: ${data.data.length} hits`}</div>
+                    <div className = 'text-sm ml-6 text-gray-300'>{`In ${props.selected}`}</div>
                 </div>
-            </div>
-        </div>
-        <div className = 'flex justify-center items-center mt-5 text-xl text-gray-500 ml-6 border-b-2'>
-            <MdLocalBar className = 'w-44 mr-3 text-4xl' />
-            <div className = 'flex flex-col w-screen'>
-                Local Beverages
-                <div className = 'text-sm ml-4 text-gray-400'>in {props.selected === "Click on a state"? `"Please choose a state first"`: props.selected}</div>
-            </div>
-        </div>
-        {loading? <Loading />: <div className = 'overflow-x-hidden scrollbar-thin scrollbar-thumb-gray-300 scrollbar-thumb-rounded-md overflow-scroll mt-1 ml-5'>
-            {data.data.map((item, i) => <li className = 'list-none border-b-2 mt-2 border-gray-100 text-gray-400' key = {i}>
-            <div className = 'hover:underline cursor-pointer text-md pb-1 flex gap-2 justify-start items-center' onClick = {() => {
-                navigate(`/beverage/${item._id}`)
-            }}><HiOutlineDocument className = 'text-md' />{`${item.name}`}</div>
-                </li>)}
-        </div>}
-    </div>
-    
+                {
+                    loading? <div><Loading /></div>:
+                    <ul className = 'flex flex-col border-2 border-gray-800 mt-5 mx-2 scrollbar-thin h-96 scrollbar-thumb-rounded-full scrollbar-thumb-gray-300 overflow-x-hidden overflow-y-scroll'>
+                        {data.data.map((item, i) => <li className = 'py-2 pl-2 hover:text-black transition duration-300 hover:bg-white' key = {i}>
+                            <div className = '' onClick = {() => {
+                                navigate(`/beverage/${item._id}`)
+                            }}>{`${item.name}`}</div>
+                        </li>)}
+                    </ul>
+                }
+            </div>: <div className = 'mt-3 font-bold text-lg tracking-wide self-center'>Select a location first.</div>
+        }
+
+    </div>     
   )
 }
 

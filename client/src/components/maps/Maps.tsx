@@ -84,7 +84,7 @@ function Maps() {
 
     return (  
         <div className='w-screen h-screen overflow-hidden'>
-            {loading?<Loading />:<div>
+            {loading?<div className = 'absolute left-1/2 -translate-x-1/2 translate-y-1/2'><Loading /></div>:<div>
                 <MapsNav setSelected={setSelected} datalist={datalist} searchParams = {searchParams} selected = {selected as string} />
                 <MapContainer zoomControl = {false} style = {{
                 }} center={[22.5937, 98.9629]} zoom={5} scrollWheelZoom={true}>
