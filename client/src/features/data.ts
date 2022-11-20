@@ -30,7 +30,6 @@ const initialState: DataStateType<SchemaType> = {
 }
 
 export const fetchData = createAsyncThunk<unknown, string>('data/fetch', async (queryString: string) => {
-
     const response = await axios.get(`/api/v1/data${queryString}`)
     const data = response.data
     return {...data, qString: queryString}

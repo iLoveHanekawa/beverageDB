@@ -13,7 +13,8 @@ function Pagination() {
     const arr = []
     for(let i = page; i > 0 && i >= page - 3; i--) arr.push(i)
     arr.reverse()
-    for(let i = page + 1; i < page + 4 && i <= Math.ceil(total / 10); i++) arr.push(i)
+    for(let i = page + 1; i < page + 4 && i <= Math.ceil(total / 15); i++) arr.push(i)
+    
     const commonObj = { 
         name: searchParams.get('name') || '',
         alcoholPercent: searchParams.get('alcoholPercent') || '',
@@ -22,7 +23,6 @@ function Pagination() {
         microorganisms: searchParams.get('microorganisms') || '',
         place: searchParams.get('place') || ''
     }
-    console.log(commonObj);
     
 
     return (
@@ -61,7 +61,7 @@ function Pagination() {
                     pathname: '',
                     search: `?${createSearchParams({ 
                         ...commonObj,
-                        page: `${Math.min(page + 1, Math.ceil(total / 10))}`
+                        page: `${Math.min(page + 1, Math.ceil(total / 15))}`
                     })}`
                 })
             }} className = 'text-4xl cursor-pointer'/>
@@ -70,7 +70,7 @@ function Pagination() {
                     pathname: '',
                     search: `?${createSearchParams({ 
                         ...commonObj,
-                        page: `${Math.ceil(total / 10)}`
+                        page: `${Math.ceil(total / 15)}`
                     })}`
                 })
             }} className = 'text-4xl cursor-pointer' />

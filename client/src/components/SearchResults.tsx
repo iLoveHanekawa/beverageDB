@@ -21,7 +21,6 @@ function SearchResults() {
     
     const total = useSelector((state: StateType) => state.data.default.total)
     const documents = useSelector((state: StateType) => { return state.data.default })
-    const count = useSelector((state: StateType) => state.data.default.count)
     const loading = useSelector((state: StateType) => { return state.data.loading })
     
     React.useEffect(() => {
@@ -45,7 +44,7 @@ function SearchResults() {
                 <div className = 'pl-10 text-4xl flex flex-col justify-start items-start border-b-2 pb-2 border-gray-800 tracking-wide'>
                     <div className='flex justify-start items-end'>
                         <div className = 'font-bold text-4xl mr-2'>Search Results</div>
-                        <div className = 'text-xl text-gray-400'>{`(${count * (page - 1) + 1} - ${Math.min(total, (page - 1) * count + count)} out of ${total})`}</div>
+                        <div className = 'text-xl text-gray-400'>{`(${15 * (page - 1) + 1} - ${Math.min(total, (page - 1) * 15 + 15)} out of ${total})`}</div>
                     </div>
                     <div className = 'pl-6 pt-1 text-gray-400 text-sm'>{`For search query: { ${searchText} }`}</div>
                     <div className = 'z-20 pl-6 text-gray-400 text-sm'>Need more specific search results?<Link className = 'ml-1 text-red-400 hover:underline tracking-wide' to = '/search'>Search Here</Link></div>
