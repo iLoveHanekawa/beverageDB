@@ -1,12 +1,7 @@
 import React from 'react'
 import SplashNav from '../splash/SplashNav'
-import { AppDispatch } from '../../app/store'
-import { useDispatch } from 'react-redux'
-import { useSearchParams, useNavigate, createSearchParams } from 'react-router-dom'
-import { fetchData } from '../../features/data'
+import { useNavigate, createSearchParams } from 'react-router-dom'
 import SearchItem from './SearchItem'
-
-type AllQueryParamsType = [key: string, value: string][]
 
 function Search() {
     const [formValues, setFormValues] = React.useState({
@@ -17,25 +12,8 @@ function Search() {
         microorganisms: '',
         alcoholPercent: '',
     })
-    const page = '1'
-    const [searchParams, setSearchParams] = useSearchParams()
-    const allQueryParams: AllQueryParamsType = []
-    searchParams.forEach((key, value) => {
-        allQueryParams.push([key, value])
-    })
-
     const navigate = useNavigate()
-
-    let queryString = '?'
-    allQueryParams.forEach(element => {
-        queryString += `${element[1]}=${element[0]}&`
-    });
-
-    const dispatch: AppDispatch = useDispatch()
-    React.useEffect(() => {
-        dispatch(fetchData(allQueryParams))
-    }, [queryString])
-
+    const page = '1'
   return (
     <div className = 'text-white w-screen h-screen'>
         <SplashNav />

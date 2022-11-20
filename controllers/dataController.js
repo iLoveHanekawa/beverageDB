@@ -50,7 +50,7 @@ const getAllData = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     if (reference) {
         queryObj = Object.assign(Object.assign({}, queryObj), { reference: reference });
     }
-    const lim = Number(limit) || 10;
+    const lim = Number(limit) || 15;
     const skip = lim * (Number(page) - 1);
     let data = yield dataModel_1.default.find(queryObj).sort('name');
     let result = { total: data.length };

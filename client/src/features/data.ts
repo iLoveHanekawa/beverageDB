@@ -19,18 +19,17 @@ export type SchemaType = {
 
 type DataStateType<T extends {}> = {
     loading: boolean,
-    default: { total: number, count: number, data: T[], qString: string},
+    default: { total: number, count: number, data: T[]},
     error: string | undefined
 }
 
 const initialState: DataStateType<SchemaType> = {
     loading: false,
-    default: { total: 0, count: 0, data: [], qString: ''},
+    default: { total: 0, count: 0, data: []},
     error: ''
 }
 
 export const fetchData = createAsyncThunk<unknown, string>('data/fetch', async (queryString: string) => {
-    console.log(queryString)
 
     const response = await axios.get(`/api/v1/data${queryString}`)
     const data = response.data
@@ -47,7 +46,7 @@ const dataSlice = createSlice({
         })
         builder.addCase(fetchData.fulfilled, (state, action) => {
             state.loading = false,
-            state.default = action.payload as { total: number, count: number, data: SchemaType[], qString: string}
+            state.default = action.payload as { total: number, count: number, data: SchemaType[]}
             state.error = ''
         })
         builder.addCase(fetchData.rejected, (state, action) => {

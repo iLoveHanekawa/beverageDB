@@ -1,6 +1,6 @@
 import React from 'react'
 
-type HeroButtonProps = {
+type SplashSearchMenuItemProps = {
     browseSelect: string
     setBrowseSelect: React.Dispatch<React.SetStateAction<string>>
     setBrowseOpen: React.Dispatch<React.SetStateAction<boolean>>
@@ -9,7 +9,7 @@ type HeroButtonProps = {
     paramValue: string
 }
 
-function HeroButton(props: HeroButtonProps) {
+function SplashSearchMenuItem(props: SplashSearchMenuItemProps) {
   return (
     <button onClick = {() => {
         props.setBrowseSelect(props.browseValue) 
@@ -20,4 +20,4 @@ function HeroButton(props: HeroButtonProps) {
   )
 }
 
-export default HeroButton
+export default SplashSearchMenuItem

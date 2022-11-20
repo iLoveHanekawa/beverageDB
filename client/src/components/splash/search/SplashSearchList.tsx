@@ -1,5 +1,5 @@
 import React from 'react'
-import HeroButton from '../../hero/HeroButton'
+import SplashSearchMenuItem from './SplashSearchMenuItem'
 
 type SearchListProps = {
     isBrowseOpen: boolean
@@ -14,7 +14,7 @@ const urlParamKeys = ['name', 'starter', 'ingredients', 'place', 'microorganim',
 function SearchList(props: SearchListProps) {
   return (
     <ul className = {props.isBrowseOpen? 'openDropdown': 'closeDropdown'}>
-        <HeroButton 
+        <SplashSearchMenuItem 
             setBrowseSelect = { props.setBrowseSelect }
             setBrowseOpen = { props.setBrowseOpen }
             setParam = {props.setParam}
@@ -22,7 +22,7 @@ function SearchList(props: SearchListProps) {
             paramValue = { urlParamKeys[0] }
             browseValue = {'Name'}
         />
-        <HeroButton 
+        <SplashSearchMenuItem 
             setBrowseSelect = { props.setBrowseSelect }
             setBrowseOpen = { props.setBrowseOpen }
             setParam = {props.setParam}
@@ -30,7 +30,7 @@ function SearchList(props: SearchListProps) {
             paramValue = { urlParamKeys[1] }
             browseValue = {'Starter Culture'}
         />
-        <HeroButton 
+        <SplashSearchMenuItem 
             setBrowseSelect = { props.setBrowseSelect }
             setBrowseOpen = { props.setBrowseOpen }
             setParam = {props.setParam}
@@ -38,7 +38,7 @@ function SearchList(props: SearchListProps) {
             paramValue = { urlParamKeys[2] }
             browseValue = {'Ingredients'}
         />
-        <HeroButton 
+        <SplashSearchMenuItem 
             setBrowseSelect = { props.setBrowseSelect }
             setBrowseOpen = { props.setBrowseOpen }
             setParam = {props.setParam}
@@ -46,7 +46,7 @@ function SearchList(props: SearchListProps) {
             paramValue = { urlParamKeys[3] }
             browseValue = {'Place'}
         />
-        <HeroButton 
+        <SplashSearchMenuItem 
             setBrowseSelect = { props.setBrowseSelect }
             setBrowseOpen = { props.setBrowseOpen }
             setParam = {props.setParam}
@@ -54,7 +54,7 @@ function SearchList(props: SearchListProps) {
             paramValue = { urlParamKeys[4] }
             browseValue = {'Microorganism'}
         />     
-        <HeroButton 
+        <SplashSearchMenuItem 
             setBrowseSelect = { props.setBrowseSelect }
             setBrowseOpen = { props.setBrowseOpen }
             setParam = {props.setParam}

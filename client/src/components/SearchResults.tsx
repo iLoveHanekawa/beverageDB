@@ -1,18 +1,16 @@
 import React from 'react'
 import SplashNav from './splash/SplashNav'
-import { createSearchParams, useParams, Link, useNavigate, useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { StateType, AppDispatch } from '../app/store'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchData } from '../features/data'
-import { MdNavigateNext, MdNavigateBefore } from 'react-icons/md'
 import Loading from '../components/Loading'
+import Pagination from './Pagination'
 
-type AllQueryParamsType = [key: string, value: string][]
 
 function SearchResults() {
 
     const dispatch: AppDispatch = useDispatch()
-    const navigate = useNavigate()
     const [searchParams, setSearchParams] = useSearchParams()
     const page = Number(searchParams.get('page'))
     const [searchText, setSearchText] = React.useState('')
@@ -23,10 +21,8 @@ function SearchResults() {
     
     const total = useSelector((state: StateType) => state.data.default.total)
     const documents = useSelector((state: StateType) => { return state.data.default })
+    const count = useSelector((state: StateType) => state.data.default.count)
     const loading = useSelector((state: StateType) => { return state.data.loading })
-
-    const arr = []
-    for(let i = 1; i <= Math.ceil(total / 10); i++) arr.push(i)
     
     React.useEffect(() => {
         dispatch(fetchData(queryString))
@@ -49,69 +45,27 @@ function SearchResults() {
                 <div className = 'pl-10 text-4xl flex flex-col justify-start items-start border-b-2 pb-2 border-gray-800 tracking-wide'>
                     <div className='flex justify-start items-end'>
                         <div className = 'font-bold text-4xl mr-2'>Search Results</div>
-                        <div className = 'text-xl text-gray-400'>{`(${10 * (page - 1)} - ${Math.min(total, (page - 1) * 10 + 10)} out of ${total})`}</div>
+                        <div className = 'text-xl text-gray-400'>{`(${count * (page - 1) + 1} - ${Math.min(total, (page - 1) * count + count)} out of ${total})`}</div>
                     </div>
-                    <div className = 'pl-6 text-gray-400 text-sm'>{`For search query: { ${searchText} }`}</div>
+                    <div className = 'pl-6 pt-1 text-gray-400 text-sm'>{`For search query: { ${searchText} }`}</div>
                     <div className = 'z-20 pl-6 text-gray-400 text-sm'>Need more specific search results?<Link className = 'ml-1 text-red-400 hover:underline tracking-wide' to = '/search'>Search Here</Link></div>
                 </div>
                 {
                     loading? <Loading />:
-                    <div className = 'flex flex-col justify-center items-start'>
-                        <ul className='grid pl-16 grid-cols-3 border-b-2 border-gray-800 grid-rows-11 w-11/12 mt-10 overflow-y-scroll scrollbar-thin scrollbar-track-rounded-full h-1/4'>
-                            <li className = 'border-b-2 border-gray-800 font-bold tracking-wider mb-5 text-3xl w-10/12 grid row-span-1 col-span-3 grid-rows-1 grid-cols-3'>
-                                <div>NAME</div>
-                                <div>PLACE</div>
-                                <div>ID</div>
+                    <div className = 'flex flex-col justify-center items-start w-screen'>
+                        <ul className='grid grid-cols-3 border-b-2 w-screen px-20 h-3/4 py-12 border-gray-800 grid-rows-11 overflow-y-scroll scrollbar-thin scrollbar-track-rounded-full'>
+                            <li className = 'border-gray-800 font-bold tracking-wider text-3xl grid row-span-1 col-span-3 grid-rows-1 grid-cols-3'>
+                                <div className='border-r-2 border-t-2 border-b border-l-2 py-2 border-gray-800 pl-4'>NAME</div>
+                                <div className='border-r-2 border-t-2 border-b-2 py-2 border-gray-800 pl-4'>PLACE</div>
+                                <div className='border-r-2 border-t-2 border-b-2 py-2 border-gray-800 pl-4'>ID</div>
                             </li>
-                            {documents.data.map((i, index) => <li key = {index} className = 'hover:text-black pl-3 w-10/12 hover:scale-110 rounded-full items-center transition duration-300 hover:bg-white h-12 grid cursor-pointer grid-rows-1 grid-cols-3 row-span-1 col-span-3'>
-                                <div>{i.name}</div>
-                                <div>{i.place}</div>
-                                <div>{i._id}</div>
+                            {documents.data.map((i, index) => <li key = {index} className = {`hover:text-black items-center transition duration-300 hover:bg-white grid cursor-pointer grid-rows-1 grid-cols-3 row-span-1 col-span-3 ${index === documents.data.length - 1? 'border-b-2 border-gray-800': ''}`}>
+                                <div className = 'border-r-2 py-2 h-full border-l-2 border-gray-800 pl-4'>{i.name}</div>
+                                <div className = 'border-r-2 py-2 h-full border-gray-800 ml-4'>{i.place}</div>
+                                <div className = 'border-r-2 py-2 h-full border-gray-800 ml-4'>{i._id}</div>
                             </li>)}
                         </ul>
-                        <div className = 'justify-start items-center ml-10 mb-10 flex w-full mt-10'>
-                            <MdNavigateBefore onClick = {() => {
-                                navigate({
-                                    pathname: '',
-                                    search: `?${createSearchParams({ 
-                                        page: `${Math.max(page - 1, 1)}`,
-                                        name: searchParams.get('name') || '',
-                                        alcoholPercent: searchParams.get('alcoholPercent') || '',
-                                        ingredients: searchParams.get('ingredients') || '',
-                                        starterCulture: searchParams.get('starterCulture') || '',
-                                        microorganisms: searchParams.get('microorganisms') || ''
-                                    })}`
-                                })
-                            }} className = 'text-white text-3xl cursor-pointer' />
-                            <ul className = 'flex'>{arr.map((num: number, i: number) => {
-                                return <li onClick = {() => {
-                                    navigate({
-                                        pathname: '',
-                                        search: `?${createSearchParams({ 
-                                            page: `${num}`,
-                                            name: searchParams.get('name') || '',
-                                            alcoholPercent: searchParams.get('alcoholPercent') || '',
-                                            ingredients: searchParams.get('ingredients') || '',
-                                            starterCulture: searchParams.get('starterCulture') || '',
-                                            microorganisms: searchParams.get('microorganisms') || ''
-                                        })}`
-                                    })
-                                }} key = {i} className = {`cursor-pointer mx-4 ${num === page? 'text-black bg-white px-2 rounded-md': ''}`}>{num}</li>
-                            })}</ul>
-                            <MdNavigateNext onClick = {() => {
-                                navigate({
-                                    pathname: '',
-                                    search: `?${createSearchParams({ 
-                                        page: `${Math.min(page + 1, Math.ceil(total / 10))}`,
-                                        name: searchParams.get('name') || '',
-                                        alcoholPercent: searchParams.get('alcoholPercent') || '',
-                                        ingredients: searchParams.get('ingredients') || '',
-                                        starterCulture: searchParams.get('starterCulture') || '',
-                                        microorganisms: searchParams.get('microorganisms') || ''
-                                    })}`
-                                })
-                            }} className = 'text-3xl'/>
-                        </div>
+                        <Pagination />
                     </div>
                 }
             </div>

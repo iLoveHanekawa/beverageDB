@@ -39,7 +39,7 @@ export const getAllData = async (req: Request, res: Response) => {
         queryObj = { ...queryObj, reference: reference }
     }
 
-    const lim = Number(limit) || 10
+    const lim = Number(limit) || 15
     const skip = lim * (Number(page )- 1) 
 
     let data: {}[] = await dataModel.find(queryObj).sort('name')
