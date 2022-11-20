@@ -48,18 +48,6 @@ nav a.active {
   @apply text-gray-200 hover:text-white py-1 pl-3 transition duration-300
 }
 
-.itemField {
-  @apply row-span-1 col-span-3 grid grid-cols-3
-}
-
-.fieldStyle {
-  @apply text-gray-200 bg-gray-800 border-b border-gray-700 py-5 px-5 col-span-1
-}
-
-.itemStyle {
-  @apply text-gray-600 col-span-2 self-center py-5 px-6 border border-gray-100
-}
-
 .news {
   @apply hover:underline hover:scale-105 hover:text-gray-700 transition duration-300 text-sm px-8 pb-7
 }

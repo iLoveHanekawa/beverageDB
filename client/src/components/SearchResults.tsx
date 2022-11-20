@@ -1,6 +1,6 @@
 import React from 'react'
 import SplashNav from './splash/SplashNav'
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams, useNavigate } from 'react-router-dom'
 import { StateType, AppDispatch } from '../app/store'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchData } from '../features/data'
@@ -10,6 +10,7 @@ import Pagination from './Pagination'
 
 function SearchResults() {
 
+    const navigate = useNavigate()
     const dispatch: AppDispatch = useDispatch()
     const [searchParams, setSearchParams] = useSearchParams()
     const page = Number(searchParams.get('page'))
@@ -52,13 +53,15 @@ function SearchResults() {
                 {
                     loading? <Loading />:
                     <div className = 'flex flex-col justify-center items-start w-screen'>
-                        <ul className='grid grid-cols-3 border-b-2 w-screen px-20 h-3/4 py-12 border-gray-800 grid-rows-11 overflow-y-scroll scrollbar-thin scrollbar-track-rounded-full'>
+                        <ul className='grid grid-cols-3 border-b-2 w-screen px-20 py-12 border-gray-800 grid-rows-11 overflow-y-scroll scrollbar-thin scrollbar-track-rounded-full'>
                             <li className = 'border-gray-800 font-bold tracking-wider text-3xl grid row-span-1 col-span-3 grid-rows-1 grid-cols-3'>
                                 <div className='border-r-2 border-t-2 border-b border-l-2 py-2 border-gray-800 pl-4'>NAME</div>
                                 <div className='border-r-2 border-t-2 border-b-2 py-2 border-gray-800 pl-4'>PLACE</div>
                                 <div className='border-r-2 border-t-2 border-b-2 py-2 border-gray-800 pl-4'>ID</div>
                             </li>
-                            {documents.data.map((i, index) => <li key = {index} className = {`hover:text-black items-center transition duration-300 hover:bg-white grid cursor-pointer grid-rows-1 grid-cols-3 row-span-1 col-span-3 ${index === documents.data.length - 1? 'border-b-2 border-gray-800': ''}`}>
+                            {documents.data.map((i, index) => <li onClick = {() => {
+                                navigate(`/beverage/${i._id}`)
+                            }} key = {index} className = {`hover:text-black items-center transition duration-300 hover:bg-white grid cursor-pointer grid-rows-1 grid-cols-3 row-span-1 col-span-3 ${index === documents.data.length - 1? 'border-b-2 border-gray-800': ''}`}>
                                 <div className = 'border-r-2 py-2 h-full border-l-2 border-gray-800 pl-4'>{i.name}</div>
                                 <div className = 'border-r-2 py-2 h-full border-gray-800 ml-4'>{i.place}</div>
                                 <div className = 'border-r-2 py-2 h-full border-gray-800 ml-4'>{i._id}</div>

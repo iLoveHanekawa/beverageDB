@@ -16,28 +16,25 @@ type MapsNavProps = {
     setSelected: React.Dispatch<React.SetStateAction<string | undefined>>
 }
 
-type AllQueryParamsType = [key: string, value: string][]
 
 function MapsNav(props: MapsNavProps) {
 
     const dispatch: AppDispatch = useDispatch()
-    const allQueryParams: AllQueryParamsType = []
     const navigate = useNavigate()
     let queryString = '?'
     props.searchParams.forEach((key, value) => {
         queryString += `${value}=${key}&`
-        allQueryParams.push([key, value])
     })
     const loading = useSelector((state: StateType) => (state.data.loading))
     
     React.useEffect(() => {
-        if(props.datalist.includes(props.searchParams.get('place') as string)) dispatch(fetchData(allQueryParams))
+        if(props.datalist.includes(props.searchParams.get('place') as string)) dispatch(fetchData(queryString))
         props.setSelected(() => {
             let state = props.searchParams.get('place') as string
             if(props.datalist.includes(state)) return state
             else return defaultText
         })
-    }, [props.selected])
+    }, [queryString])
 
     const data = useSelector((state: StateType) => state.data.default)
     const [inputText, setInputText] = React.useState('')
