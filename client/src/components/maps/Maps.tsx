@@ -51,7 +51,7 @@ function Maps() {
         x++;
         if(!datalist.includes(feature?.properties.NAME_1)) datalist.push(feature?.properties.NAME_1)
         return {
-            fillColor: colorArray[colorArray.length - 1 - x],
+            fillColor: colorArray[x % (colorArray.length)],
             fillOpacity: selected === feature?.properties.NAME_1? 0.8: 0.3,
             color: "gray",
             weight: selected === feature?.properties.NAME_1? 2: 0.3
