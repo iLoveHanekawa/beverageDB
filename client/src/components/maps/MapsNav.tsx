@@ -67,7 +67,7 @@ function MapsNav(props: MapsNavProps) {
             }} className = 'hover:scale-125 transition duration-300 text-5xl cursor-pointer' />
             <div className = 'flex flex-col justify-center'>
                 <div className = 'font-bold'>Maps</div>
-                <div className = 'text-gray-300 text-sm'>{props.selected === 'Enter valid location'? `Selected location: None`:`Selected location: ${props.selected}` }</div>
+                <div className = 'text-gray-300 text-sm'>{props.selected === 'Enter valid location'? `Selected location: None`:`Find on Google Maps: `}{props.selected !== 'Enter valid location' && <a target={'_blank'} href={`https://www.google.com/maps/place/${props.selected}`} className = 'hover:underline text-cyan-500'>{props.selected}</a>}</div>
             </div>
         </div>
         <form onSubmit={ submitForm } className='mt-5 pb-4 pl-3 border-b-2 border-gray-800 flex items-center'>
@@ -86,14 +86,13 @@ function MapsNav(props: MapsNavProps) {
         {
             props.selected !== 'Enter valid location'? <div>   
                 <div className = 'flex flex-col text-lg ml-4 mt-3 border-b-2 border-gray-800 justify-center'>
-                    <div className = 'tracking-wide text-2xl'>{`Beverages`}</div>
+                    <div className = 'tracking-wide font-bold text-2xl'>{`Beverages in `}<span className = 'text-red-500'>{props.selected}</span></div>
                     <div className = 'ml-3 text-sm text-gray-300'>{`Search results: ${data.data.length} hits`}</div>
-                    <div className = 'text-sm ml-6 text-gray-300'>{`In ${props.selected}`}</div>
                 </div>
                 {
                     loading? <div><Loading /></div>:
                     <ul className = 'flex flex-col border-2 border-gray-800 mt-5 mx-2 scrollbar-thin h-96 scrollbar-thumb-rounded-full scrollbar-thumb-gray-300 overflow-x-hidden overflow-y-scroll'>
-                        {data.data.map((item, i) => <li className = 'py-2 pl-2 hover:text-black transition duration-300 hover:bg-white' key = {i}>
+                        {data.data.map((item, i) => <li className = 'py-2 pl-2 hover:text-black transition duration-300 hover:bg-white cursor-pointer' key = {i}>
                             <div className = '' onClick = {() => {
                                 navigate(`/beverage/${item._id}`)
                             }}>{`${item.name}`}</div>
