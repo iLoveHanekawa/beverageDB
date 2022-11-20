@@ -2,12 +2,14 @@ import { configureStore } from '@reduxjs/toolkit'
 import { dataReducer } from '../features/data'
 import { textReducer} from '../features/searchText'
 import { starterReducers } from '../features/Starter/starter'
+import { geoJSONReducers } from '../features/geoJSON'
 
 export const store = configureStore({
     reducer: {
         data: dataReducer,
         text: textReducer,
-        starter: starterReducers
+        starter: starterReducers,
+        geoJSON: geoJSONReducers
     }
 })
 
