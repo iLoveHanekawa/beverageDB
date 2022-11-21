@@ -12,7 +12,7 @@ function SplashNav() {
   return (
     <div className = 'w-screen absolute top-3 z-20 flex justify-between items-start pr-5'>
       <button onClick = { () => { navigate('/') }}  className = 'flex pl-5 items-center gap-2'>
-          <GiWineGlass className = 'text-white text-xl'/>
+          <GiWineGlass className = '-rotate-45 text-white text-xl'/>
           <div className = 'text-white text-xl'>BeverageDB</div>
       </button>
       <div className = 'flex'>
