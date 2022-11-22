@@ -105,7 +105,7 @@ function MapsNav(props: MapsNavProps) {
                         </li>)}
                     </ul>
                 }
-            </div>: <div className = 'mt-3 font-bold text-lg tracking-wide self-center'>Select a location first.</div>
+            </div>: <div className = 'pb-10 font-bold text-lg tracking-wide h-full flex justify-center items-center w-full'>Select a location first.</div>
         }
 
     </div>     

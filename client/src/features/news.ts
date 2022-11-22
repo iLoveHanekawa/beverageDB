@@ -2,12 +2,12 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export type NewsType = { 
-    headline: { 
-        main: string 
-    }, web_url: string
-    multimedia: {
-        url: string
-    }[]
+    webTitle: string,
+    webUrl: string,
+    fields: {
+        trailText: string,
+        thumbnail: string
+    }
 }
 
 type NewsData = {
@@ -31,7 +31,7 @@ const initialState = {
 export const fetchNews = createAsyncThunk<unknown, string>('news/fetch', async(url: string) => {
     const response = await axios.get(url)
     const data = await response.data
-    return data.response.docs
+    return data.response.results
 })
 
 const newsSlice = createSlice({

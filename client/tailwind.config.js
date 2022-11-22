@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      brightness: {
+        25: .25
+      },
       width: {
         nvw: "97vw"
       },

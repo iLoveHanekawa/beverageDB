@@ -1,6 +1,6 @@
 import React from 'react'
 import { IconType } from 'react-icons'
-import { useNavigate } from 'react-router-dom'
+import { createSearchParams, useNavigate } from 'react-router-dom'
 
 type GridItemProps = {
     color: string
@@ -21,7 +21,9 @@ function GridItem(props: GridItemProps) {
             <div className = 'text-gray-300 row-span-1 text-sm'>Some information about this section. More information about this section. Even more information about this section.</div>
             <div className = {`${props.color} transform relative hover:scale-105 duration-300 row-span-4 rounded-lg`}>
                 <div onClick = {() => {
-                    navigate(props.route)
+                    navigate({pathname: props.route, search: `?${createSearchParams({
+                        page: '1'
+                    })}`})
                 }} onMouseEnter={() => {
                     setIsHovering(true)
                 }} onMouseLeave = {() => {
