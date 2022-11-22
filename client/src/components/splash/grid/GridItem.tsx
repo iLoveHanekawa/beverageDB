@@ -16,13 +16,13 @@ function GridItem(props: GridItemProps) {
     const [isHovering, setIsHovering] = React.useState(false)
 
   return (
-    <div onClick = {() => {
-        navigate(props.route)
-    }} className = 'row-span-1 col-span-1 shadow-inner'>
+    <div className = 'row-span-1 col-span-1 shadow-inner'>
         <div className = 'grid grid-rows-5 grid-cols-1 h-full'>
             <div className = 'text-gray-300 row-span-1 text-sm'>Some information about this section. More information about this section. Even more information about this section.</div>
             <div className = {`${props.color} transform relative hover:scale-105 duration-300 row-span-4 rounded-lg`}>
-                <div onMouseEnter={() => {
+                <div onClick = {() => {
+                    navigate(props.route)
+                }} onMouseEnter={() => {
                     setIsHovering(true)
                 }} onMouseLeave = {() => {
                     setIsHovering(false)

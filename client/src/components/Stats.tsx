@@ -2,15 +2,7 @@ import React from 'react'
 import {Chart as ChartJS, defaults, PointElement, Legend, Tooltip, LineElement, ArcElement, CategoryScale, LinearScale, BarElement} from 'chart.js'
 import { Chart } from 'react-chartjs-2'
 
-type StatsPropsType = {
-  setRenderHero: React.Dispatch<React.SetStateAction<boolean>>
-}
-
-function Stats(props: StatsPropsType) {
-  
-  React.useEffect(() => { 
-    props.setRenderHero(false)
-  }, [])
+function Stats() {
 
   ChartJS.register(ArcElement)
   ChartJS.register(CategoryScale)

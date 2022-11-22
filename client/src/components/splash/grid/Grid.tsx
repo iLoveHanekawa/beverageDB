@@ -16,7 +16,7 @@ function Grid() {
         <GridItem color = {'bg-pink-300 hover:bg-pink-400'} Icon = { BsBarChartFill } IconArt = {ImStatsBars} itemTitle = {'Stats'} route = {'/stats'}/>        
         <GridItem color = {'bg-yellow-300 hover:bg-yellow-400'} Icon = {BiSearch} IconArt = {BiSearch} itemTitle = {'Search'} route = {'/search'} />
         <GridItem color = {'bg-green-300 hover:bg-green-400'} Icon = { FaBacterium } IconArt = {FaBacteria} itemTitle = {'Starters'} route = {'/starters'} />        
-        <GridItem color = {'bg-red-300 hover:bg-red-400'} Icon = {HiOutlineNewspaper } IconArt = {HiNewspaper} itemTitle = {'News'} route = {'/maps'}/>        
+        <GridItem color = {'bg-red-300 hover:bg-red-400'} Icon = {HiOutlineNewspaper } IconArt = {HiNewspaper} itemTitle = {'News'} route = {'/news'}/>        
     </div>
   )
 }

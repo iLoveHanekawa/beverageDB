@@ -3,13 +3,15 @@ import { dataReducer } from '../features/data'
 import { textReducer} from '../features/searchText'
 import { starterReducers } from '../features/Starter/starter'
 import { geoJSONReducers } from '../features/geoJSON'
+import { newsReducers } from '../features/news'
 
 export const store = configureStore({
     reducer: {
         data: dataReducer,
         text: textReducer,
         starter: starterReducers,
-        geoJSON: geoJSONReducers
+        geoJSON: geoJSONReducers,
+        news: newsReducers
     }
 })
 
