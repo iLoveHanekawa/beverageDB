@@ -21,8 +21,8 @@ function News() {
             <SplashNav />
             <div className = 'flex flex-col top-10 absolute w-full'>
                 <div className = 'text-white text-4xl fot-bold ml-10 my-10 border-b-2 pb-2 border-gray-800 w-full tracking-wide'>News</div>
+                <Grid />
             </div>
-            <Grid />
         </div>
   )
 }
