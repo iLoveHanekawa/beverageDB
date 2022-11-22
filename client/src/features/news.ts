@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-type NewsType = { 
+export type NewsType = { 
     headline: { 
         main: string 
     }, web_url: string
@@ -20,7 +20,7 @@ type NewsData = {
 }
 
 const initialState = {
-    loading: false,
+    loading: true,
     error: '',
     default: {
         count: 0,

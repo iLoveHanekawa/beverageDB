@@ -9,7 +9,8 @@ module.exports = {
         nvw: "97vw"
       },
       height: {
-        nvh: "95vh"
+        nvh: "95vh",
+        hvh: "50vh"
       },
       colors: {
         purple: {
