@@ -27,7 +27,7 @@ function News() {
             <div className = 'flex flex-col top-10 absolute w-full'>
                 <div className = 'text-white text-4xl fot-bold ml-10 my-10 border-b-2 pb-2 border-gray-800 w-full tracking-wide'>News</div>
                 {loading? <Loading />: <Grid />}
-                <Pagination page = {Number(page)} />
+                {!loading && <Pagination page = {Number(page)} />}
             </div>
         </div>
   )
