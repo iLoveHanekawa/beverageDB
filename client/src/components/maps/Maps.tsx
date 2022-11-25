@@ -39,7 +39,7 @@ function Maps() {
     
     React.useEffect(() => {
         setSelected("Click on a location")
-        dispatch(fetchgeoJSONData('/api/v1/geojson'))
+        dispatch(fetchgeoJSONData('https://beveragedb-production.up.railway.app/api/v1/geojson'))
     }, [])
 
     let x = -1;

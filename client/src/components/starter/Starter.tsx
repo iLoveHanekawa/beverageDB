@@ -11,7 +11,7 @@ function Starter() {
     const dispatch: AppDispatch = useDispatch()
     const starterArray = useSelector((state: StateType) => state.starter.default)
     React.useEffect(() => {
-        dispatch(fetchData('/api/v1/starter')) 
+        dispatch(fetchData('https://beveragedb-production.up.railway.app/api/v1/starter')) 
     }, [])
 
     return (

@@ -14,7 +14,7 @@ function Item() {
 
     React.useEffect(() => {
         const getItem = async () => {
-            const res = await axios.get(`/api/v1/data/${userId}`)
+            const res = await axios.get(`https://beveragedb-production.up.railway.app/api/v1/data/${userId}`)
             const data = res.data
             setItem(data.data)
         }

@@ -22,7 +22,7 @@ function StarterItem() {
             setData(data.starter)
             console.log(data)
         }
-        fetchData(`/api/v1/starter/${starterId}`)
+        fetchData(`https://beveragedb-production.up.railway.app/api/v1/starter/${starterId}`)
     }, [])
 
     return (
