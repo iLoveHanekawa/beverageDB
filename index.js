@@ -40,6 +40,7 @@ const path = __importStar(require("path"));
 require("dotenv/config");
 require("express-async-errors");
 const connectDB_1 = require("./db/connectDB");
+const cors_1 = __importDefault(require("cors"));
 const dataRouter_1 = require("./routers/dataRouter");
 const starterRouter_1 = require("./routers/starterRouter");
 const countryRouter_1 = require("./routers/countryRouter");
@@ -48,6 +49,7 @@ const geoJSONRouter_1 = require("./routers/geoJSONRouter");
 const app = (0, express_1.default)();
 const port = Number(process.env.PORT) || 5000;
 app.use(express_1.default.json());
+app.use((0, cors_1.default)({ origin: true, credentials: true }));
 app.use(express_1.default.static(path.join(__dirname, '/client/dist')));
 app.get('/', (req, res) => {
     res.send('hi mom');
