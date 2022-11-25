@@ -21,9 +21,9 @@ function GridItem(props: GridItemProps) {
             <div className = 'text-gray-300 row-span-1 text-sm'>Some information about this section. More information about this section. Even more information about this section.</div>
             <div className = {`${props.color} transform relative hover:scale-105 duration-300 row-span-4 rounded-lg`}>
                 <div onClick = {() => {
-                    navigate({pathname: props.route, search: `?${createSearchParams({
+                    navigate({pathname: props.route, search: `?${createSearchParams(props.route === '/news'? {
                         page: '1'
-                    })}`})
+                    }: {})}`})
                 }} onMouseEnter={() => {
                     setIsHovering(true)
                 }} onMouseLeave = {() => {

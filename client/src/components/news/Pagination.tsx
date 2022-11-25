@@ -1,8 +1,6 @@
 import React from 'react'
 import {MdNavigateNext, MdNavigateBefore, MdLastPage, MdFirstPage} from 'react-icons/md'
-import { useNavigate, createSearchParams, useSearchParams } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-import { StateType } from '../../app/store'
+import { useNavigate, createSearchParams } from 'react-router-dom'
 
 type PaginationProps = {
     page: number
@@ -10,7 +8,6 @@ type PaginationProps = {
 
 function Pagination(props: PaginationProps) {
 
-    const [searchParams, setSearchParams] = useSearchParams()
     const navigate = useNavigate()
     const arr = []
     for(let i = props.page; i > 0 && i >= props.page - 3; i--) arr.push(i)

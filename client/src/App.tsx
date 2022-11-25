@@ -21,8 +21,6 @@ export type NewsType = {
 
 function App() {
   
-  const [news, setNews] = React.useState<NewsType[]>([])
-
   return (
     <div className = 'h-screen overflow-y-scroll font-nunito scrollbar-thin bg-black scrollbar-thumb-gray-300 scrollbar-thumb-rounded-xl'>
       <Routes>
@@ -38,7 +36,6 @@ function App() {
         <Route path = '/news' element = {<News />} />
         <Route path = '/starter/:starterId' element = {<StarterItem />} />
       </Routes>
-      {/* <BottomNavBar /> */}
     </div>
   )
 }
