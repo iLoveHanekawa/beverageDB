@@ -14,7 +14,7 @@ const app = express()
 const port = Number(process.env.PORT) || 5000
 
 app.use(express.json())
-app.use(cors({ origin: true, credentials: true}))
+app.use(cors( { origin: true, credentials: true } ))
 app.use(express.static(path.join(__dirname, '/client/dist')))
 
 app.get('/', (req: Request, res: Response) => {
