@@ -31,7 +31,7 @@ function Stats() {
     <div className = 'w-full h-full justify-center flex flex-col relative items-center'> 
       <div className = 'absolute text-white text-lg font-bold top-10 left-10 flex justify-start items-center gap-3'>
         <MdNavigateBefore onClick = {() => { navigate('/') }} className = 'text-3xl hover:scale-110 transition duration-300 cursor-pointer' />Just a demo, currently in development.</div>
-      <div className='w-4/5 bg-white'>
+      <div className={`w-4/5 bg-white ${loading? 'bg-black': 'bg-white'}`}>
         {loading? <Loading />: <Chart type = {data[0].chartType as keyof ChartTypeRegistry} ref = {chartRef} datasetIdKey='id' data={data[0].chartData} />}
       </div>
     </div>
