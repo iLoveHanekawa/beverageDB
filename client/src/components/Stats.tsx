@@ -41,13 +41,13 @@ function Stats() {
     <div className = 'w-full h-full justify-start flex flex-col relative overflow-x-hidden items-center'> 
       <SplashNav />
       <div className = 'text-white top-10 absolute text-4xl font-bold ml-20 my-10 border-b-2 pb-2 border-gray-800 w-full tracking-wide'>Stats</div>
-      <div className = 'ml-20 flex items-center absolute top-36 left-0 text-white justify-start'>
+      {!loading && <div className = 'ml-20 flex items-center absolute top-36 left-0 text-white justify-start'>
         <button onClick = {() => {setIndex(0)}} className = {`${index === 0? 'statsBtnSelected': 'statsBtn'}`}>{data[0].chartData.datasets[0].label}</button>
         <button onClick = {() => {setIndex(1)}} className = {`${index === 1? 'statsBtnSelected': 'statsBtn'}`}>{data[1].chartData.datasets[0].label}</button>
         <button onClick = {() => {setIndex(2)}} className = {`${index === 2? 'statsBtnSelected': 'statsBtn'}`}>{data[2].chartData.datasets[0].label}</button>
         <button onClick = {() => {setIndex(3)}} className = {`${index === 3? 'statsBtnSelected': 'statsBtn'}`}>{data[3].chartData.datasets[0].label}</button>
         <button onClick = {() => {setIndex(4)}} className = {`${index === 4? 'statsBtnSelected': 'statsBtn'}`}>{data[4].chartData.datasets[0].label}</button>
-      </div>
+      </div>}
       <div className={`${data[index].chartType === 'doughnut' || data[index].chartType === 'pie'?'w-2/6': 'w-4/6'} rounded-md overflow-hidden top-48 absolute ${loading? 'bg-black': 'bg-white'}`}>
         {loading? <Loading />: <Chart type = {data[index].chartType as keyof ChartTypeRegistry} ref = {chartRef} datasetIdKey='id' data={data[index].chartData} />}
       </div>
