@@ -18,12 +18,15 @@ const charts = async () => {
     const topoJSONres = await axios.get('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
     const topoJSON = await topoJSONres.data    
     let countryKeys: string[] = topoJSON.objects.countries.geometries.map((i: { properties: {name: string}}) => i.properties.name)
+    const acKeys = [2, 4, 8, 16, 32, 64, 100]
     const tasteKeys = ['Fruity', 'Strong', 'Sweet', 'Sour', 'Bitter', 'Acidic', 'Spicy']
     const ingredientKeys = ["Rice", "Maize", "Barley", "Wheat", "Millet", "Coconut", "Grapes", "Apples", "Cashew", "Honey", "Corn", "Sorghum", "Milk", "Ginger", "Sugarcane", "Cinnamon", "Orange", "Berries", "Almond"]
     const starterKeys = ['Ipoh', 'Hamei', 'Bakhar', 'Opop', 'Thiat', 'Humao', 'Pitha', 'Phab', 'Ranu', 'Yeast', 'Chamri', 'Khai', 'Dwadim', 'Kekhri', 'Marcha']
-    const getArr = async (key: string, keyArr: string[]) => {
+    const getArr = async (key: string, keyArr: string[] | number[]) => {
         const promiseArr = keyArr.map(i => {
-            const response = dataModel.find({ [key]: { $regex: i, $options: 'i' } })
+            let response
+            if(key === 'alcoholContent') response = dataModel.find({ minAC: { $lt: i } })
+            else response = dataModel.find({ [key]: { $regex: i, $options: 'i' } })
             return response
         })
         const arr = await Promise.all(promiseArr)
@@ -40,57 +43,56 @@ const charts = async () => {
         }
         return val !== 0 
     })
-    console.log(newCountryKeys);
-    
     const tasteNums = await getArr('tasteAndOdour', tasteKeys)
     const ingredientNums = await getArr('ingredients', ingredientKeys)
     const starterNums = await getArr('starter', starterKeys)
-    
+    const alcoholContentNums = await getArr('alcoholContent', acKeys)
+
     return [
-        // {
-        //     chartType: 'bar',      
-        //     chartData: {
-        //         labels: tasteKeys,
-        //         datasets: [
-        //             {
-        //                 id: 0,
-        //                 label: 'Texture',
-        //                 data: tasteNums,
-        //                 backgroundColor: ['#ffca28', '#e1bee7', '#d1c4e9', '#ffcdd2', '#bbdefb', '#dcedc8', '#fff9c4']
-        //             },
-        //         ],
-        //     }
-        // },
-        // {
-        //     chartType: 'bar',
-        //     chartData: {
-        //         labels: ingredientKeys,
-        //         datasets: [
-        //             {
-        //                 id: 0,
-        //                 label: 'list 1',
-        //                 data: ingredientNums,
-        //                 backgroundColor: ['#f06292', 'purple', 'yellow']
-        //             }
-        //         ],
-        //     }
-        // },
-        // {
-        //     chartType: 'bar',
-        //     chartData: {
-        //         labels: starterKeys,
-        //         datasets: [
-        //             {
-        //                 id: 0,
-        //                 label: 'Starter Culture',
-        //                 data: starterNums,
-        //                 backgroundColor: ['#f06292', 'purple', 'yellow']
-        //             }
-        //         ],
-        //     }
-        // },
+        {
+            chartType: 'pie',      
+            chartData: {
+                labels: tasteKeys,
+                datasets: [
+                    {
+                        id: 0,
+                        label: 'Taste',
+                        data: tasteNums,
+                        backgroundColor: colorArray
+                    },
+                ],
+            }
+        },
         {
             chartType: 'bar',
+            chartData: {
+                labels: ingredientKeys,
+                datasets: [
+                    {
+                        id: 0,
+                        label: 'Ingredient',
+                        data: ingredientNums,
+                        backgroundColor: colorArray
+                    }
+                ],
+            }
+        },
+        {
+            chartType: 'doughnut',
+            chartData: {
+                labels: starterKeys,
+                datasets: [
+                    {
+                        id: 0,
+                        label: 'Starter Culture',
+                        data: starterNums,
+                        backgroundColor: colorArray
+                    }
+                ],
+            }
+        },
+        {
+            chartType: 'line',
             chartData: {
                 labels: newCountryKeys,
                 datasets: [
@@ -98,6 +100,20 @@ const charts = async () => {
                         id: 0,
                         label: 'Country',
                         data: countryNums,
+                        backgroundColor: colorArray
+                    }
+                ],
+            }
+        },
+        {
+            chartType: 'bar',
+            chartData: {
+                labels: acKeys.map(i => `Less than ${String(i)}%`),
+                datasets: [
+                    {
+                        id: 0,
+                        label: 'Alcohol Content in Percent',
+                        data: alcoholContentNums,
                         backgroundColor: colorArray
                     }
                 ],

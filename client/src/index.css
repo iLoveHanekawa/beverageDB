@@ -55,3 +55,11 @@ nav a.active {
 .leaflet-container {
   @apply h-screen absolute top-0 z-0 w-screen left-0
 }
+
+.statsBtn {
+  @apply bg-gray-800 text-gray-500 px-3 mr-4 py-1 text-xs rounded-sm hover:scale-110 transition duration-300 cursor-pointer z-20
+}
+
+.statsBtnSelected {
+  @apply bg-gray-800 text-white px-3 mr-4 py-1 text-xs rounded-sm hover:scale-110 transition duration-300 cursor-pointer z-20
+}
