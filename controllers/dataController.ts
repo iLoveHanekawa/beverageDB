@@ -33,7 +33,7 @@ export const getAllData = async (req: Request, res: Response) => {
         queryObj = { ...queryObj, tasteAndOdour: tasteAndOdour }
     }
     if(texture) {
-        queryObj = { ...queryObj, texture: texture }
+        queryObj = { ...queryObj, texture: {$regex: texture, $options: 'i'} }
     }
     if(reference) {
         queryObj = { ...queryObj, reference: reference }

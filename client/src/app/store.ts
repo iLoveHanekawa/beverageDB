@@ -4,6 +4,7 @@ import { textReducer} from '../features/searchText'
 import { starterReducers } from '../features/Starter/starter'
 import { geoJSONReducers } from '../features/geoJSON'
 import { newsReducers } from '../features/news'
+import { statsReducers } from '../features/stats'
 
 export const store = configureStore({
     reducer: {
@@ -11,7 +12,8 @@ export const store = configureStore({
         text: textReducer,
         starter: starterReducers,
         geoJSON: geoJSONReducers,
-        news: newsReducers
+        news: newsReducers,
+        stats: statsReducers
     }
 })
 

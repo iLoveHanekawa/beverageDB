@@ -45,7 +45,7 @@ const getAllData = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         queryObj = Object.assign(Object.assign({}, queryObj), { tasteAndOdour: tasteAndOdour });
     }
     if (texture) {
-        queryObj = Object.assign(Object.assign({}, queryObj), { texture: texture });
+        queryObj = Object.assign(Object.assign({}, queryObj), { texture: { $regex: texture, $options: 'i' } });
     }
     if (reference) {
         queryObj = Object.assign(Object.assign({}, queryObj), { reference: reference });

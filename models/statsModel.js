@@ -7,7 +7,7 @@ const mongoose_1 = __importDefault(require("mongoose"));
 //thank you https://davidpiesse.github.io/tailwind-md-colours/
 const statsSchema = new mongoose_1.default.Schema({
     chartData: {
-        label: {
+        labels: {
             type: [String]
         },
         datasets: {

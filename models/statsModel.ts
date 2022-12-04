@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 
 const statsSchema = new mongoose.Schema({
     chartData: {
-        label: {
+        labels: {
             type: [String]
         },
         datasets: {

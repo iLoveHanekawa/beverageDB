@@ -1,20 +1,24 @@
 import { createSlice, createAsyncThunk, ActionReducerMapBuilder } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const fetchData = createAsyncThunk('stats/fetch', async (url: string) => {
+export const fetchData = createAsyncThunk('stats/fetch', async (url: string) => {
     const response = await axios.get(url)
     const data = await response.data
+    console.log(data);
     return data.allCharts
 })
 
 type StatsType = {
-    label: string[],
-    datasets: [{
-        id: number,
-        label: string,
-        data: number[],
-        backgroundColor: string[]
-    }]
+    chartType: string,
+    chartData: {
+        label: string[],
+        datasets: [{
+            id: number,
+            label: string,
+            data: number[],
+            backgroundColor: string[]
+        }]
+    }
 }
 
 type StatsDataType = {
@@ -27,7 +31,7 @@ type StatsDataType = {
 }
 
 const initialState: StatsDataType = {
-    loading: false,
+    loading: true,
     error: '',
     default: {
         count: 0,
@@ -41,7 +45,8 @@ const statsSlice = createSlice({
     reducers: {},
     extraReducers: (builder: ActionReducerMapBuilder<StatsDataType>) => {
         builder.addCase(fetchData.fulfilled, (state, action) => {
-            state.default.count = action.payload.allCharts.length
+            state.default.count = action.payload.length
+            state.default.data = action.payload            
             state.loading = false
         })
         builder.addCase(fetchData.rejected, (state, action) => {
