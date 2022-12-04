@@ -1,7 +1,6 @@
 import React from 'react'
 import {Chart as ChartJS, registerables, PointElement, Legend, Tooltip, LineElement, ArcElement, CategoryScale, LinearScale, BarElement, ChartTypeRegistry} from 'chart.js'
 import { Chart } from 'react-chartjs-2'
-import { useNavigate } from 'react-router-dom'
 import 'chart.js/auto'
 import { StateType, AppDispatch } from '../app/store'
 import { useSelector, useDispatch } from 'react-redux'

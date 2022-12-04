@@ -8,7 +8,10 @@ type SearchItemProps = {
         ingredients: string;
         place: string;
         microorganisms: string;
-        alcoholPercent: string;
+        minAC: string;
+        maxAC: string
+        minFT: string,
+        maxFT: string
     }>>
     title: string
     objKey: string

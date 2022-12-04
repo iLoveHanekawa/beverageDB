@@ -10,7 +10,10 @@ function Search() {
         ingredients: '',
         place: '',
         microorganisms: '',
-        alcoholPercent: '',
+        minAC: '',
+        maxAC: '',
+        minFT: '',
+        maxFT: ''
     })
     const navigate = useNavigate()
     const page = '1'
@@ -22,7 +25,7 @@ function Search() {
             <form onSubmit={e => {
                 e.preventDefault()
                 navigate({ pathname: '/beverages/search', search: `?${createSearchParams({...formValues, page: page})}` })
-            }} className = 'flex flex-col w-1/3 self-center mt-10'>
+            }} className = 'flex flex-col w-2/4 self-center mt-10'>
                 <div className='tracking-wide border-b-2 border-gray-800 pb-3 flex mb-10 justify-between text-xl font-bold'>
                     <div>PARAMETER</div>
                     <div>VALUE</div>
@@ -32,7 +35,11 @@ function Search() {
                 <SearchItem objKey = {'place'} text = {formValues.place} setText = {setFormValues} title = {'Place'} />
                 <SearchItem objKey = {'ingredients'} text = {formValues.ingredients} setText = {setFormValues} title = {'Ingredients'} />
                 <SearchItem objKey = {'microorganisms'} text = {formValues.microorganisms} setText = {setFormValues} title = {'Microorganisms'} />
-                <SearchItem objKey = {'alcoholPercent'} text = {formValues.alcoholPercent} setText = {setFormValues} title = {'Alcohol Percent'} />
+                <SearchItem objKey = {'maxAC'} text = {formValues.maxAC} setText = {setFormValues} title = {'Alcohol Percent less than equal to'} />
+                <SearchItem objKey = {'minAC'} text = {formValues.minAC} setText = {setFormValues} title = {'Alcohol Percent greater than equal to'} />
+                <SearchItem objKey = {'maxFT'} text = {formValues.maxFT} setText = {setFormValues} title = {'Fermentation Time greater than equal to'} />
+                <SearchItem objKey = {'minFT'} text = {formValues.minFT} setText = {setFormValues} title = {'Fermentation Time greater than equal to'} />
+
                 <button className = 'bg-red-300 h-16 rounded-md tracking-wide font-bold mt-10 hover:scale-105 hover:bg-red-400 duration-300 transition'>Search</button>
             </form>
         </div>

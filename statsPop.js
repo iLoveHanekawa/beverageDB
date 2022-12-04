@@ -76,7 +76,7 @@ const charts = () => __awaiter(void 0, void 0, void 0, function* () {
             }
         },
         {
-            chartType: 'bar',
+            chartType: 'line',
             chartData: {
                 labels: ingredientKeys,
                 datasets: [
@@ -90,7 +90,7 @@ const charts = () => __awaiter(void 0, void 0, void 0, function* () {
             }
         },
         {
-            chartType: 'doughnut',
+            chartType: 'bar',
             chartData: {
                 labels: starterKeys,
                 datasets: [
@@ -104,7 +104,7 @@ const charts = () => __awaiter(void 0, void 0, void 0, function* () {
             }
         },
         {
-            chartType: 'line',
+            chartType: 'bar',
             chartData: {
                 labels: newCountryKeys,
                 datasets: [
@@ -118,7 +118,7 @@ const charts = () => __awaiter(void 0, void 0, void 0, function* () {
             }
         },
         {
-            chartType: 'bar',
+            chartType: 'doughnut',
             chartData: {
                 labels: acKeys.map(i => `Less than ${String(i)}%`),
                 datasets: [

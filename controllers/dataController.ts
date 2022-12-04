@@ -2,7 +2,7 @@ import { Request, Response, text } from 'express'
 import dataModel from '../models/dataModel'
 
 export const getAllData = async (req: Request, res: Response) => {
-    const { name, starter, ingredients, place, culturalImportance, microorganisms, nutritionalValue, alcoholContent, tasteAndOdour, texture, reference, limit, page = 1 } = req.query
+    const { name, starter, ingredients, place, culturalImportance, microorganisms, nutritionalValue, alcoholContent, tasteAndOdour, texture, reference, minAC, maxAC, minFT, maxFT, limit, page = 1 } = req.query
     let queryObj = {}
 
     if(name) {
@@ -38,12 +38,25 @@ export const getAllData = async (req: Request, res: Response) => {
     if(reference) {
         queryObj = { ...queryObj, reference: reference }
     }
-
+    if(minAC) {
+        queryObj = { ...queryObj, minAC: { $gte: Number(minAC) } }
+    }
+    if(maxAC) {
+        queryObj = { ...queryObj, minAC: { $lte: Number(minAC) } }
+    }
+    if(minFT) {
+        queryObj = { ...queryObj, minAC: { $gte: Number(minAC) } }
+    }
+    if(maxFT) {
+        queryObj = { ...queryObj, minAC: { $lte: Number(minAC) } }
+    }
     const lim = Number(limit) || 15
     const skip = lim * (Number(page )- 1) 
 
+    console.log(queryObj)
+
     let data: {}[] = await dataModel.find(queryObj).sort('name')
-    let result = { total: data.length }
+    let result = { total: data.length } 
     data = await dataModel.find(queryObj).sort('name').skip(skip).limit(lim)
     res.json({ ...result, count: data.length, data })
 }

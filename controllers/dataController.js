@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getData = exports.getAllData = void 0;
 const dataModel_1 = __importDefault(require("../models/dataModel"));
 const getAllData = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { name, starter, ingredients, place, culturalImportance, microorganisms, nutritionalValue, alcoholContent, tasteAndOdour, texture, reference, limit, page = 1 } = req.query;
+    const { name, starter, ingredients, place, culturalImportance, microorganisms, nutritionalValue, alcoholContent, tasteAndOdour, texture, reference, minAC, maxAC, minFT, maxFT, limit, page = 1 } = req.query;
     let queryObj = {};
     if (name) {
         queryObj = Object.assign(Object.assign({}, queryObj), { name: { $regex: name, $options: 'i' } });
@@ -50,8 +50,21 @@ const getAllData = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     if (reference) {
         queryObj = Object.assign(Object.assign({}, queryObj), { reference: reference });
     }
+    if (minAC) {
+        queryObj = Object.assign(Object.assign({}, queryObj), { minAC: { $gte: Number(minAC) } });
+    }
+    if (maxAC) {
+        queryObj = Object.assign(Object.assign({}, queryObj), { minAC: { $lte: Number(minAC) } });
+    }
+    if (minFT) {
+        queryObj = Object.assign(Object.assign({}, queryObj), { minAC: { $gte: Number(minAC) } });
+    }
+    if (maxFT) {
+        queryObj = Object.assign(Object.assign({}, queryObj), { minAC: { $lte: Number(minAC) } });
+    }
     const lim = Number(limit) || 15;
     const skip = lim * (Number(page) - 1);
+    console.log(queryObj);
     let data = yield dataModel_1.default.find(queryObj).sort('name');
     let result = { total: data.length };
     data = yield dataModel_1.default.find(queryObj).sort('name').skip(skip).limit(lim);

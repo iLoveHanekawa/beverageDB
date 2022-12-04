@@ -64,7 +64,7 @@ const charts = async () => {
             }
         },
         {
-            chartType: 'bar',
+            chartType: 'line',
             chartData: {
                 labels: ingredientKeys,
                 datasets: [
@@ -78,7 +78,7 @@ const charts = async () => {
             }
         },
         {
-            chartType: 'doughnut',
+            chartType: 'bar',
             chartData: {
                 labels: starterKeys,
                 datasets: [
@@ -92,7 +92,7 @@ const charts = async () => {
             }
         },
         {
-            chartType: 'line',
+            chartType: 'bar',
             chartData: {
                 labels: newCountryKeys,
                 datasets: [
@@ -106,7 +106,7 @@ const charts = async () => {
             }
         },
         {
-            chartType: 'bar',
+            chartType: 'doughnut',
             chartData: {
                 labels: acKeys.map(i => `Less than ${String(i)}%`),
                 datasets: [
