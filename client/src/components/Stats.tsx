@@ -19,7 +19,7 @@ function Stats() {
         id: 0,
         label: 'list 1',
         data: [5, 6, 7],
-        backgroundColor: ['orange', 'purple', 'yellow']
+        backgroundColor: ['#f06292', 'purple', 'yellow']
       },
       {
         id: 1,

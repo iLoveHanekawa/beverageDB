@@ -6,7 +6,7 @@ import SearchItem from './SearchItem'
 function Search() {
     const [formValues, setFormValues] = React.useState({
         name: '',
-        starterCulture: '',
+        starter: '',
         ingredients: '',
         place: '',
         microorganisms: '',
@@ -28,7 +28,7 @@ function Search() {
                     <div>VALUE</div>
                 </div>
                 <SearchItem objKey = {'name'} text = {formValues.name} setText = {setFormValues} title = {'Name'} />
-                <SearchItem objKey = {'starterCulture'} text = {formValues.starterCulture} setText = {setFormValues} title = {'Starter Culture'} />
+                <SearchItem objKey = {'starter'} text = {formValues.starter} setText = {setFormValues} title = {'Starter Culture'} />
                 <SearchItem objKey = {'place'} text = {formValues.place} setText = {setFormValues} title = {'Place'} />
                 <SearchItem objKey = {'ingredients'} text = {formValues.ingredients} setText = {setFormValues} title = {'Ingredients'} />
                 <SearchItem objKey = {'microorganisms'} text = {formValues.microorganisms} setText = {setFormValues} title = {'Microorganisms'} />

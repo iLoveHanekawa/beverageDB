@@ -40,6 +40,18 @@ const dataSchema = new mongoose_1.default.Schema({
     },
     reference: {
         type: String
+    },
+    minAC: {
+        type: Number
+    },
+    maxAC: {
+        type: Number
+    },
+    minFT: {
+        type: Number
+    },
+    maxFT: {
+        type: Number
     }
 });
 exports.default = mongoose_1.default.model('data', dataSchema);

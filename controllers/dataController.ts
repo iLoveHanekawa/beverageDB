@@ -21,7 +21,7 @@ export const getAllData = async (req: Request, res: Response) => {
         queryObj = { ...queryObj, culturalImportance: culturalImportance }
     }
     if(microorganisms) {
-        queryObj = { ...queryObj, microorganisms: microorganisms }
+        queryObj = { ...queryObj, microorganisms: { $regex: microorganisms, $options: 'i'} }
     }
     if(nutritionalValue) {
         queryObj = { ...queryObj, nutritionalValue: nutritionalValue }

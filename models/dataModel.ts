@@ -36,6 +36,18 @@ const dataSchema = new mongoose.Schema({
     },
     reference: {
         type: String
+    },
+    minAC: {
+        type: Number
+    },
+    maxAC: {
+        type: Number
+    },
+    minFT: {
+        type: Number
+    },
+    maxFT: {
+        type: Number
     }
 })
 

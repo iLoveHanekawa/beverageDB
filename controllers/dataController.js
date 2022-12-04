@@ -33,7 +33,7 @@ const getAllData = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         queryObj = Object.assign(Object.assign({}, queryObj), { culturalImportance: culturalImportance });
     }
     if (microorganisms) {
-        queryObj = Object.assign(Object.assign({}, queryObj), { microorganisms: microorganisms });
+        queryObj = Object.assign(Object.assign({}, queryObj), { microorganisms: { $regex: microorganisms, $options: 'i' } });
     }
     if (nutritionalValue) {
         queryObj = Object.assign(Object.assign({}, queryObj), { nutritionalValue: nutritionalValue });

@@ -4,7 +4,7 @@ type SearchItemProps = {
     text: string
     setText: React.Dispatch<React.SetStateAction<{
         name: string;
-        starterCulture: string;
+        starter: string;
         ingredients: string;
         place: string;
         microorganisms: string;

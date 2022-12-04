@@ -9,6 +9,7 @@ import { starterRouter } from "./routers/starterRouter";
 import { countryRouter } from "./routers/countryRouter";
 import { stateRouter } from "./routers/stateRouter";
 import { geoJSONRouter } from "./routers/geoJSONRouter";
+import { statsRouter } from "./routers/statsRouter";
 
 const app = express()
 const port = Number(process.env.PORT) || 5000
@@ -25,6 +26,7 @@ app.use('/api/v1/starter', starterRouter)
 app.use('/api/v1/country', countryRouter)
 app.use('/api/v1/state', stateRouter)
 app.use('/api/v1/geojson', geoJSONRouter)
+app.use('/api/v1/stats', statsRouter)
 
 const start = async (uri: string, port: number) => {
     try {
