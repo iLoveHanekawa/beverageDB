@@ -48,9 +48,10 @@ function Stats() {
         <button onClick = {() => {setIndex(3)}} className = {`${index === 3? 'statsBtnSelected': 'statsBtn'}`}>{data[3].chartData.datasets[0].label}</button>
         <button onClick = {() => {setIndex(4)}} className = {`${index === 4? 'statsBtnSelected': 'statsBtn'}`}>{data[4].chartData.datasets[0].label}</button>
       </div>}
+      {loading? <div className = 'absolute left-1/2 top-1/2 -translate-x-1/2 w-5/6 -translate-y-1/2'><Loading /></div>: 
       <div className={`${data[index].chartType === 'doughnut' || data[index].chartType === 'pie'?'w-2/6': 'w-4/6'} rounded-md overflow-hidden top-48 absolute ${loading? 'bg-black': 'bg-white'}`}>
-        {loading? <Loading />: <Chart type = {data[index].chartType as keyof ChartTypeRegistry} ref = {chartRef} datasetIdKey='id' data={data[index].chartData} />}
-      </div>
+        <Chart type = {data[index].chartType as keyof ChartTypeRegistry} ref = {chartRef} datasetIdKey='id' data={data[index].chartData} />
+      </div>}
     </div>
   )
 }
