@@ -42,13 +42,13 @@ export const getAllData = async (req: Request, res: Response) => {
         queryObj = { ...queryObj, minAC: { $gte: Number(minAC) } }
     }
     if(maxAC) {
-        queryObj = { ...queryObj, minAC: { $lte: Number(minAC) } }
+        queryObj = { ...queryObj, maxAC: { $lte: Number(maxAC) } }
     }
     if(minFT) {
         queryObj = { ...queryObj, minAC: { $gte: Number(minAC) } }
     }
     if(maxFT) {
-        queryObj = { ...queryObj, minAC: { $lte: Number(minAC) } }
+        queryObj = { ...queryObj, maxFT: { $lte: Number(maxFT) } }
     }
     const lim = Number(limit) || 15
     const skip = lim * (Number(page )- 1) 

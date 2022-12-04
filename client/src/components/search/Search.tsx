@@ -35,10 +35,10 @@ function Search() {
                 <SearchItem objKey = {'place'} text = {formValues.place} setText = {setFormValues} title = {'Place'} />
                 <SearchItem objKey = {'ingredients'} text = {formValues.ingredients} setText = {setFormValues} title = {'Ingredients'} />
                 <SearchItem objKey = {'microorganisms'} text = {formValues.microorganisms} setText = {setFormValues} title = {'Microorganisms'} />
-                <SearchItem objKey = {'maxAC'} text = {formValues.maxAC} setText = {setFormValues} title = {'Alcohol Percent less than equal to'} />
-                <SearchItem objKey = {'minAC'} text = {formValues.minAC} setText = {setFormValues} title = {'Alcohol Percent greater than equal to'} />
-                <SearchItem objKey = {'maxFT'} text = {formValues.maxFT} setText = {setFormValues} title = {'Fermentation Time greater than equal to'} />
-                <SearchItem objKey = {'minFT'} text = {formValues.minFT} setText = {setFormValues} title = {'Fermentation Time greater than equal to'} />
+                <SearchItem objKey = {'maxAC'} text = {formValues.maxAC} setText = {setFormValues} title = {'Max Alcohol Percent'} />
+                <SearchItem objKey = {'minAC'} text = {formValues.minAC} setText = {setFormValues} title = {'Min Alcohol Percent'} />
+                <SearchItem objKey = {'maxFT'} text = {formValues.maxFT} setText = {setFormValues} title = {'Max Fermentation Time'} />
+                <SearchItem objKey = {'minFT'} text = {formValues.minFT} setText = {setFormValues} title = {'Min Fermentation Time'} />
 
                 <button className = 'bg-red-300 h-16 rounded-md tracking-wide font-bold mt-10 hover:scale-105 hover:bg-red-400 duration-300 transition'>Search</button>
             </form>

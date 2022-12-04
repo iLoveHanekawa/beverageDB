@@ -54,13 +54,13 @@ const getAllData = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         queryObj = Object.assign(Object.assign({}, queryObj), { minAC: { $gte: Number(minAC) } });
     }
     if (maxAC) {
-        queryObj = Object.assign(Object.assign({}, queryObj), { minAC: { $lte: Number(minAC) } });
+        queryObj = Object.assign(Object.assign({}, queryObj), { maxAC: { $lte: Number(maxAC) } });
     }
     if (minFT) {
         queryObj = Object.assign(Object.assign({}, queryObj), { minAC: { $gte: Number(minAC) } });
     }
     if (maxFT) {
-        queryObj = Object.assign(Object.assign({}, queryObj), { minAC: { $lte: Number(minAC) } });
+        queryObj = Object.assign(Object.assign({}, queryObj), { maxFT: { $lte: Number(maxFT) } });
     }
     const lim = Number(limit) || 15;
     const skip = lim * (Number(page) - 1);
