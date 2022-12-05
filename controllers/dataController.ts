@@ -27,7 +27,7 @@ export const getAllData = async (req: Request, res: Response) => {
         queryObj = { ...queryObj, nutritionalValue: nutritionalValue }
     }
     if(alcoholContent) {
-        queryObj = { ...queryObj, alcoholContent: alcoholContent }
+        queryObj = { ...queryObj, alcoholContent: { $regex: alcoholContent, $options: 'i' } }
     }
     if(tasteAndOdour) {
         queryObj = { ...queryObj, tasteAndOdour: tasteAndOdour }

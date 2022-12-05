@@ -7,7 +7,7 @@ import { useNavigate, createSearchParams } from 'react-router-dom'
 import { textActions } from '../../../features/searchText'
 import SearchList from './SplashSearchList'
   
-  const urlParamKeys = ['name', 'starter', 'ingredients', 'place', 'microorganim', 'alcoholPercent']
+  const urlParamKeys = ['name', 'starter', 'ingredients', 'place', 'microorganisms', 'alcoholPercent']
 
   function Search() {
     const searchText = useSelector((state: StateType) => state.text.default)
