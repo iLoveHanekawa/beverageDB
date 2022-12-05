@@ -4,6 +4,7 @@ import { AiFillGithub } from 'react-icons/ai'
 import Search from './search/SplashSearch'
 import { useNavigate } from 'react-router-dom'
 import { GiWineGlass } from 'react-icons/gi'
+import Menu from './Menu'
 
 function SplashNav() {
 
@@ -20,6 +21,7 @@ function SplashNav() {
         <a href='https://github.com/iLoveHanekawa/beverageDB' className = 'h-max' target = '__blank'>
           <AiFillGithub className = 'text-white text-3xl' />
         </a>
+        <Menu />
       </div>
     </div>
   )

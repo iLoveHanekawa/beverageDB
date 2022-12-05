@@ -18,7 +18,7 @@ const charts = async () => {
     const topoJSONres = await axios.get('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
     const topoJSON = await topoJSONres.data    
     let countryKeys: string[] = topoJSON.objects.countries.geometries.map((i: { properties: {name: string}}) => i.properties.name)
-    const acKeys = [2, 4, 8, 16, 32, 64, 100]
+    const acKeys = [0.1, 0.2, 0.4, 0.8, 1, 2, 4, 6, 8, 32, 64, 100]
     const tasteKeys = ['Fruity', 'Strong', 'Sweet', 'Sour', 'Bitter', 'Acidic', 'Spicy']
     const ingredientKeys = ["Rice", "Maize", "Barley", "Wheat", "Millet", "Coconut", "Grapes", "Apples", "Cashew", "Honey", "Corn", "Sorghum", "Milk", "Ginger", "Sugarcane", "Cinnamon", "Orange", "Berries", "Almond"]
     const starterKeys = ['Ipoh', 'Hamei', 'Bakhar', 'Opop', 'Thiat', 'Humao', 'Pitha', 'Phab', 'Ranu', 'Yeast', 'Chamri', 'Khai', 'Dwadim', 'Kekhri', 'Marcha']

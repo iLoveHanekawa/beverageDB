@@ -41,11 +41,11 @@ nav a.active {
 }
 
 .selectedBrowse {
-  @apply text-white font-bold py-1 pl-3 transition duration-300
+  @apply text-white text-xs font-bold py-2 pl-3 transition duration-300
 }
 
 .notSelectedBrowse {
-  @apply text-gray-200 hover:text-white py-1 pl-3 transition duration-300
+  @apply text-gray-300 text-xs hover:text-white py-2 pl-3 transition duration-300
 }
 
 .news {

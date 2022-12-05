@@ -8,6 +8,7 @@ type GridItemProps = {
     IconArt: IconType
     itemTitle: string
     route: string
+    itemDescription: string
 }
 
 function GridItem(props: GridItemProps) {
@@ -17,9 +18,15 @@ function GridItem(props: GridItemProps) {
 
   return (
     <div className = 'row-span-1 col-span-1 shadow-inner'>
-        <div className = 'grid grid-rows-5 grid-cols-1 h-full'>
-            <div className = 'text-gray-300 row-span-1 text-sm'>Some information about this section. More information about this section. Even more information about this section.</div>
-            <div className = {`${props.color} transform relative hover:scale-105 duration-300 row-span-4 rounded-lg`}>
+        <div className = 'grid grid-rows-6 grid-cols-1 h-full'>
+            <div className = 'row-span-1 text-gray-300 flex-col flex col-span-1'>
+                <div className = 'flex items-center gap-2 text-sm'>
+                    <props.IconArt />
+                    <div>{props.itemTitle}</div>
+                </div>
+                <div className = 'text-xs text-gray-400'>{props.itemDescription}</div>
+            </div>
+            <div className = {`${props.color} cursor-pointer transform relative hover:scale-105 duration-300 row-span-5`}>
                 <div onClick = {() => {
                     navigate({pathname: props.route, search: `?${createSearchParams(props.route === '/news'? {
                         page: '1'

@@ -19,14 +19,14 @@ type SearchItemProps = {
 
 function SearchItem(props: SearchItemProps) {
   return (
-    <div className = 'flex text-lg mb-1 justify-between'>
-        <label htmlFor = {props.title}>{props.title}</label>
+    <div className = 'flex text-md mb-1 justify-between'>
+        <label className = 'cursor-pointer' htmlFor = {props.title}>{props.title}</label>
         <input value = {props.text} onChange = {(e) => {
             const change = e.currentTarget.value
             props.setText(i => {
                 return { ...i, [props.objKey]: change };
             })
-        }} id = {props.title} className = 'text-gray-500 text-sm h-8 w-1/2 indent-3 rounded-sm focus:outline-none' />
+        }} id = {props.title} className = 'text-gray-500 text-sm h-8 w-1/2 indent-3 rounded-full focus:outline-none' />
     </div>
   )
 }

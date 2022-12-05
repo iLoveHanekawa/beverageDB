@@ -4,6 +4,7 @@ import About from './components/About'
 import Contact from './components/Contact'
 import SearchResults from './components/SearchResults'
 import Item from './components/item/Item'
+import { ToastContainer } from 'react-toastify'
 import Stats from './components/Stats'
 import Maps from './components/maps/Maps'
 import Starter from './components/starter/Starter'
@@ -11,6 +12,7 @@ import StarterItem from './components/StarterItem'
 import Splash from './components/splash/Splash'
 import Search from './components/search/Search'
 import News from './components/news/News'
+import Contribute from './components/contribute/Contribute'
 
 export type NewsType = { 
   headline: { 
@@ -35,7 +37,9 @@ function App() {
         <Route path = '/starters' element = {<Starter />} />
         <Route path = '/news' element = {<News />} />
         <Route path = '/starter/:starterId' element = {<StarterItem />} />
+        <Route path = '/contribute' element = {<Contribute />} />
       </Routes>
+      <ToastContainer />
     </div>
   )
 }
