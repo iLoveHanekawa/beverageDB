@@ -59,7 +59,7 @@ function Contribute() {
         <ContributeItem objKey='name' setFormObj={setFormObj} title = {'Beverage Name'} text = {formObj.name} key = {2} />
         <ContributeItem objKey='starter' setFormObj={setFormObj} title = {'Starter Culture'} text = {formObj.starter} key = {3} />
         <ContributeItem objKey='ing' setFormObj={setFormObj} title = {'Ingredient'} text = {formObj.ing} key = {4} />
-        <ContributeItem objKey='mo' setFormObj={setFormObj} title = {'Mincroorganisms'} text = {formObj.mo} key = {5} />
+        <ContributeItem objKey='mo' setFormObj={setFormObj} title = {'Microorganisms'} text = {formObj.mo} key = {5} />
         <ContributeItem objKey='place' setFormObj={setFormObj} title = {'Place'} text = {formObj.place} key = {6} />
         <ContributeItem objKey='ci' setFormObj={setFormObj} title = {'Cultural Importance'} text = {formObj.ci} key = {7} />
         <ContributeItem objKey='to' setFormObj={setFormObj} title = {'Taste and Odour'} text = {formObj.to} key = {8} />
