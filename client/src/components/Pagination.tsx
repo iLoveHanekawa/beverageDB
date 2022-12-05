@@ -17,7 +17,7 @@ function Pagination() {
     
     const commonObj = { 
         name: searchParams.get('name') || '',
-        alcoholPercent: searchParams.get('alcoholPercent') || '',
+        alcoholContent: searchParams.get('alcoholContent') || '',
         ingredients: searchParams.get('ingredients') || '',
         starterCulture: searchParams.get('starterCulture') || '',
         microorganisms: searchParams.get('microorganisms') || '',

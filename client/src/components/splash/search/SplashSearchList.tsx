@@ -9,7 +9,7 @@ type SearchListProps = {
     setParam: React.Dispatch<React.SetStateAction<string>>
 }
 
-const urlParamKeys = ['name', 'starter', 'ingredients', 'place', 'microorganisms', 'alcoholPercent']
+const urlParamKeys = ['name', 'starter', 'ingredients', 'place', 'microorganisms', 'alcoholContent']
 
 function SearchList(props: SearchListProps) {
   return (
