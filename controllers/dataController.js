@@ -39,7 +39,7 @@ const getAllData = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         queryObj = Object.assign(Object.assign({}, queryObj), { nutritionalValue: nutritionalValue });
     }
     if (alcoholContent) {
-        queryObj = Object.assign(Object.assign({}, queryObj), { alcoholContent: alcoholContent });
+        queryObj = Object.assign(Object.assign({}, queryObj), { alcoholContent: { $regex: alcoholContent, $options: 'i' } });
     }
     if (tasteAndOdour) {
         queryObj = Object.assign(Object.assign({}, queryObj), { tasteAndOdour: tasteAndOdour });
