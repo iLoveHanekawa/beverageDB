@@ -17,6 +17,8 @@ function Stats() {
   const dispatch: AppDispatch = useDispatch()  
   const [index, setIndex] = React.useState(0)
   const [selected, setSelected] = React.useState('')
+  console.log(data);
+  
   React.useEffect(() => {
     const fetch = async() => {
       dispatch(fetchData('https://beveragedb-production.up.railway.app/api/v1/stats'))
@@ -46,6 +48,7 @@ function Stats() {
         <button onClick = {() => {setIndex(2)}} className = {`${index === 2? 'statsBtnSelected': 'statsBtn'}`}>{data[2].chartData.datasets[0].label}</button>
         <button onClick = {() => {setIndex(3)}} className = {`${index === 3? 'statsBtnSelected': 'statsBtn'}`}>{data[3].chartData.datasets[0].label}</button>
         <button onClick = {() => {setIndex(4)}} className = {`${index === 4? 'statsBtnSelected': 'statsBtn'}`}>{data[4].chartData.datasets[0].label}</button>
+        <button onClick = {() => {setIndex(5)}} className = {`${index === 5? 'statsBtnSelected': 'statsBtn'}`}>{data[5].chartData.datasets[0].label}</button>
       </div>}
       {loading? <div className = 'absolute left-1/2 top-1/2 -translate-x-1/2 w-5/6 -translate-y-1/2'><Loading /></div>: 
       <div className={`${data[index].chartType === 'doughnut' || data[index].chartType === 'pie'?'w-2/6': 'w-4/6'} rounded-md overflow-hidden top-48 absolute ${loading? 'bg-black': 'bg-white'}`}>
