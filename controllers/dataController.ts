@@ -30,7 +30,7 @@ export const getAllData = async (req: Request, res: Response) => {
         queryObj = { ...queryObj, alcoholContent: { $regex: alcoholContent, $options: 'i' } }
     }
     if(tasteAndOdour) {
-        queryObj = { ...queryObj, tasteAndOdour: tasteAndOdour }
+        queryObj = { ...queryObj, tasteAndOdour: { $regex: tasteAndOdour, $options: 'i' } }
     }
     if(texture) {
         queryObj = { ...queryObj, texture: {$regex: texture, $options: 'i'} }

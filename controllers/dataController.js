@@ -42,7 +42,7 @@ const getAllData = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         queryObj = Object.assign(Object.assign({}, queryObj), { alcoholContent: { $regex: alcoholContent, $options: 'i' } });
     }
     if (tasteAndOdour) {
-        queryObj = Object.assign(Object.assign({}, queryObj), { tasteAndOdour: tasteAndOdour });
+        queryObj = Object.assign(Object.assign({}, queryObj), { tasteAndOdour: { $regex: tasteAndOdour, $options: 'i' } });
     }
     if (texture) {
         queryObj = Object.assign(Object.assign({}, queryObj), { texture: { $regex: texture, $options: 'i' } });

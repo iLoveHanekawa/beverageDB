@@ -4,7 +4,6 @@ import axios from "axios";
 export const fetchData = createAsyncThunk('stats/fetch', async (url: string) => {
     const response = await axios.get(url)
     const data = await response.data
-    console.log(data);
     return data.allCharts
 })
 

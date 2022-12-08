@@ -1,5 +1,5 @@
 import React from 'react'
-import {Chart as ChartJS, registerables, PointElement, Legend, Tooltip, LineElement, ArcElement, CategoryScale, LinearScale, BarElement, ChartTypeRegistry} from 'chart.js'
+import {Chart as ChartJS, registerables, PointElement, Legend, Tooltip, LineElement, ArcElement, CategoryScale, LinearScale, BarElement, ChartTypeRegistry, ChartEvent} from 'chart.js'
 import { Chart } from 'react-chartjs-2'
 import 'chart.js/auto'
 import { StateType, AppDispatch } from '../app/store'
@@ -7,9 +7,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import { fetchData } from '../features/stats'
 import Loading from './Loading'
 import SplashNav from './splash/SplashNav'
+import { createSearchParams, useNavigate } from 'react-router-dom'
 
 function Stats() {
 
+  const navigate = useNavigate()
   ChartJS.register(ArcElement, BarElement, CategoryScale, LinearScale, PointElement, Legend, Tooltip)
   const chartRef = React.useRef()
   const loading = useSelector((state: StateType) => state.stats.loading)
@@ -17,7 +19,6 @@ function Stats() {
   const dispatch: AppDispatch = useDispatch()  
   const [index, setIndex] = React.useState(0)
   const [selected, setSelected] = React.useState('')
-  console.log(data);
   
   React.useEffect(() => {
     const fetch = async() => {
@@ -52,7 +53,28 @@ function Stats() {
       </div>}
       {loading? <div className = 'absolute left-1/2 top-1/2 -translate-x-1/2 w-5/6 -translate-y-1/2'><Loading /></div>: 
       <div className={`${data[index].chartType === 'doughnut' || data[index].chartType === 'pie'?'w-2/6': 'w-4/6'} rounded-md overflow-hidden top-48 absolute ${loading? 'bg-black': 'bg-white'}`}>
-        <Chart type = {data[index].chartType as keyof ChartTypeRegistry} ref = {chartRef} datasetIdKey='id' data={data[index].chartData} />
+        <Chart options={{
+          onClick: (evt: ChartEvent & { chart: any }, element) => {
+            let key: string = evt.chart.tooltip.dataPoints[0].dataset.label
+            let val: string = evt.chart.tooltip.dataPoints[0].label
+            if(key === 'Countries' || key === 'Indian States') key = 'place'
+            if(key === 'Taste') key = 'tasteAndOdour'
+            if(key === 'Starter Culture') key = 'starter'
+            if(key === 'Ingredients') key = 'ingredients'
+            if(key === 'Alcohol Content in Percent') {
+              key = 'maxAC'
+              const arr = val.match(/[\d\.]+/g) as [string]
+              val = arr[0]
+            }
+            navigate({
+              pathname: '/beverages/search',
+              search: `?${createSearchParams({
+                [key]: val,
+                page: '1'
+              })}`
+            })
+          }
+        }} type = {data[index].chartType as keyof ChartTypeRegistry} ref = {chartRef} datasetIdKey='id' data={data[index].chartData} />
       </div>}
     </div>
   )
