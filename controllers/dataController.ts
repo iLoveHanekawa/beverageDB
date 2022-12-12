@@ -45,7 +45,7 @@ export const getAllData = async (req: Request, res: Response) => {
         queryObj = { ...queryObj, maxAC: { $lte: Number(maxAC) } }
     }
     if(minFT) {
-        queryObj = { ...queryObj, minAC: { $gte: Number(minAC) } }
+        queryObj = { ...queryObj, minFT: { $gte: Number(minAC) } }
     }
     if(maxFT) {
         queryObj = { ...queryObj, maxFT: { $lte: Number(maxFT) } }
