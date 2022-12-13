@@ -24,10 +24,10 @@ function Item() {
     const navigate = useNavigate()
 
     return (
-        <div className='w-screen relative z-0 overflow-x-hidden h-full scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-gray-300 text-white flex flex-col'>
-            {!item? <div className='absolute left-1/2 -translate-x-1/2 translate-y-1/2'><Loading /></div>:
-            <div className = 'absolute top-20 left-0 z-20 w-screen'>
-                <div className = 'flex items-center w-full border-b-gray-800 border-b-2 pb-3 text-4xl'>
+        <div className='w-screen relative overflow-x-hidden h-full scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-gray-300 text-white flex flex-col'>
+            {!item? <div className='absolute left-1/2  -translate-x-1/2 translate-y-1/2'><Loading /></div>:
+            <div className = 'absolute top-20 left-0 z-30 w-screen'>
+                <div className = 'flex w-fit items-center z-30 pb-3 text-4xl'>
                     <MdNavigateBefore onClick = {() => {
                         navigate(-1)
                     }} className = 'ml-3 text-6xl cursor-pointer hover:scale-125 duration-300 transition' />
