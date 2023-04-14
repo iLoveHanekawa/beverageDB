@@ -25,15 +25,15 @@ function Search() {
     const navigate = useNavigate()
     const page = '1'
   return (
-    <div className = 'text-white w-screen h-screen overflow-y-scroll'>
+    <div className = 'text-white w-screen h-max'>
         <SplashNav />
-        <div className = 'absolute flex flex-col justify-start w-screen  bg-black top-24'>
-            <div className = 'ml-10 text-4xl font-bold border-b-2 pb-2  border-gray-800 tracking-wide'>Query Submission Form</div>
+        <div className = 'flex flex-col justify-start bg-black mt-24'>
+            <div className = 'ml-10 text-4xl font-bold border-b-2 pb-2 border-gray-800 tracking-wide'>Query Submission Form</div>
             <form onSubmit={e => {
                 e.preventDefault()
                 navigate({ pathname: '/beverages/search', search: `?${createSearchParams({...formValues, page: page})}` })
-            }} className = 'flex flex-col w-2/4 self-center mt-10 '>
-                <div className='tracking-wide border-b-2 border-gray-800  pb-3 flex mb-10 justify-between text-xl font-bold'>
+            }} className = 'flex flex-col w-2/4 self-center mt-10'>
+                <div className='tracking-wide border-b-2 border-gray-800 pb-3 flex mb-10 justify-between text-xl font-bold'>
                     <div>PARAMETER</div>
                     <div>VALUE</div>
                 </div>
