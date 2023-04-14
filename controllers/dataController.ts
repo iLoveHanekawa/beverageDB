@@ -2,7 +2,7 @@ import { Request, Response, text } from 'express'
 import dataModel from '../models/dataModel'
 
 export const getAllData = async (req: Request, res: Response) => {
-    const { name, starter, ingredients, place, culturalImportance, microorganisms, nutritionalValue, alcoholContent, tasteAndOdour, texture, reference, minAC, maxAC, minFT, maxFT, limit, page = 1 } = req.query
+    const { name, starter, ingredients, place, culturalImportance, microorganisms, nutritionalValue, alcoholContent, tasteAndOdour, texture, reference, tribes, districts, weather, latitude, longitude, rainfall, humidity, minAC, maxAC, minFT, maxFT, minRainfall, maxRainfall, minHumidity, maxHumidity, limit, page = 1 } = req.query
     let queryObj = {}
 
     if(name) {
@@ -38,6 +38,27 @@ export const getAllData = async (req: Request, res: Response) => {
     if(reference) {
         queryObj = { ...queryObj, reference: reference }
     }
+    if(tribes) {
+        queryObj = { ...queryObj, tribes: { $regex: tribes, $options: 'i' } }
+    }
+    if(districts) {
+        queryObj = { ...queryObj, districts: { $regex: districts, $options: 'i' } }
+    }
+    if(weather) {
+        queryObj = { ...queryObj, weather: { $regex: weather, $options: 'i' } }
+    }
+    if(humidity) {
+        queryObj = { ...queryObj, humidity: { $regex: humidity, $options: 'i' } }
+    }
+    if(rainfall) {
+        queryObj = { ...queryObj, rainfall: { $regex: rainfall, $options: 'i' } }
+    }
+    if(latitude) {
+        queryObj = { ...queryObj, latitude: { $regex: latitude, $options: 'i' } }
+    }
+    if(longitude) {
+        queryObj = { ...queryObj, longitude: { $regex: longitude, $options: 'i' } }
+    }
     if(minAC) {
         queryObj = { ...queryObj, minAC: { $gte: Number(minAC) } }
     }
@@ -49,6 +70,18 @@ export const getAllData = async (req: Request, res: Response) => {
     }
     if(maxFT) {
         queryObj = { ...queryObj, maxFT: { $lte: Number(maxFT) } }
+    }
+    if(minRainfall) {
+        queryObj = { ...queryObj, minRainfall: { $gte: Number(minRainfall) } }
+    }
+    if(maxRainfall) {
+        queryObj = { ...queryObj, maxRainfall: { $lte: Number(maxRainfall) } }
+    }
+    if(minHumidity) {
+        queryObj = { ...queryObj, minHumidity: { $gte: Number(minHumidity) } }
+    }
+    if(maxHumidity) {
+        queryObj = { ...queryObj, maxHumidity: { $lte: Number(maxHumidity) } }
     }
     const lim = Number(limit) || 15
     const skip = lim * (Number(page )- 1) 

@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getData = exports.getAllData = void 0;
 const dataModel_1 = __importDefault(require("../models/dataModel"));
 const getAllData = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { name, starter, ingredients, place, culturalImportance, microorganisms, nutritionalValue, alcoholContent, tasteAndOdour, texture, reference, minAC, maxAC, minFT, maxFT, limit, page = 1 } = req.query;
+    const { name, starter, ingredients, place, culturalImportance, microorganisms, nutritionalValue, alcoholContent, tasteAndOdour, texture, reference, tribes, districts, weather, latitude, longitude, rainfall, humidity, minAC, maxAC, minFT, maxFT, minRainfall, maxRainfall, minHumidity, maxHumidity, limit, page = 1 } = req.query;
     let queryObj = {};
     if (name) {
         queryObj = Object.assign(Object.assign({}, queryObj), { name: { $regex: name, $options: 'i' } });
@@ -50,6 +50,27 @@ const getAllData = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     if (reference) {
         queryObj = Object.assign(Object.assign({}, queryObj), { reference: reference });
     }
+    if (tribes) {
+        queryObj = Object.assign(Object.assign({}, queryObj), { tribes: { $regex: tribes, $options: 'i' } });
+    }
+    if (districts) {
+        queryObj = Object.assign(Object.assign({}, queryObj), { districts: { $regex: districts, $options: 'i' } });
+    }
+    if (weather) {
+        queryObj = Object.assign(Object.assign({}, queryObj), { weather: { $regex: weather, $options: 'i' } });
+    }
+    if (humidity) {
+        queryObj = Object.assign(Object.assign({}, queryObj), { humidity: { $regex: humidity, $options: 'i' } });
+    }
+    if (rainfall) {
+        queryObj = Object.assign(Object.assign({}, queryObj), { rainfall: { $regex: rainfall, $options: 'i' } });
+    }
+    if (latitude) {
+        queryObj = Object.assign(Object.assign({}, queryObj), { latitude: { $regex: latitude, $options: 'i' } });
+    }
+    if (longitude) {
+        queryObj = Object.assign(Object.assign({}, queryObj), { longitude: { $regex: longitude, $options: 'i' } });
+    }
     if (minAC) {
         queryObj = Object.assign(Object.assign({}, queryObj), { minAC: { $gte: Number(minAC) } });
     }
@@ -61,6 +82,18 @@ const getAllData = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     }
     if (maxFT) {
         queryObj = Object.assign(Object.assign({}, queryObj), { maxFT: { $lte: Number(maxFT) } });
+    }
+    if (minRainfall) {
+        queryObj = Object.assign(Object.assign({}, queryObj), { minRainfall: { $gte: Number(minRainfall) } });
+    }
+    if (maxRainfall) {
+        queryObj = Object.assign(Object.assign({}, queryObj), { maxRainfall: { $lte: Number(maxRainfall) } });
+    }
+    if (minHumidity) {
+        queryObj = Object.assign(Object.assign({}, queryObj), { minHumidity: { $gte: Number(minHumidity) } });
+    }
+    if (maxHumidity) {
+        queryObj = Object.assign(Object.assign({}, queryObj), { maxHumidity: { $lte: Number(maxHumidity) } });
     }
     const lim = Number(limit) || 15;
     const skip = lim * (Number(page) - 1);
