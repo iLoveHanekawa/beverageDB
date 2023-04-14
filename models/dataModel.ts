@@ -48,6 +48,28 @@ const dataSchema = new mongoose.Schema({
     },
     maxFT: {
         type: Number
+    },
+
+    tribes: {
+        type: String
+    },
+    districts: {
+        type: String
+    },
+    weather: {
+        type: String
+    },
+    latitude: {
+        type: String
+    },
+    longitute: {
+        type: String
+    },
+    rainfall: {
+        type: String
+    },
+    humidity: {
+        type: String
     }
 })
 
