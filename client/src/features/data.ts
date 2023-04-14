@@ -20,6 +20,7 @@ export type SchemaType = {
     latitude: string | undefined,
     longitude: string | undefined,
     rainfall: string | undefined,
+    weather: string | undefined,
     humidity: string | undefined
 }
 

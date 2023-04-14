@@ -50,6 +50,16 @@ function Item() {
                     <div className = 'col-span-3 pl-2 font-bold tracking-wide bg-green-500'>Additional Information</div>
                     {item.nutritionalValue && <ItemItem title = {'Nutritional Value'} description = {item.nutritionalValue} />}
                     {item.culturalImportance && <ItemItem title = {'Cultural Importance'} description = {item.culturalImportance} />}
+                    <div className = 'col-span-3 pl-2 font-bold tracking-wide bg-amber-500'>Tribes and Districts</div>
+                    {item.tribes && <ItemItem title = {'Tribes'} description = {item.tribes} />}
+                    {item.districts && <ItemItem title = {'Districts'} description = {item.districts} />}
+                    <div className = 'col-span-3 pl-2 font-bold tracking-wide bg-teal-500'>Weather and Location</div>
+                    {item.latitude && <ItemItem title = {'Latitude'} description = {item.latitude} />}
+                    {item.longitude && <ItemItem title = {'Longitude'} description = {item.longitude} />}
+                    {item.weather && <ItemItem title = {'Weather'} description = {item.weather} />}
+                    {item.rainfall && <ItemItem title = {'Rainfall  (in millimeters)'} description = {item.rainfall} />}
+                    {item.humidity && <ItemItem title = {'Humidity (in percetage)'} description = {item.humidity} />}
+
                     <div className = 'col-span-3 pl-2 font-bold tracking-wide bg-purple-500'>Links and References</div>
                     {item.reference && <div className = 'grid col-span-3 row-span-1 grid-rows-1 grid-cols-3'>
                         <div className = 'col-span-1 border-r-2 py-2 h-full border-l-2 border-b-2 pl-4 border-gray-800'>Reference</div>

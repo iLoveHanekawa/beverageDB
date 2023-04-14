@@ -20,7 +20,7 @@ function Search() {
   return (
     <div className = 'text-white w-screen h-screen'>
         <SplashNav />
-        <div className = 'absolute flex flex-col justify-start w-screen top-24'>
+        <div className = 'absolute flex flex-col justify-start w-screen bg-black top-24'>
             <div className = 'ml-10 text-4xl font-bold border-b-2 pb-2 border-gray-800 tracking-wide'>Query Submission Form</div>
             <form onSubmit={e => {
                 e.preventDefault()
@@ -40,7 +40,7 @@ function Search() {
                 <SearchItem objKey = {'maxFT'} text = {formValues.maxFT} setText = {setFormValues} title = {'Max Fermentation Time'} />
                 <SearchItem objKey = {'minFT'} text = {formValues.minFT} setText = {setFormValues} title = {'Min Fermentation Time'} />
 
-                <button className = 'bg-red-300 h-16 rounded-md tracking-wide font-bold mt-10 hover:scale-105 hover:bg-red-400 duration-300 transition'>Search</button>
+                <button className = 'bg-red-300 mb-5 h-16 rounded-md tracking-wide font-bold mt-10 hover:scale-105 hover:bg-red-400 duration-300 transition'>Search</button>
             </form>
         </div>
     </div>

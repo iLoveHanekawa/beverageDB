@@ -62,7 +62,7 @@ const dataSchema = new mongoose.Schema({
     latitude: {
         type: String
     },
-    longitute: {
+    longitude: {
         type: String
     },
     rainfall: {
