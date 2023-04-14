@@ -21,7 +21,7 @@ export type SchemaType = {
     longitude: string | undefined,
     rainfall: string | undefined,
     weather: string | undefined,
-    humidity: string | undefined
+    humidity: string | undefined,
 }
 
 type DataStateType<T extends {}> = {
