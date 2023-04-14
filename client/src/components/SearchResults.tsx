@@ -23,7 +23,7 @@ function SearchResults() {
     const total = useSelector((state: StateType) => state.data.default.total)
     const documents = useSelector((state: StateType) => { return state.data.default })
     const loading = useSelector((state: StateType) => { return state.data.loading })
-    
+    console.log(documents.data)    
     React.useEffect(() => {
         dispatch(fetchData(queryString))
         setSearchText(prev => {

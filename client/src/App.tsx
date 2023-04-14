@@ -22,7 +22,6 @@ export type NewsType = {
 
 
 function App() {
-  
   return (
     <div className = 'h-screen overflow-y-scroll font-nunito scrollbar-thin bg-black scrollbar-thumb-gray-300 scrollbar-thumb-rounded-xl'>
       <Routes>

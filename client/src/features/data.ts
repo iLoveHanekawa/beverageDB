@@ -14,7 +14,13 @@ export type SchemaType = {
     tasteAndOdour: string | undefined,
     texture: string | undefined,
     fermentationTime: string | undefined,
-    reference: string | undefined
+    reference: string | undefined,
+    tribes: string | undefined,
+    districts: string | undefined,
+    latitude: string | undefined,
+    longitude: string | undefined,
+    rainfall: string | undefined,
+    humidity: string | undefined
 }
 
 type DataStateType<T extends {}> = {
