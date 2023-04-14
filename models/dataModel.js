@@ -73,6 +73,18 @@ const dataSchema = new mongoose_1.default.Schema({
     },
     humidity: {
         type: String
+    },
+    minHumidity: {
+        type: Number
+    },
+    maxHumidity: {
+        type: Number
+    },
+    minRainfall: {
+        type: Number
+    },
+    maxRainfall: {
+        type: Number
     }
 });
 exports.default = mongoose_1.default.model('data', dataSchema);

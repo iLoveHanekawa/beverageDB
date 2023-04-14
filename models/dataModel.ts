@@ -70,6 +70,18 @@ const dataSchema = new mongoose.Schema({
     },
     humidity: {
         type: String
+    },
+    minHumidity: {
+        type: Number
+    },
+    maxHumidity: {
+        type: Number
+    },
+    minRainfall: {
+        type: Number
+    },
+    maxRainfall: {
+        type: Number
     }
 })
 
