@@ -8,10 +8,17 @@ type SearchItemProps = {
         ingredients: string;
         place: string;
         microorganisms: string;
+        tribes: string;
+        districts: string;
+        weather: string;
         minAC: string;
         maxAC: string
-        minFT: string,
-        maxFT: string
+        minFT: string;
+        maxFT: string;
+        minRainfall: string;
+        maxRainfall: string;
+        minHumidity: string;
+        maxHumidity: string;
     }>>
     title: string
     objKey: string
